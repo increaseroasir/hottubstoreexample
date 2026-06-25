@@ -477,10 +477,11 @@
 		}
 		body.ps-dealer-home #showroom .mgc-hp-how__step-img {
 			width: 100%;
-			aspect-ratio: 4 / 3;
+			aspect-ratio: 3 / 2;
 			object-fit: cover;
 			display: block;
 			border-radius: 0;
+			min-height: 320px;
 		}
 		body.ps-dealer-home #showroom .mgc-hp-how__step-num {
 			margin: 20px 0 0;
@@ -521,11 +522,14 @@
 		/* ── CTA split section (Ready to get started) ── */
 		body.ps-dealer-home #get-started.mgc-hp-split {
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			min-height: 420px;
+			grid-template-columns: 55% 45%;
+			min-height: 480px;
 			background: #fff;
 			padding: 0 !important;
 			gap: 0;
+			max-width: 100%;
+			align-items: stretch;
+			overflow: hidden;
 		}
 		@media (max-width: 768px) {
 			body.ps-dealer-home #get-started.mgc-hp-split {
@@ -535,9 +539,10 @@
 		body.ps-dealer-home #get-started .mgc-hp-split__image {
 			background-size: cover;
 			background-position: center;
-			min-height: 380px;
+			min-height: 480px;
 			display: block;
 			width: 100%;
+			align-self: stretch;
 		}
 		body.ps-dealer-home #get-started .mgc-hp-split__content {
 			padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
@@ -559,6 +564,11 @@
 			color: #374151;
 			margin: 0;
 		}
+		body.ps-dealer-home #get-started .ps-ready-split__includes {
+			font-weight: 700;
+			color: #1E3A52;
+			margin-top: 12px !important;
+		}
 		body.ps-dealer-home #get-started .mgc-hp-split__list {
 			list-style: none;
 			padding: 0;
@@ -575,16 +585,23 @@
 			gap: 8px;
 		}
 		body.ps-dealer-home #get-started .ps-list-check::before {
-			content: '✓';
-			color: var(--ps-red, #E02C1E);
-			font-weight: 800;
-			font-size: 14px;
+			content: '';
+			display: inline-block;
+			width: 22px;
+			height: 22px;
+			min-width: 22px;
+			background: var(--ps-hansons-gold, #c9a84c);
+			border-radius: 50%;
+			background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 10'%3E%3Cpath d='M1 5l3.5 3.5L11 1' stroke='white' stroke-width='2' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: 60%;
 		}
 		body.ps-dealer-home #get-started .mgc-hp-btn--red {
 			display: inline-block;
-			background: var(--ps-red, #E02C1E);
-			color: #fff;
-			padding: 14px 28px;
+			background: var(--ps-hansons-gold, #c9a84c);
+			color: #1E3A52;
+			padding: 16px 32px;
 			border-radius: 4px;
 			font-family: var(--hp-font, 'Montserrat', sans-serif);
 			font-size: 13px;
@@ -593,7 +610,7 @@
 			text-transform: uppercase;
 			text-decoration: none;
 			align-self: flex-start;
-			margin-top: 4px;
+			margin-top: 8px;
 		}
 		/* ── Why Choose box ── */
 		body.ps-dealer-home .ps-why-box {
