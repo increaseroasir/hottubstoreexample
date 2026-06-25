@@ -585,6 +585,91 @@
 			align-self: flex-start;
 			margin-top: 4px;
 		}
+		/* ── Why Choose box ── */
+		body.ps-dealer-home .ps-why-box {
+			border: 2px solid #D1D5DB !important;
+			border-radius: 8px !important;
+			padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem) !important;
+			margin: 0 clamp(1rem, 3vw, 3rem) !important;
+			background: #fff !important;
+		}
+		body.ps-dealer-home .ps-why-box__panel {
+			max-width: 860px;
+			margin: 0 auto;
+		}
+		body.ps-dealer-home .ps-why-box__title {
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+			font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+			font-weight: 800;
+			color: var(--ps-headline-blue, #1E3A52);
+			margin: 0 0 12px;
+		}
+		body.ps-dealer-home .ps-why-box__prose {
+			font-size: 15px;
+			line-height: 1.65;
+			color: #374151;
+			margin-bottom: 24px;
+		}
+		body.ps-dealer-home .ps-why-box__badges {
+			display: flex !important;
+			flex-wrap: wrap;
+			gap: 0;
+			align-items: center;
+			border-top: 1px solid #E5E7EB;
+			padding-top: 20px;
+			margin-top: 8px;
+		}
+		body.ps-dealer-home .ps-why-box__badge {
+			display: flex !important;
+			align-items: center;
+			gap: 10px;
+			padding: 0 clamp(1rem, 3vw, 2.5rem);
+			border-right: 1px solid #D1D5DB;
+		}
+		body.ps-dealer-home .ps-why-box__badge:first-child {
+			padding-left: 0;
+		}
+		body.ps-dealer-home .ps-why-box__badge:last-child {
+			border-right: none;
+		}
+		body.ps-dealer-home .ps-why-box__badge-stars {
+			color: #F59E0B;
+			font-size: 18px;
+			letter-spacing: 2px;
+			display: inline-block;
+		}
+		body.ps-dealer-home .ps-why-box__badge-label {
+			font-size: 13px;
+			font-weight: 700;
+			color: #1E3A52;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+		body.ps-dealer-home .ps-why-box__badge-years {
+			display: flex;
+			flex-direction: column;
+			line-height: 1.2;
+		}
+		body.ps-dealer-home .ps-why-box__badge-years-top {
+			font-size: 18px;
+			font-weight: 800;
+			color: #1E3A52;
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+		}
+		body.ps-dealer-home .ps-why-box__badge-years-sub {
+			font-size: 11px;
+			font-weight: 600;
+			color: #6B7280;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+		}
+		/* ── Steps image aspect ratio: 4:3 square-ish ── */
+		body.ps-dealer-home #showroom .mgc-hp-how__step-img {
+			aspect-ratio: 4 / 3 !important;
+		}
+		body.ps-dealer-home #showroom .mgc-hp-how__steps {
+			gap: clamp(1.5rem, 2.5vw, 2.5rem) !important;
+		}
 	</style>
 </head>
 <body class="ps-dealer-home ps-hottubstore-home">
