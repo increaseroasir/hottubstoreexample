@@ -712,38 +712,43 @@
 				color: #374151;
 				text-align: center;
 			}
-			/* ── CTA split section (Ready to get started) ── */
-				body.ps-dealer-home #get-started.mgc-hp-split {
+				/* ── CTA split section (Ready to get started) ── */
+				body.ps-dealer-home #get-started {
+					background: #fff;
+					width: 100%;
+					padding: 0 !important;
+				}
+				body.ps-dealer-home #get-started .ps-ready-split-inner {
 					display: grid;
 					grid-template-columns: 55% 45%;
-					min-height: clamp(480px, 55vw, 700px);
-					background: #fff;
-					padding: 0 !important;
-					gap: 0;
-					max-width: 100%;
-					width: 100%;
-					align-items: stretch;
-					overflow: hidden;
+					max-width: 1280px;
+					margin: 0 auto;
+					padding: clamp(2rem, 4vw, 3.5rem) clamp(2rem, 5vw, 5rem);
+					gap: clamp(1.5rem, 3vw, 2.5rem);
+					align-items: center;
 					box-sizing: border-box;
 				}
-		@media (max-width: 768px) {
-			body.ps-dealer-home #get-started.mgc-hp-split {
-				grid-template-columns: 1fr;
-			}
-		}
+				@media (max-width: 768px) {
+					body.ps-dealer-home #get-started .ps-ready-split-inner {
+						grid-template-columns: 1fr;
+					}
+				}
 				body.ps-dealer-home #get-started .mgc-hp-split__image {
-					background-size: cover;
-					background-position: center;
-					min-height: clamp(480px, 55vw, 700px);
 					display: block;
 					width: 100%;
-					max-width: 100%;
-					align-self: stretch;
-					height: 100%;
+					border-radius: 8px;
 					overflow: hidden;
+					align-self: center;
 				}
-		body.ps-dealer-home #get-started .mgc-hp-split__content {
-			padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+				body.ps-dealer-home #get-started .mgc-hp-split__image img {
+					width: 100%;
+					height: auto;
+					display: block;
+					border-radius: 8px;
+					object-fit: cover;
+				}
+body.ps-dealer-home #get-started .mgc-hp-split__content {
+				padding: 0;
 			display: flex;
 			flex-direction: column;
 			justify-content: center;
@@ -1568,18 +1573,22 @@
 	</section>
 
 	<!-- Ready to get started split -->
-	<section class="mgc-hp-split ps-ready-split ps-hansons-buying" id="get-started" aria-label="Ready to get started">
-		<div class="mgc-hp-split__image" style="background-image:url('../assets/images/homepage/paradise-backyard-lifestyle.jpg')" role="img" aria-label="Backyard hot tub at night"></div>
-		<div class="mgc-hp-split__content">
-			<h2 class="mgc-hp-split__title">Ready to get started?</h2>
-			<p>We're ready to help you turn your backyard into the place you can't wait to come home to — with a premium hot tub or swim spa built for relaxation, recovery, and years of enjoyment.</p>
-			<p class="ps-ready-split__includes">Your consultation includes:</p>
-			<ul class="mgc-hp-split__list ps-ready-split__list">
-				<li><span class="ps-list-check" aria-hidden="true"></span> Expert guidance to match you with the right hot tub or swim spa for your space, needs, and budget</li>
+	<section class="ps-ready-split-outer" id="get-started" aria-label="Ready to get started">
+		<div class="ps-ready-split-inner">
+			<div class="mgc-hp-split__image">
+				<img src="../assets/images/homepage/paradise-backyard-lifestyle.jpg" alt="Backyard hot tub at night" width="800" height="600" loading="lazy">
+			</div>
+			<div class="mgc-hp-split__content">
+				<h2 class="mgc-hp-split__title">Ready to get started?</h2>
+				<p>We're ready to help you turn your backyard into the place you can't wait to come home to — with a premium hot tub or swim spa built for relaxation, recovery, and years of enjoyment.</p>
+				<p class="ps-ready-split__includes">Your consultation includes:</p>
+				<ul class="mgc-hp-split__list ps-ready-split__list">
+					<li><span class="ps-list-check" aria-hidden="true"></span> Expert guidance to match you with the right hot tub or swim spa for your space, needs, and budget</li>
 					<li><span class="ps-list-check" aria-hidden="true"></span> A private test soak so you can feel the jets and the warmth before you decide</li>
 					<li><span class="ps-list-check" aria-hidden="true"></span> Custom pricing and flexible financing options that fit your budget</li>
-			</ul>
-			<a href="#quote" class="mgc-hp-btn mgc-hp-btn--red">Schedule My Visit</a>
+				</ul>
+				<a href="#quote" class="mgc-hp-btn mgc-hp-btn--red">Schedule My Visit</a>
+			</div>
 		</div>
 	</section>
 	</div>
