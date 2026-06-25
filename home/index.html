@@ -453,6 +453,138 @@
 			display: inline-block;
 			font-size: 1rem;
 		}
+		/* ── Steps section (Buying your hot tub is easy) ── */
+		body.ps-dealer-home #showroom .mgc-hp-how__steps {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			gap: clamp(1.25rem, 2vw, 1.75rem);
+		}
+		@media (max-width: 768px) {
+			body.ps-dealer-home #showroom .mgc-hp-how__steps {
+				grid-template-columns: 1fr;
+			}
+		}
+		body.ps-dealer-home #showroom .mgc-hp-how__step {
+			background: #fff;
+			border: 1px solid #e5e7eb;
+			border-radius: 8px;
+			overflow: hidden;
+			display: flex;
+			flex-direction: column;
+		}
+		body.ps-dealer-home #showroom .mgc-hp-how__step-img {
+			width: 100%;
+			aspect-ratio: 16 / 10;
+			object-fit: cover;
+			display: block;
+		}
+		body.ps-dealer-home #showroom .mgc-hp-how__step-num {
+			margin: 16px 20px 0;
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+			font-size: 12px;
+			font-weight: 700;
+			text-transform: uppercase;
+			letter-spacing: 0.08em;
+			color: var(--ps-headline-blue, #1E3A52);
+		}
+		body.ps-dealer-home #showroom .mgc-hp-how__step-divider {
+			margin: 10px 20px;
+			border: 0;
+			border-top: 2px solid var(--ps-red, #E02C1E);
+		}
+		body.ps-dealer-home #showroom .mgc-hp-how__step-label {
+			margin: 0 20px 8px;
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+			font-size: 14px;
+			font-weight: 800;
+			letter-spacing: 0.08em;
+			text-transform: uppercase;
+			color: var(--ps-headline-blue, #1E3A52);
+		}
+		body.ps-dealer-home #showroom .mgc-hp-how__step-body {
+			margin: 0 20px 20px;
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+			font-size: 14px;
+			line-height: 1.6;
+			color: #374151;
+		}
+		/* ── CTA split section (Ready to get started) ── */
+		body.ps-dealer-home #get-started.mgc-hp-split {
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			min-height: 420px;
+			background: #fff;
+			padding: 0 !important;
+			gap: 0;
+		}
+		@media (max-width: 768px) {
+			body.ps-dealer-home #get-started.mgc-hp-split {
+				grid-template-columns: 1fr;
+			}
+		}
+		body.ps-dealer-home #get-started .mgc-hp-split__image {
+			background-size: cover;
+			background-position: center;
+			min-height: 380px;
+			display: block;
+			width: 100%;
+		}
+		body.ps-dealer-home #get-started .mgc-hp-split__content {
+			padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			gap: 12px;
+		}
+		body.ps-dealer-home #get-started .mgc-hp-split__title {
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+			font-size: clamp(1.5rem, 2.5vw, 2rem);
+			font-weight: 800;
+			color: var(--ps-headline-blue, #1E3A52);
+			margin: 0 0 8px;
+		}
+		body.ps-dealer-home #get-started .mgc-hp-split__content p {
+			font-size: 15px;
+			line-height: 1.6;
+			color: #374151;
+			margin: 0;
+		}
+		body.ps-dealer-home #get-started .mgc-hp-split__list {
+			list-style: none;
+			padding: 0;
+			margin: 4px 0 16px;
+			display: flex;
+			flex-direction: column;
+			gap: 8px;
+		}
+		body.ps-dealer-home #get-started .mgc-hp-split__list li {
+			font-size: 14px;
+			color: #374151;
+			display: flex;
+			align-items: center;
+			gap: 8px;
+		}
+		body.ps-dealer-home #get-started .ps-list-check::before {
+			content: '✓';
+			color: var(--ps-red, #E02C1E);
+			font-weight: 800;
+			font-size: 14px;
+		}
+		body.ps-dealer-home #get-started .mgc-hp-btn--red {
+			display: inline-block;
+			background: var(--ps-red, #E02C1E);
+			color: #fff;
+			padding: 14px 28px;
+			border-radius: 4px;
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+			font-size: 13px;
+			font-weight: 800;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+			text-decoration: none;
+			align-self: flex-start;
+			margin-top: 4px;
+		}
 	</style>
 </head>
 <body class="ps-dealer-home ps-hottubstore-home">
