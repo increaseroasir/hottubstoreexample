@@ -153,6 +153,57 @@
 			padding-left: 0 !important;
 			padding-right: 0 !important;
 		}
+		/* ── Department image tiles (photo + label bar) ── */
+		body.ps-dealer-home .ps-dept-tile {
+			position: relative;
+			display: block;
+			text-decoration: none;
+			border-radius: 6px;
+			overflow: hidden;
+			padding: 0 !important;
+			background: #000;
+			border: none !important;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+			transition: transform 0.22s ease, box-shadow 0.22s ease;
+		}
+		body.ps-dealer-home .ps-dept-tile:hover {
+			transform: translateY(-4px);
+			box-shadow: 0 12px 32px rgba(0,0,0,0.25);
+		}
+		body.ps-dealer-home .ps-dept-tile__media {
+			position: relative;
+			width: 100%;
+			padding-bottom: 66%;
+			overflow: hidden;
+		}
+		body.ps-dealer-home .ps-dept-tile__media img {
+			position: absolute;
+			inset: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+			transition: transform 0.3s ease;
+		}
+		body.ps-dealer-home .ps-dept-tile:hover .ps-dept-tile__media img {
+			transform: scale(1.04);
+		}
+		body.ps-dealer-home .ps-dept-tile__label {
+			display: block;
+			width: 100%;
+			background: rgba(0,0,0,0.72);
+			color: #ffffff;
+			text-align: center;
+			font-family: var(--hp-font, 'Montserrat', sans-serif);
+			font-size: 13px;
+			font-weight: 700;
+			letter-spacing: 1.5px;
+			text-transform: uppercase;
+			padding: 10px 8px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+		}
 		body.ps-dealer-home #mgc-home .mgc-hp-dept__grid {
 			display: grid;
 			grid-template-columns: repeat(4, minmax(0, 1fr));
