@@ -284,7 +284,9 @@
 		body.ps-dealer-home .ps-hansons-buying-wrap {
 			background: #FFFFFF;
 			position: relative;
-			overflow: visible;
+			overflow: hidden;
+			width: 100%;
+			max-width: 100%;
 		}
 		body.ps-dealer-home #showroom.ps-hansons-buying {
 			background: #FFFFFF !important;
@@ -305,13 +307,14 @@
 		}
 		body.ps-dealer-home #get-started.ps-hansons-buying {
 			display: grid;
-			grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+			grid-template-columns: minmax(0, 55%) minmax(0, 45%);
 			background: #FFFFFF;
 			width: 100%;
-			gap: clamp(1.5rem, 2.5vw, 2rem);
+			max-width: 100%;
+			gap: 0;
 			align-items: stretch;
-			padding-top: clamp(1rem, 2vw, 1.5rem) !important;
-			padding-bottom: clamp(2.75rem, 4vw, 3.5rem) !important;
+			padding: 0 !important;
+			overflow: hidden;
 		}
 		@media (max-width: 899px) {
 			body.ps-dealer-home #get-started.ps-hansons-buying {
