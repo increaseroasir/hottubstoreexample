@@ -100,16 +100,23 @@
 				padding-right: 20px;
 			}
 		}
-		body.ps-dealer-home #mgc-home > .mgc-hp-section,
-		body.ps-dealer-home #mgc-home > .mgc-hp-dept,
-		body.ps-dealer-home #mgc-home .ps-hansons-buying-wrap .mgc-hp-section,
-		body.ps-dealer-home #mgc-home .ps-hansons-buying-wrap .mgc-hp-split,
-		body.ps-dealer-home #mgc-home .ps-coupon-band {
-			padding-top: var(--section-pad) !important;
-			padding-bottom: var(--section-pad) !important;
-			min-height: 0 !important;
-			height: auto !important;
-		}
+			body.ps-dealer-home #mgc-home > .mgc-hp-section,
+			body.ps-dealer-home #mgc-home > .mgc-hp-dept,
+			body.ps-dealer-home #mgc-home .ps-hansons-buying-wrap .mgc-hp-section,
+			body.ps-dealer-home #mgc-home .ps-hansons-buying-wrap .mgc-hp-split:not(#get-started),
+			body.ps-dealer-home #mgc-home .ps-coupon-band {
+				padding-top: var(--section-pad) !important;
+				padding-bottom: var(--section-pad) !important;
+				min-height: 0 !important;
+				height: auto !important;
+			}
+			/* Explicitly zero out padding on the CTA split section */
+			body.ps-dealer-home #mgc-home .ps-hansons-buying-wrap #get-started.mgc-hp-split {
+				padding-top: 0 !important;
+				padding-bottom: 0 !important;
+				padding-left: 0 !important;
+				padding-right: 0 !important;
+			}
 		body.ps-dealer-home #mgc-home > .mgc-hp-dept#shop,
 		body.ps-dealer-home #mgc-home > #features.mgc-hp-featured,
 		body.ps-dealer-home #mgc-home > #about.ps-why-box,
