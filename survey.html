@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Claim Your Coupon | Paradise Spas and Outdoor Living</title>
+	<meta name="description" content="Answer a few quick questions and get your exclusive savings coupon from Paradise Spas and Outdoor Living.">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous">
+	<link rel="stylesheet" href="../assets/css/ps-quiz-funnel.css?v=3">
+	<link rel="stylesheet" href="../assets/css/dealer-theme.css">
+	<style>
+		:root {
+			--color-primary:       #1B3A6B;
+			--color-primary-hover: #142D55;
+			--color-cta:           #1B3A6B;
+			--color-cta-hover:     #142D55;
+			--color-gold:          #C9A84C;
+			--color-gold-hover:    #A8893A;
+			--color-headline:      #111827;
+			--color-navy:          #1B3A6B;
+		}
+	</style>
+</head>
+<body class="ps-quiz-page">
+
+	<header class="ps-funnel-header" role="banner">
+		<div class="ps-funnel-header__inner">
+			<a href="index.html" class="ps-funnel-header__logo" aria-label="Paradise Spas and Outdoor Living home">
+				<img src="../assets/images/paradise-spas-logo.png" alt="Paradise Spas and Outdoor Living" width="200" height="67" loading="eager">
+			</a>
+			<div class="ps-funnel-header__actions">
+				<a href="tel:7018382614" class="ps-funnel-header__phone">
+					<i class="fas fa-phone-alt" aria-hidden="true"></i>
+					<span>(701) 838-2614</span>
+				</a>
+				<a href="inventory/" class="ps-funnel-header__cta">View Inventory</a>
+			</div>
+		</div>
+	</header>
+
+	<main class="ps-quiz-main" id="main">
+		<div class="ps-quiz-wrap">
+			<div class="ps-quiz-stepper" role="progressbar" aria-label="Survey progress">
+				<div class="ps-quiz-stepper__step" data-step="1"><span>1</span></div>
+				<div class="ps-quiz-stepper__step" data-step="2"><span>2</span></div>
+				<div class="ps-quiz-stepper__step" data-step="3"><span>3</span></div>
+				<div class="ps-quiz-stepper__step" data-step="4"><span>4</span></div>
+				<div class="ps-quiz-stepper__step" data-step="5"><span>5</span></div>
+				<div class="ps-quiz-stepper__step" data-step="6"><span>6</span></div>
+				<div class="ps-quiz-stepper__step" data-step="7"><span>7</span></div>
+				<div class="ps-quiz-stepper__step" data-step="8"><span>8</span></div>
+			</div>
+			<p class="ps-quiz-phase-title" data-quiz-phase-title></p>
+			<div id="ps-quiz-survey" class="ps-quiz-survey">
+				<!-- Panels injected by quiz-survey.js -->
+			</div>
+		</div>
+	</main>
+
+	<footer class="ps-quiz-footer" role="contentinfo">
+		<p>&copy;2026 Paradise Spas and Outdoor Living. All rights reserved.</p>
+		<p>Minot & the Midwest</p>
+	</footer>
+
+	<script src="../assets/js/quiz-config.js?v=3"></script>
+	<script>
+		(function () {
+			if (!window.PS_QUIZ) return;
+			Object.assign(window.PS_QUIZ, {
+				STORAGE_KEY:      'paradiseSpasQuiz',
+				SUBMIT_URL:       'https://services.leadconnectorhq.com/hooks/PLACEHOLDER/webhook-trigger/PLACEHOLDER',
+				INVENTORY_URL:    'inventory/',
+				DEFAULT_SHOWROOM: 'minot',
+				ZIP_SHOWROOM_MAP: [{"prefixes": ["587", "586", "585", "584", "583"], "showroom": "minot"}],
+				SHOWROOMS: [{"id": "minot", "name": "Minot, ND", "phone": "7018382614", "phone_display": "(701) 838-2614", "address_line1": "1615 S Broadway, Minot, ND 58701", "times": ["10:00 AM", "1:00 PM", "4:00 PM"]}],
+				FINANCING_MO:     148,
+				DEALER_NAME:      'Paradise Spas and Outdoor Living',
+				DEALER_PHONE:     '(701) 838-2614',
+				DEALER_PHONE_RAW: '7018382614'
+			});
+		})();
+	</script>
+	<script src="../assets/js/quiz-survey.js?v=9"></script>
+</body>
+</html>

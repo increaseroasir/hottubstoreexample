@@ -1,0 +1,227 @@
+/**
+ * Cart Launch — Listing Manager mobile optimization.
+ *
+ * Motors' Listing Manager is a fixed-height desktop app shell (260px dark
+ * sidebar + internally-scrolling content + a 270px preview card sitting beside
+ * the form). On a phone that's unusable. This stylesheet turns it into a normal
+ * top-to-bottom, full-width, touch-friendly flow so dealers can add and edit
+ * inventory — including uploading photos straight from their phone — on mobile.
+ *
+ * Loaded only on the Listing Manager endpoint via the mvl_listing_manager_css
+ * filter (the LM template has no wp_head, so it can't be enqueued normally).
+ */
+
+/* ============================ Phones & small tablets ============================ */
+/* Breakpoint kept at 768px so scaled/un-maximized desktops (which can report an
+   effective CSS width in the 800-900px range) keep the full desktop layout. */
+@media (max-width: 768px) {
+
+	/* Let the whole shell flow naturally instead of locking to viewport height. */
+	html,
+	body.mvl-listing-manager-body {
+		height: auto !important;
+		max-height: none !important;
+		min-height: 100% !important;
+		overflow-x: hidden !important;
+	}
+	.mvl-listing-manager-body #mvl-listing-manager,
+	.mvl-listing-manager-body .mvl-listing-manager-page,
+	.mvl-listing-manager-body .mvl-listing-manager-wrapper {
+		height: auto !important;
+		max-height: none !important;
+	}
+
+	/* Stack: sidebar (as a header + step tabs) above the form. */
+	.mvl-listing-manager-body .mvl-listing-manager-wrapper {
+		flex-direction: column !important;
+	}
+
+	/* ---- Sidebar becomes a sticky top bar with a horizontal step tab strip ---- */
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar {
+		width: 100% !important;
+		min-width: 0 !important;
+		position: sticky;
+		top: 0;
+		z-index: 60;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar-header {
+		padding: 12px 14px !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar-content {
+		height: auto !important;
+		overflow: visible !important;
+	}
+	.mvl-listing-manager-body .mvl-mvl-listing-manager-sidebar-menu-list {
+		display: flex !important;
+		flex-wrap: nowrap !important;
+		overflow-x: auto !important;
+		-webkit-overflow-scrolling: touch;
+		gap: 4px !important;
+		padding: 6px 10px 10px !important;
+		margin: 0 !important;
+		scrollbar-width: none;
+	}
+	.mvl-listing-manager-body .mvl-mvl-listing-manager-sidebar-menu-list::-webkit-scrollbar { display: none; }
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar-menu-item {
+		flex: 0 0 auto !important;
+		margin: 0 !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar-menu-item a {
+		white-space: nowrap !important;
+		padding: 11px 16px !important;
+		font-size: 14px !important;
+		border-radius: 9px !important;
+	}
+	/* Hide the vertical stepper connector lines (they dangle in a horizontal strip). */
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar-menu-item a::after {
+		display: none !important;
+	}
+
+	/* ---- "More steps" scroll affordance ----
+	   The tab strip scrolls horizontally but hides its scrollbar, so nothing
+	   tells you more steps exist off-screen. JS (mgc-lm-redesign-v2.js) adds
+	   .lm-tabs-scrollable to the sidebar when the strip overflows and
+	   .lm-tabs-at-end once you've scrolled to the last tab; this paints a
+	   fade + chevron on the right edge until then. */
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar-content {
+		position: relative;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar.lm-tabs-scrollable .mvl-listing-manager-sidebar-content::after {
+		content: "\203A";
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		width: 46px;
+		display: flex;
+		align-items: center;
+		justify-content: flex-end;
+		padding-right: 10px;
+		color: rgba(255, 255, 255, 0.9);
+		font-size: 24px;
+		font-weight: 700;
+		line-height: 1;
+		background: linear-gradient(to right, rgba(31, 37, 51, 0), #1F2533 65%);
+		pointer-events: none;
+		opacity: 1;
+		transition: opacity 0.15s ease;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar.lm-tabs-scrollable.lm-tabs-at-end .mvl-listing-manager-sidebar-content::after {
+		opacity: 0;
+	}
+	/* The "Upgrade to PRO" promo just wastes space on a phone. */
+	.mvl-listing-manager-body .mvl-listing-manager-sidebar-upgrade-pro {
+		display: none !important;
+	}
+
+	/* ---- Content column full width, natural height ---- */
+	.mvl-listing-manager-body .mvl-listing-manager-content {
+		width: 100% !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-body {
+		overflow: visible !important;
+		height: auto !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-body-inner {
+		flex-direction: column !important;
+		padding: 16px !important;
+		gap: 16px !important;
+		max-height: none !important;
+		overflow: visible !important;
+	}
+
+	/* ---- Header: sticky action bar that wraps; drop the search field ---- */
+	.mvl-listing-manager-body .mvl-listing-manager-content-header {
+		max-height: none !important;
+		padding: 10px 14px !important;
+		position: sticky;
+		top: 0;
+		z-index: 55;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-header-inner {
+		flex-wrap: wrap !important;
+		gap: 8px !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-header-search-field {
+		display: none !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-header-actions {
+		width: 100% !important;
+		flex-wrap: wrap !important;
+		gap: 8px !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-header-actions > * {
+		flex: 1 1 auto !important;
+		justify-content: center !important;
+		min-height: 46px !important;
+		text-align: center;
+	}
+
+	/* ---- Form fields: one per row, large tap targets ---- */
+	.mvl-listing-manager-body .mvl-listing-manager-field {
+		width: 100% !important;
+		min-width: 0 !important;
+		flex: 1 1 100% !important;
+	}
+	.mvl-listing-manager-body input[type="text"],
+	.mvl-listing-manager-body input[type="number"],
+	.mvl-listing-manager-body input[type="email"],
+	.mvl-listing-manager-body input[type="search"],
+	.mvl-listing-manager-body select,
+	.mvl-listing-manager-body textarea,
+	.mvl-listing-manager-body .mvl-input-field {
+		font-size: 16px !important;   /* >=16px stops iOS auto-zoom on focus */
+		min-height: 46px !important;
+	}
+
+	/* ---- Preview card drops below the form, full width ---- */
+	.mvl-listing-manager-body .mvl-listing-manager-content-body-card {
+		max-width: 100% !important;
+		width: 100% !important;
+	}
+
+	/* ---- Prev / Next + page actions: tappable ---- */
+	/* Motors fixes this bar to desktop coordinates (left:290/right:320), which
+	   floats it in a broken spot on a phone — return it to normal flow. */
+	.mvl-listing-manager-body .mvl-listing-manager-content-body-page-actions {
+		position: static !important;
+		left: auto !important; right: auto !important; bottom: auto !important;
+		order: 99 !important;
+		gap: 10px !important;
+		margin: 6px 0 4px !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-body-page-action-prev,
+	.mvl-listing-manager-body .mvl-listing-manager-content-body-page-action-next {
+		flex: 1 1 auto !important;
+		justify-content: center !important;
+		min-height: 48px !important;
+	}
+
+	/* ---- Images / media: full-width dropzone, wrapping thumbnails, big buttons ---- */
+	.mvl-listing-manager-body .mvl-listing-manager-field-image-dropzone {
+		padding: 22px 16px !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-field-image-upload-btn,
+	.mvl-listing-manager-body .mvl-listing-manager-field-image-change-btn,
+	.mvl-listing-manager-body .mvl-listing-manager-field-image-list-clear-btn,
+	.mvl-listing-manager-body .mvl-listing-manager-field-file-upload-btn {
+		min-height: 46px !important;
+		align-items: center !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-field-image-list {
+		gap: 8px !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-field-image-list-item {
+		width: calc(33.333% - 6px) !important;
+	}
+}
+
+/* ================================ Narrow phones ================================ */
+@media (max-width: 520px) {
+	.mvl-listing-manager-body .mvl-listing-manager-field-image-list-item {
+		width: calc(50% - 4px) !important;
+	}
+	.mvl-listing-manager-body .mvl-listing-manager-content-body-inner {
+		padding: 12px !important;
+	}
+}

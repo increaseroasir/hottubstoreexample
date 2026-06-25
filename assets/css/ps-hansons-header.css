@@ -1,0 +1,443 @@
+/* Hansons-style header — Paradise homepage */
+
+body.ps-paradise-home,
+body.ps-paradise-inventory,
+body.ps-paradise-listing,
+body.ps-paradise-listing .ps-site-header--hansons {
+	display: contents;
+}
+
+/* ── Top utility bar ─────────────────────────────────── */
+body.ps-paradise-home .ps-h-utility,
+body.ps-paradise-inventory .ps-h-utility,
+body.ps-paradise-listing .ps-h-utility {
+	display: none;
+	position: relative;
+	top: auto;
+	z-index: auto;
+	background: #ececec;
+	border-bottom: 1px solid #ddd;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	transition: height 0.25s ease, opacity 0.25s ease, border-color 0.25s ease;
+}
+
+body.ps-paradise-home.ps-header-scrolled .ps-h-utility,
+body.ps-paradise-inventory.ps-header-scrolled .ps-h-utility,
+body.ps-paradise-listing.ps-header-scrolled .ps-h-utility {
+	height: 0;
+	opacity: 0;
+	overflow: hidden;
+	border-bottom-width: 0;
+	pointer-events: none;
+}
+
+body.ps-paradise-home .ps-h-utility__inner ,
+body.ps-paradise-inventory .ps-h-utility__inner ,
+body.ps-paradise-listing .ps-h-utility__inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 9px 20px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+body.ps-paradise-home .ps-h-utility__links ,
+body.ps-paradise-inventory .ps-h-utility__links ,
+body.ps-paradise-listing .ps-h-utility__links {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 6px 20px;
+}
+
+body.ps-paradise-home .ps-h-utility__links a ,
+body.ps-paradise-inventory .ps-h-utility__links a ,
+body.ps-paradise-listing .ps-h-utility__links a {
+	color: #4b5563;
+	text-decoration: none;
+	white-space: nowrap;
+	transition: color 0.15s ease;
+}
+
+body.ps-paradise-home .ps-h-utility__links a:hover ,
+body.ps-paradise-inventory .ps-h-utility__links a:hover ,
+body.ps-paradise-listing .ps-h-utility__links a:hover {
+	color: var(--ps-blue, #455fb5);
+}
+
+/* ── Main header row ─────────────────────────────────── */
+body.ps-paradise-home .ps-h-main ,
+body.ps-paradise-inventory .ps-h-main ,
+body.ps-paradise-listing .ps-h-main {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: #fff;
+	border-bottom: 1px solid rgba(17, 24, 39, 0.08);
+	transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+body.ps-paradise-home.ps-header-scrolled .ps-h-main,
+body.ps-paradise-inventory.ps-header-scrolled .ps-h-main,
+body.ps-paradise-listing.ps-header-scrolled .ps-h-main {
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+	border-bottom-color: rgba(0, 0, 0, 0.08);
+}
+
+body.ps-paradise-home .ps-h-main__inner ,
+body.ps-paradise-inventory .ps-h-main__inner ,
+body.ps-paradise-listing .ps-h-main__inner {
+	max-width: 1440px;
+	margin: 0 auto;
+	padding: 10px 16px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: 10px 12px;
+}
+
+body.ps-paradise-home .ps-h-main__logo ,
+body.ps-paradise-inventory .ps-h-main__logo ,
+body.ps-paradise-listing .ps-h-main__logo {
+	flex-shrink: 0;
+	justify-self: start;
+}
+
+body.ps-paradise-home .ps-h-main__logo .ps-logo__img ,
+body.ps-paradise-inventory .ps-h-main__logo .ps-logo__img ,
+body.ps-paradise-listing .ps-h-main__logo .ps-logo__img {
+	height: 44px;
+	width: auto;
+	max-width: min(200px, 38vw);
+}
+
+body.ps-paradise-home .ps-h-main__nav ,
+body.ps-paradise-inventory .ps-h-main__nav ,
+body.ps-paradise-listing .ps-h-main__nav {
+	display: none;
+	min-width: 0;
+	grid-column: 1 / -1;
+	border-top: 1px solid rgba(17, 24, 39, 0.08);
+	padding-top: 10px;
+}
+
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__inner ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__inner ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__inner {
+	max-width: none;
+	padding: 0;
+}
+
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__list ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__list ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__list {
+	justify-content: center;
+	padding: 0;
+	gap: 0 clamp(10px, 1.2vw, 22px);
+	flex-wrap: nowrap;
+}
+
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link {
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	color: var(--ps-navy-deep, #364a94);
+	white-space: nowrap;
+}
+
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link i ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link i ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link i {
+	font-size: 8px;
+	margin-left: 2px;
+}
+
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link:hover,,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link:hover,,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link:hover,
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link:focus-visible ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link:focus-visible ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link:focus-visible {
+	color: var(--ps-blue, #455fb5);
+}
+
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link.is-active,,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link.is-active,,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link.is-active,
+body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link[aria-current="page"] ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link[aria-current="page"] ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link[aria-current="page"] {
+	text-decoration: none;
+	box-shadow: inset 0 -3px 0 var(--ps-navy-deep, #364a94);
+	padding-bottom: 4px;
+}
+
+body.ps-paradise-home .ps-h-main__actions ,
+body.ps-paradise-inventory .ps-h-main__actions ,
+body.ps-paradise-listing .ps-h-main__actions {
+	display: none;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 8px;
+	flex-shrink: 0;
+	grid-column: 2;
+	grid-row: 1;
+}
+
+body.ps-paradise-home .ps-h-phone ,
+body.ps-paradise-inventory .ps-h-phone ,
+body.ps-paradise-listing .ps-h-phone {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+}
+
+body.ps-paradise-home .ps-h-phone__badge ,
+body.ps-paradise-inventory .ps-h-phone__badge ,
+body.ps-paradise-listing .ps-h-phone__badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px 8px;
+	border-radius: 999px;
+	background: #CE3F2D;
+	color: #fff;
+	font-size: 8px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+body.ps-paradise-home .ps-h-phone__badge i ,
+body.ps-paradise-inventory .ps-h-phone__badge i ,
+body.ps-paradise-listing .ps-h-phone__badge i {
+	font-size: 9px;
+}
+
+body.ps-paradise-home .ps-h-phone__number ,
+body.ps-paradise-inventory .ps-h-phone__number ,
+body.ps-paradise-listing .ps-h-phone__number {
+	font-size: 15px;
+	font-weight: 800;
+	color: #CE3F2D;
+	text-decoration: none;
+	white-space: nowrap;
+	letter-spacing: 0.01em;
+}
+
+body.ps-paradise-home .ps-h-phone__number:hover ,
+body.ps-paradise-inventory .ps-h-phone__number:hover ,
+body.ps-paradise-listing .ps-h-phone__number:hover {
+	color: #b53627;
+}
+
+body.ps-paradise-home .ps-h-estimate ,
+body.ps-paradise-inventory .ps-h-estimate ,
+body.ps-paradise-listing .ps-h-estimate {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	padding: 10px 14px;
+	border-radius: 8px;
+	background: #CE3F2D;
+	color: #fff;
+	font-size: 10px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	line-height: 1.1;
+	text-align: center;
+	transition: background 0.15s ease;
+}
+
+body.ps-paradise-home .ps-h-estimate:hover ,
+body.ps-paradise-inventory .ps-h-estimate:hover ,
+body.ps-paradise-listing .ps-h-estimate:hover {
+	background: #b53627;
+	color: #fff;
+}
+
+body.ps-paradise-home .ps-h-main__mobile ,
+body.ps-paradise-inventory .ps-h-main__mobile ,
+body.ps-paradise-listing .ps-h-main__mobile {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	justify-self: end;
+	grid-column: 2;
+	grid-row: 1;
+}
+
+body.ps-paradise-home .ps-h-main__mobile .ps-funnel-header__call ,
+body.ps-paradise-inventory .ps-h-main__mobile .ps-funnel-header__call ,
+body.ps-paradise-listing .ps-h-main__mobile .ps-funnel-header__call {
+	padding: 8px 12px;
+	font-size: 10px;
+	font-weight: 800;
+	text-transform: uppercase;
+	background: var(--ps-hansons-gold, #F4A61D);
+	color: var(--ps-navy-deep, #1B245F);
+}
+
+body.ps-paradise-home .ps-h-main__mobile .ps-funnel-header__call:hover ,
+body.ps-paradise-inventory .ps-h-main__mobile .ps-funnel-header__call:hover ,
+body.ps-paradise-listing .ps-h-main__mobile .ps-funnel-header__call:hover {
+	background: var(--ps-hansons-orange-dark, #EAA31C);
+	color: var(--ps-navy-deep, #1B245F);
+}
+
+body.ps-paradise-home .ps-site-header--hansons .ps-desktop-nav ,
+body.ps-paradise-inventory .ps-site-header--hansons .ps-desktop-nav ,
+body.ps-paradise-listing .ps-site-header--hansons .ps-desktop-nav {
+	display: none;
+	border-top: 0;
+	background: transparent;
+}
+
+@media (min-width: 768px) {
+	body.ps-paradise-home .ps-h-utility,
+body.ps-paradise-inventory .ps-h-utility,
+body.ps-paradise-listing .ps-h-utility {
+		display: block;
+	}
+}
+
+@media (min-width: 1024px) {
+	body.ps-paradise-home .ps-h-main__inner ,
+body.ps-paradise-inventory .ps-h-main__inner ,
+body.ps-paradise-listing .ps-h-main__inner {
+		padding: 12px 20px 10px;
+	}
+
+	body.ps-paradise-home .ps-site-header--hansons .ps-h-main__nav.ps-desktop-nav ,
+body.ps-paradise-inventory .ps-site-header--hansons .ps-h-main__nav.ps-desktop-nav ,
+body.ps-paradise-listing .ps-site-header--hansons .ps-h-main__nav.ps-desktop-nav {
+		display: block;
+	}
+
+	body.ps-paradise-home .ps-h-main__actions ,
+body.ps-paradise-inventory .ps-h-main__actions ,
+body.ps-paradise-listing .ps-h-main__actions {
+		display: flex;
+	}
+
+	body.ps-paradise-home .ps-h-main__mobile ,
+body.ps-paradise-inventory .ps-h-main__mobile ,
+body.ps-paradise-listing .ps-h-main__mobile {
+		display: none;
+	}
+}
+
+/* Wide desktop: single-row Hansons layout (logo | nav | phone+CTA) */
+@media (min-width: 1320px) {
+	body.ps-paradise-home .ps-h-main__inner ,
+body.ps-paradise-inventory .ps-h-main__inner ,
+body.ps-paradise-listing .ps-h-main__inner {
+		grid-template-columns: auto minmax(0, 1fr) auto;
+		grid-template-rows: auto;
+		gap: 12px 18px;
+		padding: 12px 24px;
+	}
+
+	body.ps-paradise-home .ps-h-main__logo ,
+body.ps-paradise-inventory .ps-h-main__logo ,
+body.ps-paradise-listing .ps-h-main__logo {
+		grid-column: 1;
+		grid-row: 1;
+	}
+
+	body.ps-paradise-home .ps-h-main__logo .ps-logo__img ,
+body.ps-paradise-inventory .ps-h-main__logo .ps-logo__img ,
+body.ps-paradise-listing .ps-h-main__logo .ps-logo__img {
+		height: 52px;
+		max-width: 220px;
+	}
+
+	body.ps-paradise-home .ps-h-main__nav ,
+body.ps-paradise-inventory .ps-h-main__nav ,
+body.ps-paradise-listing .ps-h-main__nav {
+		grid-column: 2;
+		grid-row: 1;
+		border-top: 0;
+		padding-top: 0;
+		align-self: center;
+	}
+
+	body.ps-paradise-home .ps-h-main__actions ,
+body.ps-paradise-inventory .ps-h-main__actions ,
+body.ps-paradise-listing .ps-h-main__actions {
+		grid-column: 3;
+		grid-row: 1;
+		gap: 10px;
+	}
+
+	body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link {
+		font-size: 12px;
+	}
+
+	body.ps-paradise-home .ps-h-phone__number ,
+body.ps-paradise-inventory .ps-h-phone__number ,
+body.ps-paradise-listing .ps-h-phone__number {
+		font-size: 18px;
+	}
+
+	body.ps-paradise-home .ps-h-estimate ,
+body.ps-paradise-inventory .ps-h-estimate ,
+body.ps-paradise-listing .ps-h-estimate {
+		padding: 12px 16px;
+		font-size: 11px;
+	}
+}
+
+@media (min-width: 1400px) {
+	body.ps-paradise-home .ps-h-main__logo .ps-logo__img ,
+body.ps-paradise-inventory .ps-h-main__logo .ps-logo__img ,
+body.ps-paradise-listing .ps-h-main__logo .ps-logo__img {
+		height: 56px;
+		max-width: 240px;
+	}
+
+	body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__list ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__list ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__list {
+		gap: 0 clamp(14px, 1.4vw, 26px);
+	}
+
+	body.ps-paradise-home .ps-h-main__nav .ps-desktop-nav__link ,
+body.ps-paradise-inventory .ps-h-main__nav .ps-desktop-nav__link ,
+body.ps-paradise-listing .ps-h-main__nav .ps-desktop-nav__link {
+		font-size: 13px;
+	}
+
+	body.ps-paradise-home .ps-h-estimate ,
+body.ps-paradise-inventory .ps-h-estimate ,
+body.ps-paradise-listing .ps-h-estimate {
+		padding: 14px 18px;
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 1023px) {
+	body.ps-paradise-home .ps-h-main__actions ,
+body.ps-paradise-inventory .ps-h-main__actions ,
+body.ps-paradise-listing .ps-h-main__actions {
+		display: none;
+	}
+
+	body.ps-paradise-home .ps-h-main__nav ,
+body.ps-paradise-inventory .ps-h-main__nav ,
+body.ps-paradise-listing .ps-h-main__nav {
+		display: none !important;
+	}
+}

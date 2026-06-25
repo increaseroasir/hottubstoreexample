@@ -1,0 +1,74 @@
+/* Cart Launch — wp-admin white label */
+
+.wpcfto-settings-header__logo img,
+.wpcfto-settings .wpcfto-logo img,
+#wpcfto_settings_app .wpcfto-settings-header img[src*="logo"],
+.mst-starter-info-box .logo img {
+	max-height: 52px;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+}
+
+#adminmenu img.motors-theme-icon,
+#adminmenu .wp-menu-image img[src*="motors-theme-icon"] {
+	content: url("../images/carf-launch.png");
+	width: 20px !important;
+	height: 20px !important;
+	object-fit: contain;
+}
+
+/* Skin install overlay: keep original blue spinner, not Cart Launch logo */
+body .mst-starter-wizard__wrapper-content-preloader,
+body .mst-starter-wizard__wrapper-content-preloader::before,
+body .mst-starter-wizard__wrapper-content-preloader::after {
+	content: none !important;
+	background: none !important;
+	background-image: none !important;
+	color: #1280df !important;
+	font-size: 10px !important;
+	width: 1em !important;
+	height: 1em !important;
+	border-radius: 50% !important;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+	margin: -0.5em 0 0 -0.5em !important;
+	text-indent: -9999em !important;
+	animation: mulShdSpin 1.3s infinite linear !important;
+	transform: translateZ(0) !important;
+}
+
+body .mst-starter-wizard__wrapper-content-preloader.disabled {
+	display: none !important;
+}
+
+.mgc-cart-launch-ab-icon img {
+	display: block;
+	max-height: 22px;
+	width: auto;
+	object-fit: contain;
+}
+
+/* Hide empty vendor subtitle under settings header */
+.wpcfto-settings-header__sub-title:empty,
+.wpcfto-settings-header .sub_title:empty {
+	display: none !important;
+}
+
+.mvl-feedback .mvl-feedback-button img {
+	width: 30px;
+}
+
+.wpcfto_settings_head__side {
+	align-items: center;
+}
+
+.wpcfto_settings_head__logo {
+	width: 60px;
+	height: max-content;
+}
+
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon img {
+	width: 40px;
+}

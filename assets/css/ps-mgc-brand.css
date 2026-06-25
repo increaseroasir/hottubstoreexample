@@ -1,0 +1,95 @@
+/* Pure Soak text logo on mgc-header (inventory + listing pages) */
+.mgc-header__logo {
+	opacity: 0;
+	width: 140px !important;
+	height: 72px !important;
+}
+
+.mgc-header__logo-wrap::after {
+	content: "PURE SOAK";
+	display: block;
+	position: absolute;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-weight: 800;
+	font-size: 18px;
+	letter-spacing: 0.04em;
+	color: #0b2d4a;
+	line-height: 1.1;
+}
+
+.mgc-header__logo-wrap::before {
+	content: "HOT TUBS";
+	display: block;
+	position: absolute;
+	left: 20px;
+	top: calc(50% + 14px);
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-weight: 600;
+	font-size: 9px;
+	letter-spacing: 0.22em;
+	color: #2d8fd5;
+}
+
+.mgc-header__phone i,
+.mgc-header__location-btn:hover {
+	color: #c88214 !important;
+}
+
+.mgc-header__nav a:hover,
+.mgc-header__nav .current-menu-item > a {
+	color: #c88214 !important;
+}
+
+.mgc-quote-link,
+.mvl-action-button.mgc-quote-link {
+	background: #c88214 !important;
+}
+
+.mgc-savings-line__amount,
+.sale-price,
+.mvl-sale-price {
+	color: #c88214 !important;
+}
+
+/* Footer logo text fallback (until branded asset is supplied) */
+.gc-footer__logo-link {
+	position: relative;
+	display: inline-block;
+	min-height: 72px;
+}
+
+.gc-footer__logo {
+	opacity: 0;
+	width: 140px !important;
+	height: 72px !important;
+}
+
+.gc-footer__logo-link::after {
+	content: "PURE SOAK";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 14px;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-weight: 800;
+	font-size: 22px;
+	letter-spacing: 0.04em;
+	color: #0b2d4a;
+	line-height: 1.1;
+}
+
+.gc-footer__logo-link::before {
+	content: "HOT TUBS";
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 42px;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-weight: 600;
+	font-size: 10px;
+	letter-spacing: 0.22em;
+	color: #c88214;
+}

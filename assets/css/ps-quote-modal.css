@@ -1,0 +1,256 @@
+/* Paradise Spas — product quote modal (navy + gold) */
+
+/* Single visibility switch — avoids hidden + is-open fighting each other */
+.ps-quote-modal:not(.is-open) {
+	display: none !important;
+}
+
+.ps-quote-modal.is-open {
+	display: flex !important;
+}
+
+.ps-quote-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 2147483000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px 16px;
+}
+
+.ps-quote-modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(15, 23, 42, 0.62);
+}
+
+.ps-quote-modal__panel {
+	position: relative;
+	z-index: 1;
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	max-width: 800px;
+	max-height: min(90vh, 720px);
+	overflow: hidden;
+	background: #fff;
+	border-radius: 14px;
+	box-shadow: 0 24px 64px rgba(15, 23, 42, 0.28);
+	font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+/* ── Navy header bar ── */
+.ps-quote-modal__header {
+	position: relative;
+	flex-shrink: 0;
+	padding: 24px 56px 22px 24px;
+	background: #25308B;
+	color: #fff;
+	border-radius: 14px 14px 0 0;
+}
+
+.ps-quote-modal__close {
+	position: absolute;
+	top: 14px;
+	right: 14px;
+	z-index: 2;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border: 0;
+	border-radius: 8px;
+	background: transparent;
+	font-size: 28px;
+	line-height: 1;
+	color: #fff;
+	cursor: pointer;
+	padding: 0;
+	transition: background 0.15s ease;
+}
+
+.ps-quote-modal__close:hover,
+.ps-quote-modal__close:focus-visible {
+	background: rgba(255, 255, 255, 0.14);
+	outline: none;
+}
+
+.ps-quote-modal__title {
+	margin: 0 0 8px;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: clamp(22px, 3vw, 28px);
+	font-weight: 800;
+	line-height: 1.15;
+	letter-spacing: 0.02em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+.ps-quote-modal__product {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 500;
+	line-height: 1.45;
+	color: rgba(255, 255, 255, 0.88);
+}
+
+/* ── Body ── */
+.ps-quote-modal__body {
+	flex: 1 1 auto;
+	overflow-y: auto;
+	padding: 24px;
+	background: #fff;
+}
+
+.ps-quote-modal__form {
+	margin: 0;
+}
+
+.ps-quote-modal__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 16px;
+	margin-bottom: 16px;
+}
+
+.ps-quote-modal__field {
+	display: block;
+	margin: 0;
+}
+
+.ps-quote-modal__field--full {
+	grid-column: 1 / -1;
+	margin-bottom: 0;
+}
+
+.ps-quote-modal__label {
+	display: block;
+	margin-bottom: 6px;
+	font-size: 13px;
+	font-weight: 700;
+	color: #1F2937;
+}
+
+.ps-quote-modal__label .ps-quote-modal__req {
+	color: #25308B;
+}
+
+.ps-quote-modal__input,
+.ps-quote-modal__textarea {
+	display: block;
+	width: 100%;
+	box-sizing: border-box;
+	padding: 12px 14px;
+	border: 1px solid #D1D5DB;
+	border-radius: 8px;
+	font-size: 16px;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	color: #1F2937;
+	background: #fff;
+	transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.ps-quote-modal__input {
+	height: 48px;
+}
+
+.ps-quote-modal__textarea {
+	min-height: 120px;
+	resize: vertical;
+	line-height: 1.5;
+}
+
+.ps-quote-modal__input:focus,
+.ps-quote-modal__textarea:focus {
+	outline: none;
+	border-color: #25308B;
+	box-shadow: 0 0 0 3px rgba(37, 48, 139, 0.15);
+}
+
+.ps-quote-modal__submit {
+	display: block;
+	width: 100%;
+	margin-top: 20px;
+	padding: 16px 20px;
+	border: 0;
+	border-radius: 8px;
+	background: #F5A400;
+	color: #25308B;
+	cursor: pointer;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	transition: background 0.15s ease;
+}
+
+.ps-quote-modal__submit:hover,
+.ps-quote-modal__submit:focus-visible {
+	background: #EAA31C;
+	outline: none;
+}
+
+.ps-quote-modal__trust {
+	margin: 14px 0 0;
+	font-size: 12px;
+	font-weight: 500;
+	line-height: 1.45;
+	color: #6B7280;
+	text-align: center;
+}
+
+.ps-quote-modal__success {
+	margin: 0;
+	padding: 24px 0 8px;
+	font-size: 16px;
+	line-height: 1.55;
+	color: #1F2937;
+	text-align: center;
+	font-weight: 600;
+}
+
+body.ps-quote-modal-open,
+html.ps-quote-modal-open {
+	overflow: hidden;
+}
+
+body.ps-quote-modal-open .mgc-cta-sticky-wrap,
+body.ps-quote-modal-open .mgc-cta-sticky-wrap.mobile-fixed {
+	display: none !important;
+}
+
+@media (max-width: 767px) {
+	.ps-quote-modal {
+		padding: 16px;
+		align-items: center;
+	}
+
+	.ps-quote-modal__panel {
+		width: calc(100vw - 32px);
+		max-width: calc(100vw - 32px);
+		max-height: 90vh;
+		border-radius: 14px;
+	}
+
+	.ps-quote-modal__header {
+		padding: 20px 48px 18px 20px;
+		border-radius: 14px 14px 0 0;
+	}
+
+	.ps-quote-modal__body {
+		padding: 20px;
+	}
+
+	.ps-quote-modal__grid {
+		grid-template-columns: 1fr;
+		gap: 14px;
+		margin-bottom: 14px;
+	}
+
+	.ps-quote-modal__field--full {
+		margin-bottom: 0;
+	}
+}

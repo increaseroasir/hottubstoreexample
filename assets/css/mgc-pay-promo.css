@@ -1,0 +1,359 @@
+/*
+ * Listing card — payment promo, Savings line, and global card typography.
+ *
+ * Visual hierarchy rules:
+ *   1. TWO type sizes: HEADLINE (title, Our Price, Payment ≈ 22–28px) and
+ *      SUPPORT (specs, retail price, savings, sub-payment ≈ 12–14px).
+ *   2. ONE left edge for left-aligned content, ONE right edge for right-aligned.
+ *   3. RED only on payment, savings amount, and the CTA button — every other
+ *      accent is dark gray. Red is the action color, not a decoration.
+ *   4. Mobile gets BIGGER headline + payment, not smaller — these cards are
+ *      the only thing on screen so the primary numbers should pop.
+ */
+
+/* ─── Tiny "i" disclaimer trigger next to the payment amount ─── */
+.mgc-pay-promo__info {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 11px;
+	height: 11px;
+	margin: 0 0 0 5px;
+	padding: 0;
+	border: 1px solid currentColor;
+	background: transparent;
+	color: #9ca3af;
+	border-radius: 50%;
+	font: 700 7px/1 -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, sans-serif;
+	cursor: pointer;
+	vertical-align: middle;
+	transition: color 0.15s ease, background 0.15s ease;
+}
+.mgc-pay-promo__info:hover,
+.mgc-pay-promo__info:focus-visible {
+	color: #fff;
+	background: var(--cl-red);
+	border-color: var(--cl-red);
+	outline: none;
+}
+
+/* ─── Disclaimer modal ─── */
+.mgc-disclaimer-modal {
+	position: fixed;
+	inset: 0;
+	z-index: 99999;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+}
+.mgc-disclaimer-modal[hidden] {
+	display: none !important;
+}
+.mgc-disclaimer-modal__backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(15, 23, 42, 0.55);
+	backdrop-filter: blur(2px);
+}
+.mgc-disclaimer-modal__panel {
+	position: relative;
+	background: #fff;
+	border-radius: 12px;
+	max-width: 520px;
+	width: 100%;
+	padding: 28px 28px 24px;
+	box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+	max-height: 85vh;
+	overflow-y: auto;
+}
+.mgc-disclaimer-modal__close {
+	position: absolute;
+	top: 10px;
+	right: 14px;
+	background: transparent;
+	border: 0;
+	font-size: 28px;
+	line-height: 1;
+	color: #6b7280;
+	cursor: pointer;
+	padding: 4px 8px;
+}
+.mgc-disclaimer-modal__close:hover {
+	color: #111;
+}
+.mgc-disclaimer-modal__title {
+	margin: 0 0 14px;
+	font-size: 20px;
+	font-weight: 800;
+	color: #111;
+	line-height: 1.2;
+	padding-right: 28px;
+}
+.mgc-disclaimer-modal__body p {
+	margin: 0 0 12px;
+	color: #374151;
+	font-size: 14px;
+	line-height: 1.55;
+}
+.mgc-disclaimer-modal__body p:last-child {
+	margin-bottom: 0;
+}
+
+/* ─── Single listing — payment under the H1 (left side) ─── */
+.mgc-pay-promo--single {
+	margin: 10px 0 0;
+	text-align: left;
+	line-height: 1;
+}
+.mgc-pay-promo--single .mgc-pay-promo__amount {
+	display: inline-block;
+	font-weight: 800;
+	color: var(--cl-red);
+	font-size: 32px;
+	letter-spacing: -0.4px;
+}
+.mgc-pay-promo--single .mgc-pay-promo__per {
+	font-size: 16px;
+	font-weight: 700;
+	margin-left: 2px;
+	color: var(--cl-red);
+}
+.mgc-pay-promo--single .mgc-pay-promo__sub {
+	display: block;
+	color: #444;
+	font-size: 13px;
+	font-weight: 500;
+	margin-top: 4px;
+}
+
+/* ─── Inventory card layout (list + grid, all viewports) ───
+   Price column on left, payment column on right. Same arrangement at every
+   breakpoint — mobile just adjusts type sizes. */
+.mgc-price-card {
+	display: flex !important;
+	align-items: center;
+	justify-content: space-between;
+	gap: 18px;
+	flex-wrap: nowrap;
+}
+.mgc-price-card__main {
+	flex: 1 1 auto;
+	min-width: 0;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: flex-start;
+}
+.mgc-price-card__side {
+	flex: 0 0 auto;
+	text-align: right;
+	margin-left: auto;
+}
+
+/* Grid view — head row = pricing + payment side by side, Quote button below. */
+.mgc-price-card--grid {
+	display: block !important;
+}
+.mgc-price-card__head {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 14px;
+}
+
+/* Divider line under the price-card spans full inner width and matches the
+   spec-icons divider below it. */
+.mvl-price-list-card.mgc-price-card--list {
+	margin-left: 16px;
+	margin-right: 16px;
+	border-bottom: 1px solid rgba(17, 24, 39, 0.1);
+	padding-bottom: 12px;
+}
+.mvl-price-list-card.mgc-price-card--list .mvl-price-list-card-inner {
+	border-bottom: 0 !important;
+	padding-bottom: 0 !important;
+}
+
+/* ─── Card price typography (override plugin defaults for hierarchy) ───
+   Goal: the dollar amount is what the eye lands on, not the label. So we
+   shrink the prefix words ("Retail Price:", "Our Price:", "Savings:") to a
+   muted support size — the numbers stay bold. */
+.mvl-price-list-card .mvl-normal-price,
+.mvl-price-grid-card .mvl-normal-price {
+	font-size: 12px !important;
+	font-weight: 500 !important;
+	color: #9ca3af !important;
+	text-decoration: line-through;
+	line-height: 1.3 !important;
+	letter-spacing: 0;
+}
+/* Shrink the label-price prefix ("Retail Price:" / "Our Price:" / etc) so
+   the dollar amount visually dominates the row. */
+.mvl-price-list-card .label-price,
+.mvl-price-grid-card .label-price {
+	font-size: 11px !important;
+	font-weight: 500 !important;
+	color: #6b7280 !important;
+	text-transform: uppercase;
+	letter-spacing: 0.5px;
+	margin-right: 4px;
+}
+.mvl-price-list-card .mvl-sale-price,
+.mvl-price-grid-card .mvl-sale-price {
+	font-size: 22px !important;
+	font-weight: 800 !important;
+	color: #111 !important;
+	line-height: 1.15 !important;
+	letter-spacing: -0.3px;
+	margin-top: 2px;
+}
+
+/* Listing card TITLE (the make/model headline) — biggest thing on the card
+   so it anchors the visual hierarchy. Add bottom margin to separate it from
+   the price block below; otherwise title + price read as one mashed lump.
+   Note: priority is to win specificity over the plugin's default. */
+.mvl-card-skins .car-title a,
+.mvl-card-skins .car-title,
+.mvl-card-skins .title a,
+.mvl-card-skins .mvl-list-content .car-title,
+.mvl-card-skins .mvl-list-content .car-title a {
+	font-size: 24px !important;
+	font-weight: 900 !important;
+	line-height: 1.15 !important;
+	color: #111 !important;
+	letter-spacing: -0.4px;
+	display: inline-block;
+}
+.mvl-card-skins .car-title,
+.mvl-card-skins .mvl-card-listing-data-title,
+.mvl-card-skins .title {
+	margin-bottom: 12px !important;
+}
+
+/* Tighten the price stack so Retail, Our Price, and Savings read as ONE
+   block, not three separate lines. */
+.mvl-price-list-card .mvl-price,
+.mvl-price-grid-card .mvl-price {
+	line-height: 1.1 !important;
+}
+.mvl-price-list-card .mvl-normal-price + .mvl-sale-price,
+.mvl-price-grid-card .mvl-normal-price + .mvl-sale-price {
+	margin-top: 1px !important;
+}
+
+/* ─── Savings line under the price ─── */
+.mgc-savings-line {
+	margin-top: 4px;
+	font-size: 13px;
+	color: #444;
+	font-weight: 600;
+	white-space: nowrap;
+}
+.mgc-savings-line__amount {
+	color: var(--cl-red);
+	margin-left: 4px;
+	font-weight: 700;
+}
+.mgc-price-card--grid .mgc-savings-line {
+	margin-top: 2px;
+	margin-bottom: 6px;
+}
+
+/* ─── Payment promo inside cards — same level as Our Price ─── */
+.mgc-price-card__side .mgc-pay-promo {
+	margin: 0;
+	text-align: right;
+	line-height: 1;
+}
+.mgc-price-card__side .mgc-pay-promo__amount {
+	display: inline-block;
+	font-weight: 800;
+	color: var(--cl-red);
+	font-size: 28px;
+	letter-spacing: -0.4px;
+	white-space: nowrap;
+	line-height: 1;
+}
+.mgc-price-card__side .mgc-pay-promo__per {
+	font-size: 14px;
+	font-weight: 700;
+	margin-left: 1px;
+	color: var(--cl-red);
+}
+.mgc-price-card__side .mgc-pay-promo__sub {
+	display: block;
+	color: #6b7280;
+	font-size: 12px;
+	font-weight: 500;
+	margin-top: 4px;
+	white-space: nowrap;
+}
+
+/* ─── Spec icons row — neutral gray, evenly distributed ─── */
+.mvl-card-skins .mvl-card-listing-data-inner .data-list-wrap li i,
+.mvl-card-skins .data-list-item i {
+	color: #4b5563 !important;
+}
+.mvl-card-skins .data-list-item .heading-font,
+.mvl-card-skins .data-list-item span {
+	color: #374151 !important;
+}
+
+/* ─── Get a Quote CTA button — keep it bold, single source of red on hover ─── */
+.mvl-card-skins .mvl_view_listing_link {
+	font-weight: 700 !important;
+	letter-spacing: 0.3px;
+	min-height: 48px;
+}
+
+/* ─── Mobile (≤768px): scale UP the primary numbers ───
+   Cards are full-width on mobile so the headline + payment need MORE presence,
+   not less. Supporting text shrinks slightly. */
+@media (max-width: 768px) {
+	.mvl-card-skins .car-title a,
+	.mvl-card-skins .car-title,
+	.mvl-card-skins .title a {
+		font-size: 26px !important;
+	}
+	.mvl-card-skins .car-title,
+	.mvl-card-skins .mvl-card-listing-data-title,
+	.mvl-card-skins .title {
+		margin-bottom: 10px !important;
+	}
+	.mvl-price-list-card .mvl-sale-price,
+	.mvl-price-grid-card .mvl-sale-price {
+		font-size: 26px !important;
+	}
+	.mgc-price-card__side .mgc-pay-promo__amount {
+		font-size: 30px;
+	}
+	.mgc-price-card__side .mgc-pay-promo__per {
+		font-size: 15px;
+	}
+	.mgc-price-card__side .mgc-pay-promo__sub {
+		font-size: 12px;
+		margin-top: 6px;
+	}
+	.mgc-savings-line {
+		font-size: 13px;
+	}
+}
+
+@media (max-width: 420px) {
+	.mvl-card-skins .car-title a,
+	.mvl-card-skins .car-title,
+	.mvl-card-skins .title a {
+		font-size: 22px !important;
+	}
+	.mvl-price-list-card .mvl-sale-price,
+	.mvl-price-grid-card .mvl-sale-price {
+		font-size: 24px !important;
+	}
+	.mgc-price-card__side .mgc-pay-promo__amount {
+		font-size: 26px;
+	}
+	.mgc-price-card,
+	.mgc-price-card__head {
+		gap: 12px;
+	}
+}

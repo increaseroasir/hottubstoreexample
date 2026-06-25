@@ -1,0 +1,1383 @@
+/* The Hot Tub Store palette — homepage tokens (index.html only) */
+
+body.home {
+	--ps-navy: #1E3A52;
+	--ps-navy-deep: #004080;
+	--ps-navy-card: #0070C0;
+	--ps-blue: #00A0E0;
+	--ps-blue-light: #00A0E0;
+	--ps-orange: #E02C1E;
+	--ps-orange-hover: #C32417;
+	--cl-red: #E02C1E;
+	--cl-red-dark: #C32417;
+
+	background: #fff;
+	font-family: 'Montserrat', system-ui, sans-serif;
+}
+
+body.home #mgc-home {
+	--hp-red: #E02C1E;
+	--hp-red-dark: #C32417;
+	--hp-dark: #1E3A52;
+}
+
+/* Hero — deep blue depth + cyan overlay */
+body.home .ps-hero {
+	background: #004080;
+}
+
+body.home .ps-hero__bg {
+	background:
+		linear-gradient(90deg, rgba(0, 64, 128, 0.82) 0%, rgba(0, 64, 128, 0.58) 45%, rgba(0, 112, 192, 0.42) 100%),
+		url('../images/homepage/hero.png') center / cover no-repeat;
+}
+
+/* Sticky header — ensure z-index wins over ps-quiz-funnel.css */
+body.home .ps-funnel-header {
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+
+body.home .ps-funnel-header .ps-logo__tag::before,
+body.home .ps-funnel-header .ps-logo__tag::after {
+	display: none;
+}
+
+body.home .ps-funnel-header__call {
+	background: #E02C1E;
+	color: #fff;
+}
+
+body.home .ps-funnel-header__call:hover {
+	background: #C32417;
+	color: #fff;
+}
+
+body.home .ps-menu-toggle {
+	color: #1E3A52;
+}
+
+body.home .ps-icon {
+	flex-shrink: 0;
+}
+
+body.home .ps-logo__mark {
+	background: linear-gradient(145deg, #00A0E0 0%, #0070C0 100%);
+}
+
+body.home .ps-funnel-header__call,
+body.home .ps-funnel-header__call:hover,
+body.home .ps-btn--orange {
+	color: #fff;
+}
+
+body.home .ps-btn--orange {
+	background: #E02C1E;
+}
+
+body.home .ps-btn--orange:hover:not(:disabled) {
+	background: #C32417;
+}
+
+body.home .ps-quiz-card [data-quiz-hero-continue]:disabled {
+	opacity: 1;
+	background: #E02C1E;
+	color: #fff;
+	cursor: not-allowed;
+}
+
+body.home .ps-quiz-card [data-quiz-hero-continue]:not(:disabled) {
+	background: #E02C1E;
+	color: #fff;
+}
+
+body.home .ps-quiz-card [data-quiz-hero-continue]:not(:disabled):hover {
+	background: #C32417;
+}
+
+/* Hero offer badge */
+body.home .ps-hero__offer {
+	margin: 0 0 14px;
+	padding: 10px 14px;
+	border-left: 4px solid #E02C1E;
+	background: rgba(224, 44, 30, 0.15);
+	font-size: clamp(14px, 2vw, 17px);
+	font-weight: 600;
+	color: #fff;
+	line-height: 1.4;
+	max-width: 520px;
+}
+
+body.home .ps-hero__offer strong {
+	color: #E02C1E;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+body.home .ps-hero__offer--mobile {
+	margin-top: 10px;
+	margin-bottom: 12px;
+}
+
+body.home .ps-hero__reviews-stars {
+	color: #F6961B;
+}
+
+body.home .ps-quiz__option.is-selected {
+	border-color: #E02C1E;
+	background: rgba(224, 44, 30, 0.1);
+}
+
+body.home .ps-lead--mobile.ps-quiz-card .ps-quiz__option.is-selected {
+	border-color: #E02C1E;
+	background: rgba(224, 44, 30, 0.22);
+}
+
+body.home .ps-mobile-bar {
+	background: #000;
+}
+
+/* Main content sections — alternating white / light gray rhythm */
+body.home #mgc-home .mgc-hp-reviews {
+	background: #fff !important;
+}
+
+body.home #mgc-home .mgc-hp-dept {
+	background: #F2F2F2 !important;
+}
+
+body.home #mgc-home .mgc-hp-promise {
+	background: #fff !important;
+}
+
+body.home #mgc-home .mgc-hp-featured {
+	background: #F2F2F2 !important;
+}
+
+body.home #mgc-home .mgc-hp-why#about {
+	background: #F2F2F2 !important;
+}
+
+body.home #mgc-home .mgc-hp-how {
+	background: #F2F2F2 !important;
+}
+
+body.home #mgc-home .ps-years {
+	background: #fff !important;
+}
+
+body.home #mgc-home .mgc-hp-split--dark-content .mgc-hp-split__content {
+	background: #004080;
+}
+
+body.home #mgc-home .mgc-hp-section__title,
+body.home #mgc-home .mgc-hp-dept__name,
+body.home #mgc-home .mgc-hp-split__title {
+	color: #1E3A52;
+}
+
+body.home #mgc-home .mgc-hp-reviews .mgc-hp-section__title,
+body.home #mgc-home .mgc-hp-reviews .mgc-hp-section__sub {
+	color: #1E3A52;
+}
+
+body.home #mgc-home .mgc-hp-reviews .mgc-hp-section__sub {
+	opacity: 0.65;
+}
+
+body.home #mgc-home .mgc-hp-reviews__arrow {
+	border-color: rgba(30, 58, 82, 0.25);
+	color: rgba(30, 58, 82, 0.55);
+}
+
+body.home #mgc-home .mgc-hp-reviews__dot {
+	background: rgba(30, 58, 82, 0.2);
+}
+
+body.home #mgc-home .mgc-hp-split--dark-content .mgc-hp-split__title {
+	color: #fff;
+}
+
+body.home #mgc-home .mgc-hp-btn--dark {
+	background: #0070C0;
+}
+
+body.home #mgc-home .mgc-hp-btn--dark:hover {
+	background: #004080;
+}
+
+body.home #mgc-home .mgc-hp-reviews__header-stars {
+	color: #F6961B;
+}
+
+/* ACTION red — CTAs, prices, accents */
+body.home #mgc-home .mgc-hp-btn--red,
+body.home #mgc-home .mgc-hp-dept__icon,
+body.home #mgc-home .mgc-hp-dept__btn,
+body.home #mgc-home .mgc-hp-reviews__avatar {
+	background-color: #E02C1E;
+}
+
+body.home #mgc-home .mgc-hp-btn--red {
+	background: #E02C1E;
+	color: #fff;
+}
+
+body.home #mgc-home .mgc-hp-btn--red:hover {
+	background: #C32417;
+}
+
+body.home #mgc-home .mgc-hp-btn--red:hover,
+body.home #mgc-home .mgc-hp-dept__card:hover .mgc-hp-dept__icon,
+body.home #mgc-home .mgc-hp-dept__card:hover .mgc-hp-dept__btn {
+	background: #C32417;
+}
+
+body.home #mgc-home .mgc-hp-eyebrow {
+	color: #E02C1E;
+	background: rgba(224, 44, 30, 0.12);
+}
+
+body.home #mgc-home .mgc-hp-dept__label {
+	color: #E02C1E;
+}
+
+body.home #mgc-home .mgc-deal-card__price {
+	color: #E02C1E;
+}
+
+body.home #mgc-home .mgc-hp-split__list i,
+body.home #mgc-home .mgc-hp-why__icon {
+	color: #E02C1E;
+}
+
+body.home #mgc-home .mgc-hp-reviews__avatar {
+	background: #E02C1E !important;
+}
+
+body.home .gc-footer .ps-logo__mark {
+	background: #00A0E0 !important;
+}
+
+/* Footer text logo (no icon boxes) */
+body.home .ps-footer-logo {
+	display: inline-block;
+	text-decoration: none;
+	margin-bottom: 20px;
+	line-height: 1.15;
+}
+
+body.home .ps-footer-logo__name {
+	display: block;
+	font-size: 22px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	color: #fff;
+}
+
+body.home .ps-footer-logo__tag {
+	display: block;
+	margin-top: 4px;
+	font-size: 10px;
+	font-weight: 700;
+	letter-spacing: 0.22em;
+	color: #00A0E0;
+}
+
+/* Bottom CTA checkmarks (SVG-free) */
+body.home .ps-list-check {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: #E02C1E;
+	flex-shrink: 0;
+}
+
+body.home .ps-list-check::after {
+	content: '';
+	width: 5px;
+	height: 9px;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg) translate(-1px, -1px);
+}
+
+body.home #mgc-home .mgc-hp-cta-section__list li {
+	color: rgba(255, 255, 255, 0.92);
+}
+
+/* Promise seal */
+body.home #mgc-home .mgc-hp-promise__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 16px;
+}
+
+body.home #mgc-home .mgc-hp-promise__seal {
+	display: block;
+	border-radius: 50%;
+}
+
+/* Product grid — placeholder images */
+body.home #mgc-home .mgc-hp-dept__card {
+	padding: 0;
+	overflow: hidden;
+}
+
+body.home #mgc-home .mgc-hp-dept__image {
+	width: 100%;
+	aspect-ratio: 5 / 3;
+	overflow: hidden;
+	background: #E5E5E5;
+}
+
+body.home #mgc-home .mgc-hp-dept__image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+}
+
+body.home #mgc-home .mgc-hp-dept__icon {
+	margin: 20px 32px 16px;
+}
+
+body.home #mgc-home .mgc-hp-dept__body {
+	padding: 0 32px;
+}
+
+body.home #mgc-home .mgc-hp-dept__btn {
+	margin: 16px 32px 32px;
+}
+
+/* How It Works — photo-per-step layout */
+body.home #mgc-home .mgc-hp-how__steps {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 28px;
+}
+
+body.home #mgc-home .mgc-hp-how__step {
+	background: #fff;
+	border: 1px solid #e5e7eb;
+	border-radius: 8px;
+	overflow: hidden;
+}
+
+body.home #mgc-home .mgc-hp-how__step-img {
+	width: 100%;
+	aspect-ratio: 16 / 10;
+	object-fit: cover;
+	display: block;
+}
+
+body.home #mgc-home .mgc-hp-how__step-num {
+	margin: 20px 24px 0;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 13px;
+	font-weight: 700;
+	color: #1E3A52;
+}
+
+body.home #mgc-home .mgc-hp-how__step-divider {
+	margin: 12px 24px;
+	border: 0;
+	border-top: 2px solid #E02C1E;
+}
+
+body.home #mgc-home .mgc-hp-how__step-label {
+	margin: 0 24px 10px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 15px;
+	font-weight: 800;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	color: #1E3A52;
+}
+
+body.home #mgc-home .mgc-hp-how__step-body {
+	margin: 0 24px 24px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 15px;
+	line-height: 1.6;
+	color: #1E3A52;
+}
+
+/* Reviews video placeholder */
+body.home #mgc-home .mgc-hp-reviews__video-wrap {
+	position: relative;
+	max-width: 720px;
+	margin: 0 auto 36px;
+	border-radius: 12px;
+	overflow: hidden;
+	box-shadow: 0 16px 40px rgba(0, 0, 0, 0.25);
+}
+
+body.home #mgc-home .mgc-hp-reviews__video-wrap img {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+body.home #mgc-home .mgc-hp-reviews__play {
+	position: absolute;
+	inset: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+
+body.home #mgc-home .mgc-hp-reviews__play::before {
+	content: '';
+	width: 72px;
+	height: 72px;
+	border-radius: 50%;
+	background: rgba(224, 44, 30, 0.92);
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+body.home #mgc-home .mgc-hp-reviews__play svg {
+	position: absolute;
+	color: #fff;
+	margin-left: 4px;
+}
+
+/* ── Reviews carousel — real Google reviews ───────────── */
+body.home #mgc-home .mgc-hp-reviews__track {
+	align-items: stretch;
+}
+
+body.home #mgc-home .mgc-hp-reviews__card {
+	min-height: 300px;
+}
+
+body.home #mgc-home .mgc-hp-reviews__meta {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px 14px;
+}
+
+body.home #mgc-home .mgc-hp-reviews__verified {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 11px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.72);
+	letter-spacing: 0.01em;
+}
+
+body.home #mgc-home .mgc-hp-reviews__google-icon {
+	width: 14px;
+	height: 14px;
+	flex-shrink: 0;
+}
+
+body.home #mgc-home .mgc-hp-reviews__body {
+	display: flex;
+	flex-direction: column;
+	flex: 1 1 auto;
+	min-height: 0;
+	gap: 10px;
+}
+
+body.home #mgc-home .mgc-hp-reviews__quote:not(.mgc-hp-reviews__quote--full) {
+	display: -webkit-box;
+	-webkit-box-orient: vertical;
+	-webkit-line-clamp: 5;
+	overflow: hidden;
+	white-space: pre-line;
+}
+
+body.home #mgc-home .mgc-hp-reviews__more {
+	align-self: flex-start;
+	margin: 0;
+	padding: 0;
+	border: 0;
+	background: none;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 13px;
+	font-weight: 700;
+	color: #F6961B;
+	cursor: pointer;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+body.home #mgc-home .mgc-hp-reviews__more:hover {
+	color: #fff;
+}
+
+body.home #mgc-home .mgc-hp-reviews__avatar {
+	position: relative;
+	overflow: hidden;
+	padding: 0;
+}
+
+body.home #mgc-home .mgc-hp-reviews__avatar-img {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	border-radius: 50%;
+}
+
+body.home #mgc-home .mgc-hp-reviews__avatar-initials {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+}
+
+body.home #mgc-home .mgc-hp-reviews__avatar-img:not([hidden]) + .mgc-hp-reviews__avatar-initials {
+	display: none;
+}
+
+/* Review modal */
+body.mgc-reviews-modal-open {
+	overflow: hidden;
+}
+
+.mgc-hp-reviews__modal[hidden] {
+	display: none !important;
+}
+
+.mgc-hp-reviews__modal {
+	position: fixed;
+	inset: 0;
+	z-index: 10000;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px 16px;
+}
+
+.mgc-hp-reviews__modal-backdrop {
+	position: absolute;
+	inset: 0;
+	background: rgba(15, 23, 42, 0.62);
+}
+
+.mgc-hp-reviews__modal-panel {
+	position: relative;
+	width: min(560px, 100%);
+	max-height: min(85vh, 720px);
+	background: #242424;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-top: 3px solid #E02C1E;
+	border-radius: 12px;
+	padding: 28px 24px 24px;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+}
+
+.mgc-hp-reviews__modal-close {
+	position: absolute;
+	top: 10px;
+	right: 12px;
+	width: 36px;
+	height: 36px;
+	border: 0;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.08);
+	color: #fff;
+	font-size: 24px;
+	line-height: 1;
+	cursor: pointer;
+}
+
+.mgc-hp-reviews__modal-close:hover {
+	background: rgba(255, 255, 255, 0.16);
+}
+
+.mgc-hp-reviews__modal-body {
+	overflow-y: auto;
+	padding-right: 4px;
+	display: flex;
+	flex-direction: column;
+	gap: 16px;
+}
+
+.mgc-hp-reviews__modal-body .mgc-hp-reviews__quote--full {
+	display: block;
+	overflow: visible;
+	-webkit-line-clamp: unset;
+	white-space: pre-line;
+	flex: unset;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 16px;
+	font-style: italic;
+	line-height: 1.78;
+	color: rgba(255, 255, 255, 0.95);
+	margin: 0;
+}
+
+.mgc-hp-reviews__modal-body .mgc-hp-reviews__stars {
+	color: #f59e0b;
+}
+
+.mgc-hp-reviews__modal-body .mgc-hp-reviews__verified {
+	color: rgba(255, 255, 255, 0.72);
+}
+
+.mgc-hp-reviews__modal-body .mgc-hp-reviews__author {
+	margin-top: 8px;
+	padding-top: 16px;
+	border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.mgc-hp-reviews__modal-body .mgc-hp-reviews__author-info strong {
+	color: #fff;
+}
+
+/* ── Homepage structure helpers (layout only) ─────────── */
+body.home #mgc-home .mgc-hp-dept__intro {
+	padding-bottom: 0;
+}
+
+body.home #mgc-home .mgc-hp-dept__intro .mgc-hp-section__header {
+	margin-bottom: 28px;
+}
+
+body.home #mgc-home .mgc-hp-dept .mgc-hp-section__title {
+	color: #1E3A52;
+}
+
+body.home #mgc-home .mgc-hp-proof-band {
+	background: #fff;
+	padding-top: 48px;
+	padding-bottom: 48px;
+	text-align: center;
+}
+
+body.home #mgc-home .mgc-hp-proof-band__score {
+	margin: 0;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: clamp(22px, 3vw, 32px);
+	font-weight: 800;
+	color: #1E3A52;
+	letter-spacing: -0.02em;
+}
+
+body.home #mgc-home .mgc-hp-why__grid--steps {
+	grid-template-columns: repeat(3, 1fr);
+}
+
+body.home #mgc-home .mgc-hp-cta-section__includes {
+	margin: 0 0 12px;
+	font-weight: 700;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+body.home #mgc-home .mgc-hp-cta-section__list {
+	max-width: 360px;
+	margin: 0 auto 28px;
+	text-align: left;
+}
+
+body.home #mgc-home .mgc-hp-cta-section__list li {
+	color: rgba(255, 255, 255, 0.88);
+}
+
+/* ── Hero trust + local ───────────────────────────────── */
+body.home .ps-hero__trust-trio {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px 18px;
+	list-style: none;
+	margin: 0 0 14px;
+	padding: 0;
+}
+
+body.home .ps-hero__trust-trio li {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	font-size: 14px;
+	font-weight: 700;
+	color: #fff;
+	letter-spacing: 0.02em;
+}
+
+body.home .ps-hero__trust-check {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: rgba(255, 255, 255, 0.18);
+	flex-shrink: 0;
+}
+
+body.home .ps-hero__trust-check::after {
+	content: '';
+	width: 5px;
+	height: 9px;
+	border: solid #fff;
+	border-width: 0 2px 2px 0;
+	transform: rotate(45deg) translate(-1px, -1px);
+}
+
+body.home .ps-hero__local {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 12px 16px;
+	margin: 0 0 18px;
+}
+
+body.home .ps-hero__local-line {
+	margin: 0;
+	font-size: 14px;
+	font-weight: 600;
+	color: rgba(255, 255, 255, 0.92);
+	line-height: 1.45;
+}
+
+body.home .ps-hero__years-badge {
+	display: block;
+	width: 72px;
+	height: 72px;
+	object-fit: contain;
+	flex-shrink: 0;
+}
+
+/* ── Trust logo strip (above Promise) ─────────────────── */
+body.home #mgc-home .ps-trust-strip {
+	background: #f0f0f0;
+	padding: 28px 0;
+	border-top: 1px solid rgba(30, 58, 82, 0.08);
+	border-bottom: 1px solid rgba(30, 58, 82, 0.08);
+}
+
+body.home #mgc-home .ps-trust-strip__logos {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 16px 24px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.home #mgc-home .ps-trust-strip__logos img {
+	display: block;
+	height: 56px;
+	width: auto;
+	max-width: 180px;
+	object-fit: contain;
+	filter: none;
+	opacity: 1;
+}
+
+/* ── Brands strip (after product grid) ────────────────── */
+body.home #mgc-home .ps-brands-strip {
+	background: #fff;
+	padding-top: 48px;
+	padding-bottom: 48px;
+}
+
+body.home #mgc-home .ps-brands-strip .mgc-hp-section__title {
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+body.home #mgc-home .ps-brands-strip__logos {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 20px 28px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.home #mgc-home .ps-brands-strip__logos img {
+	display: block;
+	height: 64px;
+	width: auto;
+	max-width: 200px;
+	object-fit: contain;
+	border-radius: 4px;
+	filter: none;
+	opacity: 1;
+}
+
+/* ── Visit Our Showroom (above footer) ────────────────── */
+body.home #mgc-home .ps-showroom {
+	background: #fff;
+	padding-top: 56px;
+	padding-bottom: 56px;
+}
+
+body.home #mgc-home .ps-showroom .mgc-hp-section__title {
+	text-align: center;
+	margin-bottom: 28px;
+}
+
+body.home #mgc-home .ps-showroom__grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 28px;
+	align-items: stretch;
+}
+
+body.home #mgc-home .ps-showroom__map {
+	min-height: 280px;
+	background: #E5E5E5;
+	border: 1px dashed #9CA3AF;
+	border-radius: 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 24px;
+	text-align: center;
+}
+
+body.home #mgc-home .ps-showroom__map-label {
+	font-size: 15px;
+	font-weight: 700;
+	color: #666;
+	line-height: 1.45;
+	max-width: 240px;
+}
+
+body.home #mgc-home .ps-showroom__details {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 14px;
+}
+
+body.home #mgc-home .ps-showroom__address,
+body.home #mgc-home .ps-showroom__phone,
+body.home #mgc-home .ps-showroom__hours {
+	margin: 0;
+	font-size: 16px;
+	line-height: 1.55;
+	color: #1E3A52;
+	font-weight: 600;
+}
+
+body.home #mgc-home .ps-showroom__phone a {
+	color: #1E3A52;
+	text-decoration: none;
+}
+
+body.home #mgc-home .ps-showroom__phone a:hover {
+	color: #E02C1E;
+}
+
+/* ── Why Choose — credibility photo ───────────────────── */
+body.home #mgc-home .ps-about-cred {
+	margin: 0 0 32px;
+	text-align: center;
+}
+
+body.home #mgc-home .ps-about-cred__img {
+	display: block;
+	width: 100%;
+	max-width: 720px;
+	height: auto;
+	margin: 0 auto;
+	border-radius: 8px;
+}
+
+body.home #mgc-home .ps-about-cred__caption {
+	margin: 14px auto 0;
+	max-width: 640px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 15px;
+	line-height: 1.55;
+	color: #1E3A52;
+	font-weight: 600;
+}
+
+/* ── 25 Years in Business ─────────────────────────────── */
+body.home #mgc-home .ps-years__header {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	margin-bottom: 24px;
+}
+
+body.home #mgc-home .ps-years__badge {
+	display: block;
+	width: 160px;
+	height: 160px;
+	object-fit: contain;
+	margin-bottom: 20px;
+}
+
+body.home #mgc-home .ps-years__body {
+	max-width: 760px;
+	margin: 0 auto 12px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 16px;
+	line-height: 1.65;
+	color: #1E3A52;
+}
+
+body.home #mgc-home .ps-years__confirm {
+	margin: 0 auto;
+	max-width: 760px;
+	font-size: 13px;
+	font-weight: 700;
+	color: #E02C1E;
+	font-style: italic;
+}
+
+body.home #mgc-home .ps-years__trust {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 12px 24px;
+	max-width: 900px;
+	margin-inline: auto;
+}
+
+body.home #mgc-home .ps-years__trust li {
+	display: inline-flex;
+	align-items: flex-start;
+	gap: 10px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 14px;
+	font-weight: 600;
+	color: #1E3A52;
+	line-height: 1.45;
+	max-width: 420px;
+}
+
+/* ── Ready to get started split ───────────────────────── */
+body.home #mgc-home .ps-ready-split .mgc-hp-split__content p {
+	color: #1E3A52;
+}
+
+body.home #mgc-home .ps-ready-split__includes {
+	margin: 0 0 12px;
+	font-weight: 700;
+	color: #1E3A52;
+}
+
+body.home #mgc-home .ps-ready-split__list {
+	margin-bottom: 28px;
+}
+
+body.home #mgc-home .ps-ready-split__list li {
+	color: #1E3A52;
+	align-items: flex-start;
+}
+
+body.home #mgc-home .ps-ready-split .mgc-hp-btn {
+	min-height: 48px;
+}
+
+/* ── Coupon claim band ────────────────────────────────── */
+body.home #mgc-home .ps-coupon-band {
+	background: #E02C1E;
+	padding: 48px 0;
+}
+
+body.home #mgc-home .ps-coupon-band__inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 24px 32px;
+	text-align: center;
+}
+
+body.home #mgc-home .ps-coupon-band__badge {
+	display: block;
+	border-radius: 50%;
+	flex-shrink: 0;
+}
+
+body.home #mgc-home .ps-coupon-band__copy {
+	flex: 1 1 280px;
+	max-width: 640px;
+}
+
+body.home #mgc-home .ps-coupon-band__title {
+	margin: 0 0 10px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: clamp(20px, 3.5vw, 28px);
+	font-weight: 800;
+	line-height: 1.25;
+	color: #fff;
+}
+
+body.home #mgc-home .ps-coupon-band__sub {
+	margin: 0 0 8px;
+	font-family: var(--hp-font, 'Montserrat', sans-serif);
+	font-size: 16px;
+	line-height: 1.5;
+	color: rgba(255, 255, 255, 0.92);
+}
+
+body.home #mgc-home .ps-coupon-band__confirm {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 700;
+	font-style: italic;
+	color: rgba(255, 255, 255, 0.85);
+}
+
+body.home #mgc-home .ps-coupon-band__cta {
+	flex-shrink: 0;
+	min-height: 48px;
+	background: #fff !important;
+	color: #E02C1E !important;
+}
+
+body.home #mgc-home .ps-coupon-band__cta:hover {
+	background: #F2F2F2 !important;
+	color: #C32417 !important;
+}
+
+@media (max-width: 900px) {
+	body.home #mgc-home .mgc-hp-why__grid--steps {
+		grid-template-columns: 1fr;
+	}
+}
+
+/* ── Homepage mobile layout (≤1023px) — desktop unchanged ── */
+@media (max-width: 1023px) {
+	body.home {
+		overflow-x: hidden;
+		padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px));
+	}
+
+	/* Hero — full-bleed photo with readable overlay */
+	body.home .ps-hero {
+		display: block;
+		position: relative;
+		min-height: 0;
+	}
+
+	body.home .ps-hero__bg {
+		position: absolute;
+		inset: 0;
+		min-height: 100%;
+		background:
+			linear-gradient(180deg, rgba(0, 64, 128, 0.62) 0%, rgba(0, 64, 128, 0.78) 42%, rgba(0, 64, 128, 0.9) 100%),
+			url('../images/homepage/hero.png') center center / cover no-repeat;
+	}
+
+	body.home .ps-hero__inner {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		gap: 16px;
+		padding: 24px 16px 28px;
+		width: 100%;
+		max-width: none;
+	}
+
+	body.home .ps-hero__copy--mobile-top {
+		order: 1;
+		align-items: stretch;
+		text-align: center;
+	}
+
+	body.home .ps-hero__title--mobile-top {
+		max-width: none;
+		font-size: clamp(34px, 9.5vw, 42px);
+		line-height: 1.06;
+		margin-bottom: 12px;
+	}
+
+	body.home .ps-hero__offer--mobile {
+		margin: 0 0 12px;
+		max-width: none;
+		text-align: left;
+		font-size: 15px;
+	}
+
+	body.home .ps-hero__sub--mobile-top {
+		max-width: none;
+		font-size: 16px;
+		line-height: 1.55;
+		margin-bottom: 16px;
+	}
+
+	body.home .ps-hero__reviews--center {
+		max-width: none;
+		margin-top: 0;
+	}
+
+	body.home .ps-lead--mobile.ps-quiz-card {
+		order: 2;
+		width: 100%;
+		max-width: none;
+		margin: 0;
+		box-sizing: border-box;
+	}
+
+	body.home .ps-quiz-card .ps-quiz__option {
+		min-height: 44px;
+	}
+
+	body.home .ps-quiz-card [data-quiz-hero-continue] {
+		min-height: 48px;
+	}
+
+	body.home .ps-funnel-header__inner {
+		padding: 10px 14px;
+	}
+
+	body.home .ps-funnel-header__call {
+		min-height: 44px;
+		padding: 10px 12px;
+	}
+
+	body.home .ps-funnel-header .ps-menu-toggle {
+		min-width: 44px;
+		min-height: 44px;
+	}
+
+	/* Main sections — single column, comfortable padding */
+	body.home #mgc-home .mgc-hp-container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	body.home #mgc-home .mgc-hp-section {
+		padding-top: 48px;
+		padding-bottom: 48px;
+	}
+
+	body.home #mgc-home .mgc-hp-section__title {
+		font-size: clamp(24px, 6.5vw, 30px);
+	}
+
+	body.home #mgc-home .mgc-hp-section__sub {
+		font-size: 16px;
+		line-height: 1.55;
+	}
+
+	/* Testimonials — one card, full width video */
+	body.home #mgc-home .mgc-hp-reviews__video-wrap {
+		max-width: none;
+		width: 100%;
+		margin-bottom: 28px;
+		border-radius: 10px;
+	}
+
+	body.home #mgc-home .mgc-hp-reviews__viewport {
+		overflow: hidden;
+		width: 100%;
+	}
+
+	body.home #mgc-home .mgc-hp-reviews__arrow {
+		min-width: 44px;
+		min-height: 44px;
+	}
+
+	/* Product grid — 2×2, full-width shop buttons */
+	body.home #mgc-home .mgc-hp-dept {
+		padding: 40px 16px;
+	}
+
+	body.home #mgc-home .mgc-hp-dept__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		gap: 12px;
+	}
+
+	body.home #mgc-home .mgc-hp-dept__card {
+		padding: 0;
+	}
+
+	body.home #mgc-home .mgc-hp-dept__icon {
+		margin: 16px 14px 12px;
+	}
+
+	body.home #mgc-home .mgc-hp-dept__body {
+		padding: 0 14px;
+	}
+
+	body.home #mgc-home .mgc-hp-dept__btn {
+		margin: 12px 14px 20px;
+	}
+
+	/* How It Works — stack on mobile */
+	body.home #mgc-home .mgc-hp-how__steps {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+
+	body.home #mgc-home .mgc-hp-promise .mgc-hp-why__grid,
+	body.home #mgc-home .mgc-hp-why#about .mgc-hp-why__grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+		gap: 12px;
+	}
+
+	body.home #mgc-home .mgc-hp-why__item {
+		padding: 24px 14px 20px;
+	}
+
+	body.home #mgc-home .mgc-hp-why__item h4 {
+		font-size: 14px;
+	}
+
+	body.home #mgc-home .mgc-hp-why__item p {
+		font-size: 14px;
+		line-height: 1.5;
+	}
+
+	body.home #mgc-home .mgc-hp-dept__name {
+		font-size: 15px;
+	}
+
+	body.home #mgc-home .mgc-hp-dept__btn {
+		width: 100%;
+		justify-content: center;
+		min-height: 44px;
+	}
+
+	/* Promise + Why Choose — 2×2 */
+	body.home #mgc-home .mgc-hp-deals-carousel .mgc-related-listings__grid {
+		scroll-snap-type: x mandatory;
+		scroll-padding-inline: 16px;
+		gap: 12px;
+		margin-inline: -16px;
+		padding-inline: 16px;
+	}
+
+	body.home #mgc-home .mgc-deal-card {
+		flex: 0 0 calc(100% - 32px) !important;
+		scroll-snap-align: center;
+		max-width: calc(100% - 32px);
+	}
+
+	/* Split sections — stacked blocks */
+	body.home #mgc-home .mgc-hp-split {
+		grid-template-columns: 1fr;
+		min-height: 0;
+	}
+
+	body.home #mgc-home .mgc-hp-split--reverse {
+		direction: ltr;
+	}
+
+	body.home #mgc-home .mgc-hp-split__image {
+		min-height: 240px;
+	}
+
+	body.home #mgc-home .mgc-hp-split__content {
+		padding: 40px 20px;
+	}
+
+	body.home #mgc-home .mgc-hp-split__content .mgc-hp-btn {
+		width: 100%;
+		justify-content: center;
+		min-height: 48px;
+	}
+
+	/* Bottom CTA — stacked full-width buttons */
+	body.home #mgc-home .mgc-hp-cta-section {
+		padding: 56px 20px;
+	}
+
+	body.home #mgc-home .mgc-hp-cta-section__inner h2 {
+		font-size: clamp(26px, 7vw, 34px);
+	}
+
+	body.home #mgc-home .mgc-hp-cta-section__list {
+		max-width: none;
+		margin-bottom: 24px;
+	}
+
+	body.home #mgc-home .mgc-hp-cta-section__list li {
+		font-size: 16px;
+	}
+
+	body.home #mgc-home .mgc-hp-cta-section__btns {
+		flex-direction: column;
+		align-items: stretch;
+		width: 100%;
+		gap: 12px;
+	}
+
+	body.home #mgc-home .mgc-hp-cta-section__btns .mgc-hp-btn {
+		width: 100%;
+		justify-content: center;
+		min-height: 48px;
+	}
+
+	body.home #mgc-home .mgc-hp-section__footer .mgc-hp-btn {
+		width: 100%;
+		justify-content: center;
+		min-height: 48px;
+	}
+
+	body.home #mgc-home .mgc-hp-proof-band {
+		padding-top: 36px;
+		padding-bottom: 36px;
+	}
+
+	body.home #mgc-home .mgc-hp-promise__seal {
+		width: 110px;
+		height: 110px;
+	}
+
+	body.home .ps-hero__trust-trio {
+		justify-content: center;
+	}
+
+	body.home .ps-hero__local {
+		justify-content: center;
+		text-align: center;
+	}
+
+	body.home #mgc-home .ps-showroom__grid {
+		grid-template-columns: 1fr;
+	}
+
+	body.home #mgc-home .ps-showroom__map {
+		min-height: 220px;
+	}
+
+	body.home #mgc-home .ps-coupon-band__inner {
+		flex-direction: column;
+	}
+
+	body.home #mgc-home .ps-coupon-band__cta {
+		width: 100%;
+		justify-content: center;
+	}
+
+	body.home #mgc-home .ps-ready-split .mgc-hp-split__content .mgc-hp-btn {
+		width: 100%;
+		justify-content: center;
+	}
+
+	body.home #mgc-home .ps-years__trust li {
+		max-width: none;
+		width: 100%;
+		justify-content: flex-start;
+	}
+}

@@ -1,0 +1,1806 @@
+/* The Hot Tub Store — inventory page (matches homepage design system) */
+
+body.ps-hottubstore-inventory {
+	--ps-royal-blue: #00AEEF;
+	--ps-navy-dark: #050505;
+	--ps-headline-blue: #111827;
+	--ps-gold: #00AEEF;
+	--ps-gold-hover: #008FC7;
+	--ps-hansons-gold: #00AEEF;
+	--ps-hansons-orange-dark: #008FC7;
+	--ps-navy-deep: #050505;
+	--ps-urgency-red: #E53935;
+	--ps-bg: #F4F7F9;
+	--ps-body: #222222;
+	--ps-muted: #666666;
+	--ps-card-border: rgba(5, 5, 5, 0.08);
+	--cl-red: var(--ps-urgency-red);
+	--ps-brand-accent: var(--ps-royal-blue);
+	--ps-brand-navy: var(--ps-headline-blue);
+	--ps-brand-cta: var(--ps-navy-dark);
+	--ps-brand-cta-hover: #111827;
+	--mvl-primary-color: var(--ps-royal-blue);
+	--motors-accent-color: var(--ps-royal-blue);
+	--motors-card-btn-color: var(--ps-navy-dark);
+	font-family: 'Montserrat', system-ui, sans-serif;
+	background: var(--ps-bg);
+	color: var(--ps-body);
+	overflow-x: clip;
+}
+
+/* Hansons header — aqua accent + black phone */
+body.ps-hottubstore-inventory .ps-h-estimate {
+	background: #00AEEF !important;
+	color: #FFFFFF !important;
+}
+
+body.ps-hottubstore-inventory .ps-h-estimate:hover {
+	background: #008FC7 !important;
+	color: #FFFFFF !important;
+}
+
+body.ps-hottubstore-inventory .ps-h-phone__badge {
+	background: var(--ps-royal-blue);
+	color: #fff;
+}
+
+body.ps-hottubstore-inventory .ps-h-phone__number {
+	color: var(--ps-royal-blue);
+}
+
+body.ps-hottubstore-inventory .ps-h-phone__number:hover {
+	color: var(--ps-gold-hover);
+}
+
+body.ps-hottubstore-inventory .ps-h-main__mobile .ps-funnel-header__call {
+	background: #00AEEF;
+	color: #FFFFFF;
+}
+
+body.ps-hottubstore-inventory .ps-h-main__mobile .ps-funnel-header__call:hover {
+	background: #008FC7;
+	color: #FFFFFF;
+}
+
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link.is-active,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link[aria-current="page"] {
+	box-shadow: inset 0 -3px 0 #00AEEF;
+	color: #00AEEF;
+}
+
+body.ps-hottubstore-inventory .ps-h-utility__links a:hover {
+	color: var(--ps-royal-blue);
+}
+
+body.ps-hottubstore-inventory .ps-logo__img {
+	height: 44px;
+	width: auto;
+	max-width: min(280px, 68vw);
+}
+
+/* ── Page shell ── */
+body.ps-hottubstore-inventory #main,
+body.ps-hottubstore-inventory .mst-wrapper,
+body.ps-hottubstore-inventory .page-content {
+	background: var(--ps-bg);
+}
+
+body.ps-hottubstore-inventory .stm-pro-layout.stm-inventory-pro {
+	padding-top: clamp(24px, 4vw, 40px) !important;
+	padding-bottom: 48px;
+}
+
+body.ps-hottubstore-inventory .container {
+	max-width: 1400px;
+}
+
+/* ── Page title area ── */
+body.ps-hottubstore-inventory .search-results-actions {
+	display: flex;
+	flex-direction: column;
+	gap: 8px !important;
+	margin-bottom: 16px !important;
+	padding: 0 0 12px !important;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-breadcrumbs {
+	margin: 0 0 12px !important;
+	padding: 0 !important;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-heading {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0;
+	margin: 0 0 0 !important;
+	padding: 0 !important;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-title {
+	font-family: 'Montserrat', system-ui, sans-serif !important;
+	font-size: clamp(28px, 3.5vw, 42px) !important;
+	font-weight: 800 !important;
+	color: var(--ps-headline-blue) !important;
+	line-height: 1.08 !important;
+	letter-spacing: -0.02em;
+	margin: 0 0 10px !important;
+	padding: 0 !important;
+	border-left: 0 !important;
+	text-transform: none;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-subtitle {
+	margin: 0 0 10px;
+	font-size: clamp(15px, 1.5vw, 17px);
+	font-weight: 500;
+	line-height: 1.45;
+	color: #374151;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-trust {
+	margin: 0 0 8px;
+	font-size: clamp(12px, 1.1vw, 14px);
+	font-weight: 700;
+	line-height: 1.4;
+	color: var(--ps-royal-blue);
+	letter-spacing: 0.02em;
+}
+
+body.ps-hottubstore-inventory .mvl-total-results {
+	margin: 0 0 16px;
+}
+
+body.ps-hottubstore-inventory .mvl-total-results,
+body.ps-hottubstore-inventory .mvl-total-results-label,
+body.ps-hottubstore-inventory .mvl-total-count {
+	font-family: 'Montserrat', system-ui, sans-serif !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	color: var(--ps-muted) !important;
+	line-height: 1.2;
+}
+
+/* Collapse empty filter-tag row above toolbar */
+body.ps-hottubstore-inventory .search-results-actions-result {
+	margin: 0 !important;
+	padding: 0 !important;
+	min-height: 0 !important;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-result:has(.stm-filter-chosen-units-list:empty) {
+	display: none !important;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-triggers {
+	margin: 12px 0 0 !important;
+	padding: 0 !important;
+}
+
+body.ps-hottubstore-inventory #listings-result,
+body.ps-hottubstore-inventory .stm-isotope-sorting-list {
+	margin-top: 0 !important;
+	padding-top: 0 !important;
+}
+
+/* Desktop: compress intro so first card + CTA appear sooner */
+@media (min-width: 992px) {
+	body.ps-hottubstore-inventory .stm-pro-layout.stm-inventory-pro {
+		padding-top: 36px !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions {
+		gap: 6px !important;
+		margin-bottom: 16px !important;
+		padding-bottom: 8px !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-breadcrumbs {
+		margin-bottom: 6px !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-heading {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: baseline;
+		column-gap: 12px;
+		row-gap: 0;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-title {
+		font-size: 36px !important;
+		margin: 0 !important;
+		flex: 0 1 auto;
+	}
+
+	body.ps-hottubstore-inventory .mvl-total-results {
+		margin: 0 !important;
+		flex: 0 0 auto;
+		align-self: baseline;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-subtitle,
+	body.ps-hottubstore-inventory .search-results-actions-trust {
+		width: 100%;
+		flex: 0 0 100%;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-subtitle {
+		margin-top: 8px;
+		margin-bottom: 6px;
+		font-size: 15px;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-trust {
+		margin-bottom: 0;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-triggers {
+		margin-top: 8px !important;
+	}
+
+	body.ps-hottubstore-inventory .motors-compare-button {
+		display: none !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-triggers-sorting {
+		margin-left: auto;
+		width: 100%;
+		justify-content: flex-end;
+		gap: 12px !important;
+	}
+}
+
+body.ps-hottubstore-inventory .mvl-simple-breadcrumbs,
+body.ps-hottubstore-inventory .mvl-simple-breadcrumbs a {
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	color: var(--ps-muted) !important;
+}
+
+body.ps-hottubstore-inventory .mvl-simple-breadcrumbs .current-link a {
+	color: var(--ps-headline-blue) !important;
+	font-weight: 600 !important;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-reset-all a,
+body.ps-hottubstore-inventory .mvl-reset-all,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-header .heading-action .action-reset {
+	color: var(--ps-royal-blue) !important;
+	font-weight: 600 !important;
+	text-decoration: none;
+	background: none !important;
+	border: 0 !important;
+}
+
+body.ps-hottubstore-inventory .search-results-actions-reset-all a:hover,
+body.ps-hottubstore-inventory .mvl-reset-all:hover {
+	color: var(--ps-navy-dark) !important;
+	text-decoration: underline;
+}
+
+/* ── Listing toolbar ── */
+body.ps-hottubstore-inventory .search-results-actions-triggers,
+body.ps-hottubstore-inventory .motors-compare-button,
+body.ps-hottubstore-inventory .stm-view-by,
+body.ps-hottubstore-inventory .stm-sort-by-options {
+	color: var(--ps-headline-blue);
+}
+
+body.ps-hottubstore-inventory .motors-compare-button,
+body.ps-hottubstore-inventory .stm-view-by .view-type,
+body.ps-hottubstore-inventory .stm-sort-by-options i {
+	color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .stm-view-by .view-type.active {
+	background: rgba(0, 174, 239, 0.12);
+	border-radius: 8px;
+	color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .stm-select-sorting select,
+body.ps-hottubstore-inventory .select2-container--default .select2-selection--single {
+	background: #fff !important;
+	border: 1px solid var(--ps-card-border) !important;
+	border-radius: 8px !important;
+	color: var(--ps-headline-blue) !important;
+	font-weight: 600 !important;
+	min-height: 40px;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .filter-handle,
+body.ps-hottubstore-inventory .filter-handle-wrapper .filter-handle {
+	background: var(--ps-navy-dark) !important;
+	border-color: var(--ps-navy-dark) !important;
+	color: #fff !important;
+	border-radius: 10px !important;
+}
+
+/* ── Filter sidebar ── */
+body.ps-hottubstore-inventory .stm-inventory-pro-sidebar {
+	position: sticky;
+	top: 88px;
+	align-self: start;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter--solid {
+	background: #fff !important;
+	border: 1px solid var(--ps-card-border) !important;
+	border-radius: 12px !important;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.04) !important;
+	overflow: hidden;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-header .heading,
+body.ps-hottubstore-inventory .stm-inventory-pro-sidebar .heading,
+body.ps-hottubstore-inventory .stm-filter-pro-item-heading .heading-title {
+	color: var(--ps-navy-dark) !important;
+	font-weight: 800 !important;
+	border-left-color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-item-content input[type="checkbox"],
+body.ps-hottubstore-inventory .stm-filter-pro-item-content input[type="radio"] {
+	accent-color: var(--ps-royal-blue);
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-options-list label input[type="checkbox"]:checked + .option-badge {
+	background: var(--ps-royal-blue) !important;
+	color: #fff !important;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-options-list label input[type="checkbox"]:checked + .option-badge .option-count {
+	color: #fff !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-sidebar .show-all,
+body.ps-hottubstore-inventory a.show-all {
+	color: var(--ps-royal-blue) !important;
+	font-weight: 600 !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .show-results,
+body.ps-hottubstore-inventory .show-results {
+	background: var(--ps-navy-dark) !important;
+	border-color: var(--ps-navy-dark) !important;
+	color: #fff !important;
+	font-weight: 800 !important;
+	border-radius: 8px !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .show-results:hover,
+body.ps-hottubstore-inventory .show-results:hover {
+	background: #111827 !important;
+	border-color: #111827 !important;
+	color: #fff !important;
+}
+
+/* Range sliders — cyan track, blue handles */
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .stm-price-range.ui-slider,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .stm-mgc_monthly_payment-range.ui-slider,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .ui-slider,
+body.ps-hottubstore-inventory .stm-price-range.ui-slider,
+body.ps-hottubstore-inventory .stm-mgc_monthly_payment-range.ui-slider {
+	background: #e8eef3 !important;
+	border: 0 !important;
+	height: 6px !important;
+	border-radius: 999px !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .stm-price-range.ui-slider .ui-slider-range,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .ui-slider .ui-slider-range,
+body.ps-hottubstore-inventory .stm-price-range.ui-slider .ui-slider-range,
+body.ps-hottubstore-inventory .ui-slider .ui-slider-range,
+body.ps-hottubstore-inventory .stm-mgc_monthly_payment-range.ui-slider .ui-slider-range {
+	background: linear-gradient(90deg, #00AEEF 0%, #008FC7 100%) !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .ui-slider .ui-slider-handle,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .ui-slider-handle.ui-state-default,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .ui-slider-handle.ui-state-hover,
+body.ps-hottubstore-inventory .ui-slider .ui-slider-handle,
+body.ps-hottubstore-inventory .ui-slider-handle.ui-state-default,
+body.ps-hottubstore-inventory .ui-slider-handle.ui-state-hover {
+	background-color: #fff !important;
+	border: 2px solid var(--ps-royal-blue) !important;
+	border-radius: 50% !important;
+	box-shadow: 0 2px 8px rgba(0, 174, 239, 0.25) !important;
+	width: 18px !important;
+	height: 18px !important;
+	top: -6px !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter .ui-slider .ui-slider-handle::after,
+body.ps-hottubstore-inventory .ui-slider .ui-slider-handle::after {
+	background-color: var(--ps-royal-blue) !important;
+	border-color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .select2-container--default .select2-results__option[aria-selected="true"]::after,
+body.ps-hottubstore-inventory .select2-results__option[aria-selected="true"]::after {
+	border-color: var(--ps-royal-blue) !important;
+}
+
+/* ── Product listing cards ── */
+body.ps-hottubstore-inventory .stm-isotope-sorting-list {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(24px, 2.5vw, 32px);
+}
+
+body.ps-hottubstore-inventory .mvl-list-card-skin.skin_1 {
+	background: #fff !important;
+	border: 1px solid var(--ps-card-border) !important;
+	border-radius: 12px !important;
+	box-shadow: 0 4px 16px rgba(5, 5, 5, 0.06) !important;
+	overflow: hidden;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+body.ps-hottubstore-inventory .mvl-list-card-skin.skin_1:hover {
+	box-shadow: 0 8px 24px rgba(30, 58, 109, 0.12) !important;
+	transform: translateY(-2px);
+	border-color: #D0D0D0 !important;
+}
+
+/* List layout: image left (~62%), info right (~38%) */
+body.ps-hottubstore-inventory .listing-list-loop.mvl-list-card-skin.skin_1 {
+	display: grid !important;
+	grid-template-columns: minmax(0, 62%) minmax(0, 38%);
+	align-items: stretch;
+}
+
+body.ps-hottubstore-inventory .listing-list-loop .skin-list-gallery.skin_1 {
+	display: block;
+	min-height: 100%;
+}
+
+body.ps-hottubstore-inventory .listing-list-loop .skin_1.image {
+	height: 100%;
+	min-height: 240px;
+}
+
+body.ps-hottubstore-inventory .listing-list-loop .image-inner,
+body.ps-hottubstore-inventory .listing-list-loop .interactive-hoverable,
+body.ps-hottubstore-inventory .listing-list-loop .hoverable-wrap,
+body.ps-hottubstore-inventory .listing-list-loop .hoverable-unit,
+body.ps-hottubstore-inventory .listing-list-loop .thumb {
+	height: 100%;
+}
+
+body.ps-hottubstore-inventory .listing-list-loop .thumb img {
+	width: 100%;
+	height: 100%;
+	min-height: 240px;
+	object-fit: cover;
+	display: block;
+	background: #eef1f5;
+}
+
+body.ps-hottubstore-inventory .listing-list-loop .mvl-list-content.skin_1 {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	gap: 10px;
+	padding: 20px 22px !important;
+	min-height: 240px;
+}
+
+body.ps-hottubstore-inventory .mvl_listing_title,
+body.ps-hottubstore-inventory .mvl_listing_title .car-title,
+body.ps-hottubstore-inventory .mvl_listing_title a {
+	color: var(--ps-navy-dark) !important;
+	font-weight: 800 !important;
+	font-size: clamp(18px, 1.6vw, 22px) !important;
+	line-height: 1.25 !important;
+}
+
+body.ps-hottubstore-inventory a.mvl_listing_title:hover .car-title,
+body.ps-hottubstore-inventory a.mvl_listing_title:hover div {
+	color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .skin_1.mvl_listing_title_wrapper {
+	padding: 0 0 8px !important;
+}
+
+body.ps-hottubstore-inventory .mvl-list-card-skin.skin_1 .mvl-normal-price,
+body.ps-hottubstore-inventory .mvl-price-list-card .mvl-normal-price {
+	color: #9ca3af !important;
+	font-size: 14px !important;
+	font-weight: 600 !important;
+	text-decoration: line-through;
+}
+
+body.ps-hottubstore-inventory .mvl-list-card-skin.skin_1 .mvl-sale-price,
+body.ps-hottubstore-inventory .mvl-price-list-card .mvl-sale-price,
+body.ps-hottubstore-inventory .mvl-price-list-card .mvl-normal-price:only-child {
+	color: var(--ps-navy-dark) !important;
+	font-weight: 900 !important;
+	font-size: clamp(22px, 2.2vw, 28px) !important;
+}
+
+body.ps-hottubstore-inventory .mgc-savings-line {
+	color: var(--ps-muted);
+	font-size: 13px;
+	font-weight: 600;
+	margin-top: 4px;
+}
+
+body.ps-hottubstore-inventory .mgc-savings-line__amount {
+	color: #00AEEF !important;
+	font-weight: 800 !important;
+}
+
+body.ps-hottubstore-inventory .mgc-pay-promo__amount,
+body.ps-hottubstore-inventory .mgc-pay-promo__per {
+	color: var(--ps-headline-blue) !important;
+	font-weight: 800 !important;
+}
+
+body.ps-hottubstore-inventory .mgc-pay-promo__sub {
+	color: var(--ps-muted) !important;
+}
+
+body.ps-hottubstore-inventory .mvl-card-listing-data-inner li {
+	color: var(--ps-muted) !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+}
+
+body.ps-hottubstore-inventory .mvl-card-listing-data-inner li i {
+	color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .mvl-list-card-skin.skin_1 .mvl-price-list-card {
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+body.ps-hottubstore-inventory .mgc-price-card {
+	gap: 14px !important;
+	align-items: center !important;
+}
+
+body.ps-hottubstore-inventory .mvl-price.has-sale-price {
+	display: flex;
+	flex-direction: column;
+	gap: 2px;
+}
+
+body.ps-hottubstore-inventory .skin_1.mvl-card-listing-data {
+	margin: 0;
+	padding: 2px 0 0;
+}
+
+body.ps-hottubstore-inventory .mvl-card-listing-data-inner {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 10px 18px;
+}
+
+body.ps-hottubstore-inventory .mvl-card-listing-data-inner li {
+	display: inline-flex;
+	align-items: center;
+	gap: 6px;
+	margin: 0 !important;
+}
+
+body.ps-hottubstore-inventory .mvl-action-buttons {
+	margin-top: auto !important;
+	padding-top: 2px !important;
+}
+
+/* CTA button — black primary (homepage mgc-hp-btn--dark) */
+body.ps-hottubstore-inventory .mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button,
+body.ps-hottubstore-inventory .mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button:link,
+body.ps-hottubstore-inventory .mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button:visited,
+body.ps-hottubstore-inventory .mgc-quote-link,
+body.ps-hottubstore-inventory .mvl-action-button.mgc-quote-link {
+	background: var(--ps-navy-dark) !important;
+	background-color: var(--ps-navy-dark) !important;
+	border-color: var(--ps-navy-dark) !important;
+	color: #FFFFFF !important;
+	font-weight: 800 !important;
+	border-radius: 6px !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.04em;
+	padding: 14px 20px !important;
+}
+
+body.ps-hottubstore-inventory .mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button:hover,
+body.ps-hottubstore-inventory .mgc-quote-link:hover,
+body.ps-hottubstore-inventory .mvl-action-button.mgc-quote-link:hover {
+	background: #111827 !important;
+	background-color: #111827 !important;
+	border-color: #111827 !important;
+	color: #FFFFFF !important;
+}
+
+body.ps-hottubstore-inventory .mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button .label,
+body.ps-hottubstore-inventory .mgc-quote-link .label {
+	color: #FFFFFF !important;
+}
+
+/* Missing / broken image placeholder */
+body.ps-hottubstore-inventory .listing-list-loop .skin_1.image {
+	position: relative;
+}
+
+body.ps-hottubstore-inventory .listing-list-loop .thumb img.ps-card-img--missing,
+body.ps-hottubstore-inventory .listing-list-loop .thumb img[src=""],
+body.ps-hottubstore-inventory .listing-list-loop .thumb img:not([src]) {
+	display: none !important;
+}
+
+body.ps-hottubstore-inventory .listing-list-loop .thumb.ps-thumb-placeholder,
+body.ps-hottubstore-inventory .listing-list-loop .thumb:has(img.ps-card-img--missing),
+body.ps-hottubstore-inventory .listing-list-loop .thumb:has(img[src=""]),
+body.ps-hottubstore-inventory .listing-list-loop .thumb:not(:has(img[src])) {
+	position: relative;
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	background: linear-gradient(180deg, #fafbfc 0%, #eef2f6 100%);
+	border: 1px solid rgba(5, 5, 5, 0.08);
+	border-right: 1px solid var(--ps-card-border);
+	min-height: 240px;
+	height: 100%;
+}
+
+body.ps-hottubstore-inventory .ps-thumb-placeholder__inner {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	width: 100%;
+	min-height: 240px;
+	padding: 24px 16px;
+	text-align: center;
+	box-sizing: border-box;
+}
+
+body.ps-hottubstore-inventory .ps-thumb-placeholder__icon {
+	font-size: 30px;
+	line-height: 1;
+	color: rgba(0, 174, 239, 0.5);
+}
+
+body.ps-hottubstore-inventory .ps-thumb-placeholder__title {
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 12px;
+	font-weight: 800;
+	line-height: 1.2;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #6b7280;
+}
+
+body.ps-hottubstore-inventory .ps-thumb-placeholder__sub {
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 11px;
+	font-weight: 500;
+	line-height: 1.4;
+	color: #9ca3af;
+	max-width: 220px;
+}
+
+/* ── Footer — Hansons style ── */
+body.ps-hottubstore-inventory .gc-footer.gc-footer--hansons {
+	background-color: var(--ps-navy-dark) !important;
+	border-top: 3px solid #00AEEF !important;
+	color: #fff;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__inner {
+	display: grid;
+	grid-template-columns: repeat(3, auto);
+	justify-content: center;
+	justify-items: center;
+	gap: clamp(2.5rem, 6vw, 5rem);
+	width: 100%;
+	max-width: none;
+	margin-inline: auto;
+	padding: clamp(2.5rem, 4vw, 3rem) 24px clamp(1.5rem, 2.5vw, 2rem);
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__col {
+	text-align: center;
+	width: max-content;
+	max-width: min(240px, 30vw);
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__title {
+	margin: 0 0 1.125rem;
+	font-size: 15px;
+	font-weight: 800;
+	line-height: 1.2;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	color: #fff;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__menu {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__menu li {
+	margin: 0 0 10px;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__menu a {
+	color: #fff !important;
+	font-size: 15px;
+	font-weight: 400;
+	line-height: 1.45;
+	text-decoration: none;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__menu a:hover {
+	color: #00AEEF !important;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__social-row {
+	display: flex;
+	justify-content: center;
+	padding: 0 0 clamp(1.75rem, 3vw, 2.25rem);
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__socials {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 22px;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__socials a {
+	color: #fff !important;
+	font-size: 22px;
+	background: transparent !important;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__socials a:hover {
+	color: #00AEEF !important;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__bottom {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	gap: 10px;
+	background: transparent !important;
+	border-top: none !important;
+	padding: 0 24px clamp(2rem, 3vw, 2.5rem);
+	text-align: center;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__service-area,
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__copyright {
+	margin: 0;
+	font-size: 14px;
+	color: #fff;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__privacy {
+	color: #fff !important;
+	font-size: 14px;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__privacy:hover {
+	color: #00AEEF !important;
+}
+
+/* Hide legacy footer chrome when Hansons footer is used */
+body.ps-hottubstore-inventory .gc-footer__logo-link,
+body.ps-hottubstore-inventory .gc-footer__divider,
+body.ps-hottubstore-inventory .gc-footer__map,
+body.ps-hottubstore-inventory .gc-footer__btn {
+	display: none !important;
+}
+
+body.ps-hottubstore-inventory .mgc-header__logo-wrap::before,
+body.ps-hottubstore-inventory .mgc-header__logo-wrap::after,
+body.ps-hottubstore-inventory .gc-footer__logo-link::before,
+body.ps-hottubstore-inventory .gc-footer__logo-link::after {
+	content: none !important;
+	display: none !important;
+}
+
+/* ── Mobile ── */
+@media (max-width: 991px) {
+	body.ps-hottubstore-inventory .stm-inventory-pro-sidebar {
+		position: static;
+		top: auto;
+	}
+}
+
+@media (max-width: 767px) {
+	/* Header + content shell */
+	body.ps-hottubstore-inventory .ps-h-main__inner {
+		padding-top: 8px !important;
+		padding-bottom: 8px !important;
+	}
+
+	body.ps-hottubstore-inventory .stm-pro-layout.stm-inventory-pro {
+		padding-top: 20px !important;
+		padding-bottom: 32px;
+	}
+
+	body.ps-hottubstore-inventory .container {
+		padding-left: 16px;
+		padding-right: 16px;
+	}
+
+	/* Search / filter row */
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent {
+		margin: 0 0 8px !important;
+		padding: 0 !important;
+		gap: 8px !important;
+	}
+
+	/* Intro block — show title on mobile (plugin hides it) and compress */
+	body.ps-hottubstore-inventory .search-results-actions {
+		gap: 6px !important;
+		margin-bottom: 12px !important;
+		padding: 0 0 8px !important;
+		border-bottom-width: 1px;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-breadcrumbs {
+		display: none !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-heading {
+		display: flex !important;
+		flex-direction: row;
+		flex-wrap: wrap;
+		align-items: baseline;
+		column-gap: 8px;
+		row-gap: 0;
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-title {
+		font-size: 22px !important;
+		line-height: 1.08 !important;
+		margin: 0 !important;
+		flex: 0 1 auto;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-subtitle,
+	body.ps-hottubstore-inventory .search-results-actions-trust {
+		width: 100%;
+		flex: 0 0 100%;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-subtitle {
+		margin: 6px 0 4px;
+		font-size: 13px;
+		line-height: 1.25;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-trust {
+		margin: 0 0 6px;
+		font-size: 12px;
+		line-height: 1.2;
+	}
+
+	body.ps-hottubstore-inventory .mvl-total-results {
+		margin: 0 !important;
+		flex: 0 0 auto;
+	}
+
+	body.ps-hottubstore-inventory .mvl-total-results,
+	body.ps-hottubstore-inventory .mvl-total-results-label {
+		font-size: 13px !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-triggers {
+		margin: 0 !important;
+		padding: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .search-results-actions-triggers-sorting {
+		gap: 10px !important;
+		width: 100%;
+	}
+
+	body.ps-hottubstore-inventory .stm-isotope-sorting-list {
+		gap: 16px;
+		margin-top: 0 !important;
+	}
+
+	/* Product cards — mobile stack */
+	body.ps-hottubstore-inventory .listing-list-loop.mvl-list-card-skin.skin_1 {
+		grid-template-columns: 1fr !important;
+	}
+
+	body.ps-hottubstore-inventory .listing-list-loop .skin_1.image,
+	body.ps-hottubstore-inventory .listing-list-loop .image-inner,
+	body.ps-hottubstore-inventory .listing-list-loop .interactive-hoverable,
+	body.ps-hottubstore-inventory .listing-list-loop .hoverable-wrap,
+	body.ps-hottubstore-inventory .listing-list-loop .hoverable-unit,
+	body.ps-hottubstore-inventory .listing-list-loop .thumb,
+	body.ps-hottubstore-inventory .listing-list-loop .thumb.ps-thumb-placeholder,
+	body.ps-hottubstore-inventory .listing-list-loop .thumb:has(img.ps-card-img--missing),
+	body.ps-hottubstore-inventory .listing-list-loop .thumb:has(img[src=""]),
+	body.ps-hottubstore-inventory .listing-list-loop .thumb:not(:has(img[src])) {
+		height: auto !important;
+		min-height: 0 !important;
+		aspect-ratio: 2 / 1;
+		max-height: 180px;
+		border-right: 0;
+	}
+
+	body.ps-hottubstore-inventory .listing-list-loop .skin_1.image {
+		overflow: hidden;
+	}
+
+	body.ps-hottubstore-inventory .listing-list-loop .thumb img {
+		width: 100%;
+		height: 100%;
+		min-height: 0 !important;
+		max-height: 180px;
+		aspect-ratio: 2 / 1;
+		object-fit: cover;
+		display: block;
+	}
+
+	body.ps-hottubstore-inventory .ps-thumb-placeholder__inner {
+		min-height: 0;
+		aspect-ratio: 2 / 1;
+		max-height: 180px;
+		padding: 12px 10px;
+		gap: 5px;
+	}
+
+	body.ps-hottubstore-inventory .ps-thumb-placeholder__icon {
+		font-size: 22px;
+	}
+
+	body.ps-hottubstore-inventory .ps-thumb-placeholder__title {
+		font-size: 10px;
+	}
+
+	body.ps-hottubstore-inventory .ps-thumb-placeholder__sub {
+		font-size: 10px;
+		max-width: 180px;
+	}
+
+	body.ps-hottubstore-inventory .ps-card-badges {
+		top: 8px;
+		left: 8px;
+		max-width: calc(100% - 16px);
+	}
+
+	body.ps-hottubstore-inventory .listing-list-loop .mvl-list-content.skin_1 {
+		display: flex;
+		flex-direction: column;
+		gap: 10px;
+		padding: 12px 14px 14px !important;
+		min-height: 0;
+	}
+
+	body.ps-hottubstore-inventory .mvl-card-skins .car-title,
+	body.ps-hottubstore-inventory .mvl-card-skins .car-title a,
+	body.ps-hottubstore-inventory .mvl_listing_title,
+	body.ps-hottubstore-inventory .mvl_listing_title .car-title {
+		font-size: 16px !important;
+		font-weight: 800 !important;
+		line-height: 1.2 !important;
+		margin-bottom: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .mvl-price-list-card.mgc-price-card--list {
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		padding-bottom: 0 !important;
+		border-bottom: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .mvl-list-card-skin.skin_1 .mvl-price-list-card {
+		padding: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .mvl-list-card-skin.skin_1 .mvl-sale-price,
+	body.ps-hottubstore-inventory .mvl-price-list-card .mvl-sale-price,
+	body.ps-hottubstore-inventory .mvl-price-list-card .mvl-sale-price {
+		font-size: 20px !important;
+		margin-top: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .mgc-price-card {
+		gap: 10px !important;
+		align-items: flex-start !important;
+	}
+
+	body.ps-hottubstore-inventory .mgc-price-card__side .mgc-pay-promo__amount {
+		font-size: 20px !important;
+	}
+
+	body.ps-hottubstore-inventory .mgc-price-card__side .mgc-pay-promo__per {
+		font-size: 13px !important;
+	}
+
+	body.ps-hottubstore-inventory .mgc-savings-line {
+		margin-top: 0;
+		font-size: 11px;
+		line-height: 1.2;
+	}
+
+	body.ps-hottubstore-inventory .mgc-pay-promo__sub {
+		font-size: 11px;
+		margin-top: 2px !important;
+	}
+
+	body.ps-hottubstore-inventory .mvl-card-listing-data-inner li {
+		font-size: 11px !important;
+	}
+
+	body.ps-hottubstore-inventory .mvl-card-listing-data-inner li i {
+		font-size: 14px !important;
+		margin-bottom: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .skin_1.mvl-card-listing-data {
+		margin: 0;
+		padding: 0;
+	}
+
+	body.ps-hottubstore-inventory .mvl-card-listing-data-inner {
+		gap: 8px 12px;
+	}
+
+	body.ps-hottubstore-inventory .mvl-action-buttons {
+		margin-top: auto !important;
+		padding: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .mgc-quote-link,
+	body.ps-hottubstore-inventory .mvl-action-button.mgc-quote-link {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 12px 14px !important;
+		margin-top: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .ps-card-trust {
+		font-size: 9px;
+		line-height: 1.3;
+	}
+
+	body.ps-hottubstore-inventory .ps-card-cta-row {
+		width: 100%;
+		justify-content: stretch;
+	}
+
+	body.ps-hottubstore-inventory .ps-card-secondary-cta--coupon,
+	body.ps-hottubstore-inventory .ps-card-secondary-cta--details {
+		flex: 1 1 calc(50% - 8px);
+		text-align: center;
+		justify-content: center;
+	}
+
+	body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__inner {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	body.ps-hottubstore-inventory .gc-footer--hansons .gc-footer__col {
+		max-width: 280px;
+	}
+}
+
+/* ── Filter sidebar polish ── */
+@media (min-width: 992px) {
+	body.ps-hottubstore-inventory .stm-pro-layout.stm-inventory-pro.stm-inventory-pro--col-left {
+		grid-template-columns: minmax(0, 1fr) minmax(300px, 22%) !important;
+		gap: clamp(22px, 2.5vw, 34px) !important;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-sidebar {
+		min-width: 300px;
+		max-width: 340px;
+	}
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter--solid {
+	border-radius: 14px !important;
+	box-shadow: 0 10px 28px rgba(5, 5, 5, 0.06) !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-header {
+	padding: 24px 24px 20px !important;
+	border-bottom: 1px solid var(--ps-card-border);
+	background: linear-gradient(180deg, #fff 0%, #fafbfc 100%);
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-header .heading {
+	font-size: 21px !important;
+	font-weight: 800 !important;
+	letter-spacing: -0.015em !important;
+	text-transform: none !important;
+	line-height: 1.2 !important;
+	margin: 0 !important;
+	border-left: 0 !important;
+	padding-left: 0 !important;
+	color: var(--ps-headline-blue) !important;
+}
+
+body.ps-hottubstore-inventory .ps-filter-sidebar__intro {
+	margin: 10px 0 0;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.55;
+	color: #4b5563;
+	max-width: none;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-fields {
+	padding: 12px 24px 16px !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer {
+	padding: 0 24px 24px !important;
+	border-top: 0 !important;
+	background: #fff;
+}
+
+body.ps-hottubstore-inventory .stm-filter-item {
+	padding: 22px 0 !important;
+	margin: 0 !important;
+	border-bottom: 1px solid rgba(5, 5, 5, 0.07);
+}
+
+body.ps-hottubstore-inventory .stm-filter-item:last-child {
+	border-bottom: 0;
+	padding-bottom: 14px !important;
+}
+
+body.ps-hottubstore-inventory .stm-filter-item-search {
+	padding-top: 18px !important;
+	padding-bottom: 8px !important;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-item-heading {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 12px;
+	margin-bottom: 14px !important;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-item-heading .heading-title {
+	font-size: 14px !important;
+	font-weight: 800 !important;
+	letter-spacing: 0.01em;
+	text-transform: none !important;
+	color: var(--ps-headline-blue) !important;
+	border-left: 0 !important;
+	padding-left: 0 !important;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-item-heading .heading-action .action-reset,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-reset {
+	font-size: 11px !important;
+	font-weight: 700 !important;
+	color: var(--ps-royal-blue) !important;
+	background: none !important;
+	border: 0 !important;
+	box-shadow: none !important;
+	text-transform: none;
+	cursor: pointer;
+	padding: 0 !important;
+	opacity: 0.9;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-item-heading .heading-action .action-reset:hover,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-reset:hover {
+	color: #008FC7 !important;
+	text-decoration: underline;
+	opacity: 1;
+}
+
+body.ps-hottubstore-inventory .stm-filter-item-search-input {
+	position: relative;
+}
+
+body.ps-hottubstore-inventory .stm-filter-item-search-input input.form-control,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .stm-filter-item-search-input input.form-control {
+	border: 1px solid rgba(5, 5, 5, 0.12) !important;
+	border-radius: 10px !important;
+	min-height: 48px;
+	padding: 12px 44px 12px 14px !important;
+	font-size: 14px;
+	font-weight: 600;
+	color: var(--ps-headline-blue);
+	background: #fff !important;
+	box-shadow: inset 0 1px 2px rgba(5, 5, 5, 0.03);
+}
+
+body.ps-hottubstore-inventory .stm-filter-item-search-input input.form-control:focus,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .stm-filter-item-search-input input.form-control:focus {
+	border-color: var(--ps-royal-blue) !important;
+	box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.12);
+	outline: none;
+}
+
+body.ps-hottubstore-inventory .stm-filter-item-search-input input.form-control::placeholder {
+	color: #9ca3af;
+	font-weight: 500;
+}
+
+body.ps-hottubstore-inventory .stm-filter-item-search-input i,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .stm-filter-item-search-input i {
+	color: #9ca3af !important;
+	opacity: 0.75;
+	font-size: 16px;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-options-list--inline {
+	display: grid;
+	grid-template-columns: repeat(2, minmax(0, 1fr));
+	gap: 10px 12px;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-options-list label {
+	display: flex;
+	width: 100%;
+	font-weight: 600;
+	color: #374151;
+	margin: 0 !important;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-options-list .option-badge {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 40px;
+	box-sizing: border-box;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+	line-height: 1.3;
+	border-radius: 10px !important;
+	border: 1px solid rgba(5, 5, 5, 0.11) !important;
+	background: #fff !important;
+	color: #374151 !important;
+	padding: 10px 12px !important;
+	text-align: center;
+	transition: border-color 0.15s ease, background 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-options-list label:has(input:checked) .option-badge,
+body.ps-hottubstore-inventory .stm-filter-pro-options-list label.checked .option-badge,
+body.ps-hottubstore-inventory .stm-filter-pro-options-list label input[type="checkbox"]:checked + .option-badge {
+	background: rgba(0, 174, 239, 0.14) !important;
+	border-color: #00AEEF !important;
+	color: #007aa8 !important;
+	box-shadow: inset 0 0 0 1px rgba(0, 174, 239, 0.08);
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-sidebar .show-all,
+body.ps-hottubstore-inventory a.show-all,
+body.ps-hottubstore-inventory .show-all {
+	color: var(--ps-royal-blue) !important;
+	font-size: 12px !important;
+	font-weight: 700 !important;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+body.ps-hottubstore-inventory .show-all strong {
+	font-weight: 800;
+	margin-right: 4px;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-price-inputs,
+body.ps-hottubstore-inventory .stm-filter-numeric-inputs {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 10px;
+	margin-bottom: 14px;
+}
+
+body.ps-hottubstore-inventory .stm-filter-pro-price-inputs input,
+body.ps-hottubstore-inventory .stm-filter-numeric-input input,
+body.ps-hottubstore-inventory .stm-filter-pro-numeric-range-inputs select {
+	border: 1px solid rgba(5, 5, 5, 0.12) !important;
+	border-radius: 8px !important;
+	font-weight: 600;
+	font-size: 13px;
+	color: var(--ps-headline-blue);
+	min-height: 40px;
+	padding: 8px 10px !important;
+	background: #fff !important;
+}
+
+body.ps-hottubstore-inventory .stm-price-range-unit,
+body.ps-hottubstore-inventory .stm-number-range-unit {
+	padding: 4px 4px 0;
+}
+
+body.ps-hottubstore-inventory .mgc-range-slider {
+	background: #e8eef3 !important;
+	margin-top: 16px;
+}
+
+body.ps-hottubstore-inventory .mgc-range-slider__track {
+	background: linear-gradient(90deg, #00AEEF 0%, #008FC7 100%) !important;
+}
+
+body.ps-hottubstore-inventory .mgc-range-slider input[type="range"]::-webkit-slider-thumb {
+	border-color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .mgc-range-slider input[type="range"]::-moz-range-thumb {
+	border-color: var(--ps-royal-blue) !important;
+}
+
+body.ps-hottubstore-inventory .ps-filter-sidebar-help {
+	margin: 12px 24px 0;
+	padding: 18px 18px 16px;
+	border-radius: 14px;
+	background: linear-gradient(180deg, rgba(0, 174, 239, 0.07) 0%, rgba(248, 250, 252, 0.98) 100%);
+	border: 1px solid rgba(0, 174, 239, 0.16);
+}
+
+body.ps-hottubstore-inventory .ps-filter-sidebar-help__title {
+	margin: 0 0 8px;
+	font-size: 15px;
+	font-weight: 800;
+	line-height: 1.3;
+	color: var(--ps-headline-blue);
+}
+
+body.ps-hottubstore-inventory .ps-filter-sidebar-help__text {
+	margin: 0 0 14px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.5;
+	color: #4b5563;
+}
+
+body.ps-hottubstore-inventory .ps-filter-sidebar-help__btn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	min-height: 44px;
+	padding: 12px 16px;
+	border-radius: 10px;
+	background: #050505;
+	color: #fff !important;
+	font-size: 11px;
+	font-weight: 800;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	text-decoration: none;
+	transition: background 0.15s ease, transform 0.15s ease;
+}
+
+body.ps-hottubstore-inventory .ps-filter-sidebar-help__btn:hover {
+	background: #111827;
+	color: #fff !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer .actions,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer .actions-button {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer .reset-btn,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer .mvl-reset-all {
+	display: block;
+	width: 100%;
+	margin-top: 16px;
+	padding: 14px 16px !important;
+	border: 1px solid rgba(5, 5, 5, 0.12) !important;
+	border-radius: 10px !important;
+	background: #fff !important;
+	color: var(--ps-headline-blue) !important;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 14px !important;
+	font-weight: 700 !important;
+	text-align: center;
+	cursor: pointer;
+	transition: border-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer .reset-btn:hover,
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer .mvl-reset-all:hover {
+	border-color: var(--ps-royal-blue) !important;
+	color: var(--ps-royal-blue) !important;
+	background: rgba(0, 174, 239, 0.04) !important;
+	box-shadow: 0 0 0 3px rgba(0, 174, 239, 0.1);
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .filter-handle,
+body.ps-hottubstore-inventory .filter-handle-wrapper .filter-handle {
+	background: var(--ps-navy-dark) !important;
+	border: 1px solid var(--ps-navy-dark) !important;
+	color: #fff !important;
+	border-radius: 10px !important;
+	font-weight: 700 !important;
+	font-size: 13px !important;
+	padding: 12px 16px !important;
+	min-height: 48px;
+	white-space: nowrap;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .filter-handle:hover,
+body.ps-hottubstore-inventory .filter-handle-wrapper .filter-handle:hover {
+	background: #111827 !important;
+	border-color: #111827 !important;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header {
+	display: none;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent {
+	display: none;
+	margin-bottom: 12px;
+}
+
+body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .search-field {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+@media (max-width: 991px) {
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent {
+		display: flex !important;
+		align-items: stretch;
+		gap: 10px;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-sidebar {
+		position: fixed;
+		top: 0;
+		right: 0;
+		width: min(380px, 100vw);
+		height: 100vh;
+		height: 100dvh;
+		z-index: 10000;
+		transform: translateX(110%);
+		transition: transform 0.28s ease;
+		overflow-y: auto;
+		overflow-x: hidden;
+		box-shadow: -12px 0 40px rgba(5, 5, 5, 0.14);
+		align-self: auto;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-sidebar.is-open {
+		transform: translateX(0);
+	}
+
+	body.ps-hottubstore-inventory.mgc-filter-open::before {
+		content: '';
+		position: fixed;
+		inset: 0;
+		background: rgba(17, 24, 39, 0.42);
+		z-index: 9999;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter,
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter--solid {
+		border-radius: 0 !important;
+		min-height: 100%;
+		box-shadow: none !important;
+		border: 0 !important;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header {
+		display: flex !important;
+		align-items: center;
+		justify-content: space-between;
+		gap: 12px;
+		padding: 16px 20px !important;
+		border-bottom: 1px solid var(--ps-card-border);
+		background: #fff;
+		position: sticky;
+		top: 0;
+		z-index: 3;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-heading {
+		font-size: 16px;
+		font-weight: 800;
+		color: var(--ps-headline-blue);
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-close {
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+		width: 36px;
+		height: 36px;
+		border-radius: 8px;
+		border: 1px solid rgba(5, 5, 5, 0.12);
+		background: #fff;
+		cursor: pointer;
+		flex-shrink: 0;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-close::before,
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-close::after {
+		content: '';
+		position: absolute;
+		width: 14px;
+		height: 2px;
+		background: #374151;
+		border-radius: 1px;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-close {
+		position: relative;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-close::before {
+		transform: rotate(45deg);
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-header .filter-close::after {
+		transform: rotate(-45deg);
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-header {
+		display: none;
+	}
+
+	body.ps-hottubstore-inventory .ps-filter-sidebar__intro {
+		max-width: none;
+		font-size: 13px;
+		line-height: 1.55;
+		color: #4b5563;
+	}
+
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-fields,
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-footer,
+	body.ps-hottubstore-inventory .ps-filter-sidebar-help {
+		padding-left: 18px !important;
+		padding-right: 18px !important;
+		margin-left: 0;
+		margin-right: 0;
+	}
+
+	body.ps-hottubstore-inventory .ps-filter-sidebar-help {
+		margin: 8px 18px 0;
+		padding: 16px 16px 14px;
+	}
+
+	body.ps-hottubstore-inventory .stm-filter-pro-options-list--inline {
+		gap: 10px;
+	}
+
+	body.ps-hottubstore-inventory .stm-filter-item-search-input input.form-control,
+	body.ps-hottubstore-inventory .stm-inventory-pro-filter-mobile-apparent .stm-filter-item-search-input input.form-control {
+		width: 100%;
+	}
+
+	body.ps-hottubstore-inventory .stm-filter-pro-price-inputs,
+	body.ps-hottubstore-inventory .stm-filter-numeric-inputs,
+	body.ps-hottubstore-inventory .stm-filter-pro-numeric-range-inputs {
+		width: 100%;
+	}
+}
+
+/* ── Sort / view controls ── */
+body.ps-hottubstore-inventory .stm-view-by {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 4px;
+	border: 1px solid var(--ps-card-border);
+	border-radius: 10px;
+	background: #fff;
+}
+
+body.ps-hottubstore-inventory .stm-view-by .view-type {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 36px;
+	height: 36px;
+	border-radius: 8px;
+	transition: background 0.15s ease, color 0.15s ease;
+}
+
+body.ps-hottubstore-inventory .stm-sort-by-options {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 4px 10px 4px 8px;
+	border: 1px solid var(--ps-card-border);
+	border-radius: 10px;
+	background: #fff;
+}
+
+body.ps-hottubstore-inventory .stm-select-sorting select {
+	min-height: 36px;
+	padding: 6px 32px 6px 10px;
+	font-size: 13px;
+}
+
+/* ── Product card badges ── */
+body.ps-hottubstore-inventory .ps-card-badges {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 4;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 6px;
+	max-width: calc(100% - 20px);
+	pointer-events: none;
+}
+
+body.ps-hottubstore-inventory .ps-card-badge {
+	display: inline-flex;
+	align-items: center;
+	padding: 3px 8px;
+	border-radius: 999px;
+	font-size: 9px;
+	font-weight: 800;
+	line-height: 1.1;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+body.ps-hottubstore-inventory .ps-card-badge--sale {
+	background: var(--ps-navy-dark);
+	color: #fff;
+}
+
+body.ps-hottubstore-inventory .ps-card-badge--new,
+body.ps-hottubstore-inventory .ps-card-badge--custom,
+body.ps-hottubstore-inventory .ps-card-badge--condition {
+	background: rgba(17, 24, 39, 0.82);
+	color: #fff;
+}
+
+body.ps-hottubstore-inventory .ps-card-badge--finance {
+	background: rgba(255, 255, 255, 0.94);
+	color: #008FC7;
+	border: 1px solid rgba(0, 174, 239, 0.28);
+}
+
+/* ── Card CTA row ── */
+body.ps-hottubstore-inventory .mvl-list-card-skin .mvl-action-buttons-inner {
+	display: flex;
+	flex-direction: column;
+	align-items: stretch;
+	gap: 8px;
+}
+
+body.ps-hottubstore-inventory .ps-card-trust {
+	margin: 0;
+	padding: 0 4px;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 10px;
+	font-weight: 600;
+	line-height: 1.35;
+	color: #6b7280;
+	text-align: center;
+}
+
+body.ps-hottubstore-inventory .ps-card-trust span {
+	color: #00AEEF;
+	padding: 0 1px;
+}
+
+body.ps-hottubstore-inventory .ps-card-cta-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 8px 16px;
+}
+
+body.ps-hottubstore-inventory .ps-card-secondary-cta {
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 13px;
+	font-weight: 800;
+	line-height: 1.2;
+	text-decoration: none;
+	color: var(--ps-royal-blue);
+	letter-spacing: 0.02em;
+}
+
+body.ps-hottubstore-inventory .ps-card-secondary-cta:hover {
+	color: var(--ps-navy-dark);
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+
+body.ps-hottubstore-inventory .ps-card-secondary-cta--coupon {
+	padding: 8px 14px;
+	border-radius: 999px;
+	background: rgba(0, 174, 239, 0.1);
+}
+
+body.ps-hottubstore-inventory .ps-card-secondary-cta--coupon:hover {
+	background: rgba(0, 174, 239, 0.16);
+	text-decoration: none;
+	color: #008FC7;
+}
+
+/* ── Pagination ── */
+body.ps-hottubstore-inventory .stm_ajax_pagination,
+body.ps-hottubstore-inventory .mvl-card-skin-pagination {
+	margin-top: 32px;
+}
+
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers li {
+	list-style: none !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers li::before,
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers li::marker {
+	content: none !important;
+	display: none !important;
+}
+
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers a,
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers span.page-numbers {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 40px;
+	height: 40px;
+	padding: 0 12px;
+	border-radius: 8px;
+	border: 1px solid var(--ps-card-border);
+	background: #fff;
+	color: var(--ps-headline-blue);
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 14px;
+	font-weight: 700;
+	text-decoration: none;
+	transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease;
+}
+
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers a:hover {
+	border-color: var(--ps-royal-blue);
+	color: var(--ps-royal-blue);
+}
+
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers .current,
+body.ps-hottubstore-inventory .stm_ajax_pagination .page-numbers span.current {
+	background: var(--ps-royal-blue) !important;
+	border-color: var(--ps-royal-blue) !important;
+	color: #fff !important;
+}

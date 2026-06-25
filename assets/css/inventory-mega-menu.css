@@ -1,0 +1,137 @@
+/* =========================================================
+   Inventory Mega Menu — Elementor widget ({{DEALER_NAME}})
+   ========================================================= */
+.mgc-mm {
+	display: flex;
+	align-items: flex-start;
+	gap: 40px;
+	width: 100%;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* --- Заголовки секций --- */
+.mgc-mm__title {
+	margin: 0 0 18px;
+	font-weight: 700 !important;
+	text-transform: uppercase;
+	letter-spacing: .5px;
+	color: #000;
+	line-height: 1.2;
+}
+
+/* =========================================================
+   Левая колонка — Shop by Seating
+   ========================================================= */
+.mgc-mm__seating {
+	flex: 0 0 220px;
+	max-width: 220px;
+}
+
+.mgc-mm__seating-list {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.mgc-mm__btn {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 10px 16px;
+	border-radius: 4px;
+	background-color: var(--cl-red);
+	color: #fff;
+	font-weight: 700;
+	text-decoration: none;
+	line-height: 1.3;
+	transition: background-color .2s ease, color .2s ease;
+}
+
+.mgc-mm__btn:hover,
+.mgc-mm__btn:focus {
+	background-color: #fff;
+	color: #000;
+}
+
+/* =========================================================
+   Правая колонка — Shop by Brand
+   ========================================================= */
+.mgc-mm__brand-col {
+	flex: 1 1 auto;
+	min-width: 0;
+}
+
+.mgc-mm__brands {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 15px;
+}
+
+.mgc-mm__brand {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px;
+	border: 1px solid rgba(0, 0, 0, .08);
+	border-radius: 6px;
+	overflow: hidden;
+	text-decoration: none;
+	transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+
+.mgc-mm__brand:hover {
+	border-color: var(--cl-red);
+	box-shadow: 0 6px 18px rgba(0, 0, 0, .12);
+}
+
+.mgc-mm__brand-logo,
+.mgc-mm__brand-hover {
+	display: block;
+	width: 100%;
+	height: auto;
+	max-height: 120px;
+	object-fit: contain;
+	transition: opacity .25s ease;
+}
+
+/* Hover-смена изображения (логотип -> картинка авто) */
+.mgc-mm__brand--has-hover .mgc-mm__brand-hover {
+	position: absolute;
+	inset: 15px;
+	width: calc(100% - 30px);
+	height: calc(100% - 30px);
+	opacity: 0;
+	pointer-events: none;
+}
+
+.mgc-mm__brand--has-hover:hover .mgc-mm__brand-logo {
+	opacity: 0;
+}
+
+.mgc-mm__brand--has-hover:hover .mgc-mm__brand-hover {
+	opacity: 1;
+}
+
+/* =========================================================
+   Адаптив
+   ========================================================= */
+@media (max-width: 1024px) {
+	.mgc-mm {
+		flex-direction: column;
+		gap: 24px;
+	}
+
+	.mgc-mm__seating,
+	.mgc-mm__brand-col {
+		flex: 1 1 100%;
+		max-width: 100%;
+		width: 100%;
+	}
+}
+
+@media (max-width: 600px) {
+	.mgc-mm__brands {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}

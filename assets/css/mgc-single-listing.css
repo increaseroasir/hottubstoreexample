@@ -1,0 +1,617 @@
+/* =========================================================
+   MGC Single Listing Page — Premium Styling
+   ========================================================= */
+
+/* ── Page background — intentionally plain white ─────── */
+
+/* ── Main listing section padding ─────────────────────── */
+.gf-single-page-fixed {
+	margin-top: 20px !important;
+	padding-top: 24px !important;
+	padding-bottom: 48px !important;
+	background: transparent !important;
+}
+
+/* ── Left content column — white card ────────────────── */
+.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-66 > .elementor-column-wrap > .elementor-widget-wrap,
+.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-66 > .elementor-widget-wrap {
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, .07);
+	padding: 32px 32px 36px !important;
+}
+
+/* ── Right sidebar — top padding when plugin makes it fixed ── */
+.single-listings [data-id="ad45d7b"] > .elementor-column-wrap > .elementor-widget-wrap[style*="position: fixed"],
+.single-listings [data-id="ad45d7b"] > .elementor-column-wrap > .elementor-widget-wrap[style*="position:fixed"] {
+	margin-top: 24px !important;
+}
+
+.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-33 > .elementor-column-wrap > .elementor-widget-wrap,
+.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-33 > .elementor-widget-wrap {
+	background: #ffffff;
+	border-radius: 10px;
+	box-shadow: 0 2px 20px rgba(0, 0, 0, .07);
+	padding: 24px 20px 28px !important;
+}
+
+/* ── Remove gray divider line above title ───────────────── */
+.single-listings [data-id="e49611c"] {
+	border-top: 0 !important;
+}
+
+/* ── Title column — full width inside inner section ────── */
+.single-listings [data-id="5344489"] {
+	width: 100% !important;
+	max-width: 100% !important;
+	flex: 0 0 100% !important;
+}
+.single-listings [data-id="3a3581e"] {
+	display: none !important;
+}
+
+/* Force inner section container to flush-left with no auto-centering */
+.single-listings [data-id="e49611c"] > .elementor-container {
+	max-width: 100% !important;
+	width: 100% !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	padding-left: 0 !important;
+	padding-right: 0 !important;
+}
+
+/* ── Title ─────────────────────────────────────────────── */
+.single-listings .elementor-widget-motors-single-listing-classified-title h1 {
+	font-size: clamp(22px, 2.6vw, 34px) !important;
+	font-weight: 800 !important;
+	color: #0d0d0d !important;
+	line-height: 1.2 !important;
+	margin: 0 0 4px !important;
+	font-family: 'Montserrat', sans-serif !important;
+	text-align: left !important;
+}
+
+.single-listings [data-id="b464aa7"] {
+	text-align: left !important;
+}
+
+/* ── Title + Price inline row ──────────────────────────── */
+/* Grid the left content widget-wrap so title & price share row 1 */
+.single-listings [data-id="1abe6da"] > .elementor-column-wrap > .elementor-widget-wrap,
+.single-listings [data-id="1abe6da"] > .elementor-widget-wrap {
+	display: grid !important;
+	grid-template-columns: 1fr auto;
+	column-gap: 0;
+	align-items: center;
+}
+
+/* Title section: left cell
+   NOTE: the red divider is NOT drawn here. The two row-1 cells render at
+   different heights, so a per-cell border-bottom splits into a broken/stepped
+   line. Instead the divider is a single border-top on the full-width element
+   below (eee64c6), giving one continuous line snug under the price block. */
+.single-listings [data-id="e49611c"] {
+	grid-column: 1;
+	grid-row: 1;
+	padding-right: 24px !important;
+	padding-bottom: 10px !important;
+	margin-bottom: 0 !important;
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+}
+
+/* Price widget: right cell */
+.single-listings [data-id="5a0b2f5"] {
+	grid-column: 2;
+	grid-row: 1;
+	padding-bottom: 10px !important;
+	margin-bottom: 0 !important;
+	align-self: stretch;
+	display: flex;
+	align-items: center;
+}
+
+/* Single continuous red divider under the price row (top of the gallery) */
+.single-listings [data-id="eee64c6"] {
+	border-top: 3px solid var(--cl-red) !important;
+	margin-top: 0 !important;
+	padding-top: 20px !important;
+}
+
+/* Tighten the top of the card on phones: Elementor's template CSS adds
+   pb8+mb12 under the title cell and pb16+mb24 under the price cell on
+   mobile (its selectors out-rank the generic rules above, hence the extra
+   body-prefixed specificity here). Pull those in so the title, price,
+   divider, and gallery sit close together and more fits on screen. */
+@media (max-width: 767px) {
+	body.single-listings .elementor-element.elementor-element-e49611c {
+		padding-bottom: 2px !important;
+		margin-bottom: 0 !important;
+	}
+	body.single-listings .elementor-element.elementor-element-5a0b2f5 {
+		padding-bottom: 8px !important;
+		margin-bottom: 0 !important;
+	}
+	body.single-listings .elementor-element.elementor-element-eee64c6 {
+		padding-top: 12px !important;
+	}
+}
+
+/* All other widgets span full width */
+.single-listings [data-id="1abe6da"] > .elementor-column-wrap > .elementor-widget-wrap > *:not([data-id="e49611c"]):not([data-id="5a0b2f5"]),
+.single-listings [data-id="1abe6da"] > .elementor-widget-wrap > *:not([data-id="e49611c"]):not([data-id="5a0b2f5"]) {
+	grid-column: 1 / -1;
+}
+
+/* ── Price block ───────────────────────────────────────── */
+.mgc-price-promo {
+	border-top: 0 !important;
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	text-align: right;
+}
+
+.mgc-price-promo__label {
+	font-size: 13px;
+	font-weight: 600;
+	color: #888;
+	margin-right: 6px;
+}
+
+.mgc-price-promo__value--strike {
+	font-size: 18px;
+	color: #aaa;
+	text-decoration: line-through;
+}
+
+.mgc-price-promo__value--highlight {
+	font-size: 34px !important;
+	font-weight: 800 !important;
+	color: #0d0d0d !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.mgc-price-promo__savings {
+	display: inline-block;
+	margin-top: 6px;
+	background: var(--cl-red);
+	color: #fff;
+	font-weight: 700;
+	font-size: 14px;
+	padding: 3px 10px;
+	border-radius: 20px;
+}
+
+/* ── Specs / listing data ───────────────────────────────── */
+.stm-single-car-listing-data {
+	background: #f8f8fb;
+	border-radius: 8px;
+	border: 1px solid #e8e8ee;
+	padding: 0 12px !important;
+	margin-top: 28px;
+	overflow: hidden;
+}
+
+.stm-single-car-listing-data .data-list-wrap {
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.stm-single-car-listing-data .data-list-item {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	padding: 12px 10px !important;
+	border-bottom: 1px solid #ecedf1 !important;
+}
+
+.stm-single-car-listing-data .data-list-item:last-child {
+	border-bottom: 0 !important;
+}
+
+.stm-single-car-listing-data .item-label {
+	font-size: 10px !important;
+	font-weight: 700 !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.9px !important;
+	color: #999 !important;
+	display: flex !important;
+	align-items: center !important;
+	gap: 5px !important;
+	white-space: nowrap !important;
+	overflow: visible !important;
+	text-overflow: clip !important;
+	max-width: none !important;
+}
+
+.stm-single-car-listing-data .item-label i {
+	color: var(--cl-red);
+	font-size: 13px;
+}
+
+.stm-single-car-listing-data .heading-font {
+	font-size: 15px !important;
+	font-weight: 700 !important;
+	color: #111 !important;
+	white-space: normal !important;
+	overflow: visible !important;
+	text-overflow: unset !important;
+}
+
+/* ── Section headings (FEATURES, DESCRIPTION) ─────────── */
+.single-listings .elementor-widget-heading .elementor-heading-title {
+	font-size: 16px !important;
+	font-weight: 800 !important;
+	text-transform: uppercase !important;
+	letter-spacing: 1.8px !important;
+	color: #111 !important;
+	padding-left: 14px !important;
+	border-left: 4px solid var(--cl-red) !important;
+	margin: 8px 0 12px !important;
+	display: block;
+}
+
+/* ── Features list ──────────────────────────────────────── */
+.stm-single-listing-car-features .lists-horizontal {
+	display: block !important;
+	width: 100%;
+}
+
+.stm-single-listing-car-features .lists-horizontal > div {
+	width: 100% !important;
+	flex: unset !important;
+}
+
+.stm-single-listing-car-features .lists-horizontal ul {
+	display: grid !important;
+	grid-template-columns: repeat(3, 1fr) !important;
+	column-gap: 16px;
+	list-style: none;
+	padding: 0 !important;
+	margin: 0 !important;
+}
+
+.stm-single-listing-car-features .lists-horizontal ul li {
+	font-size: 16px;
+	color: #333;
+	padding: 6px 0;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	border-bottom: 1px solid #f0f0f0;
+}
+
+.stm-single-listing-car-features .lists-horizontal ul li i {
+	color: var(--cl-red);
+	font-size: 14px;
+	flex-shrink: 0;
+}
+
+.stm-single-listing-car-features h4 {
+	font-size: 14px !important;
+	font-weight: 700 !important;
+	text-transform: uppercase !important;
+	letter-spacing: 1px !important;
+	color: #999 !important;
+	margin: 0 0 10px !important;
+}
+
+/* ── Hide dealer widget clutter from sidebar ────────────── */
+.single-listings .elementor-widget-motors-single-listing-user-data-simple,
+.single-listings .elementor-widget-motors-single-listing-dealer-phone,
+.single-listings .elementor-widget-motors-single-listing-dealer-email {
+	display: none !important;
+}
+
+/* ── CTA container heading ──────────────────────────────── */
+.mgc-sidebar-cta-heading {
+	font-size: 16px;
+	font-weight: 800;
+	color: #111;
+	margin: 0 0 14px;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.3px;
+}
+
+/* ── CTA container card ─────────────────────────────────── */
+.mgc-sidebar-cta-wrap {
+	background: #fff;
+	border: 1px solid #e5e5e5;
+	border-radius: 8px;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, .09);
+	padding: 16px;
+	margin-bottom: 4px;
+}
+
+/* ── CTA button block ───────────────────────────────────── */
+.mgc-sidebar-cta {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.mgc-cta-btn {
+	display: block;
+	width: 100%;
+	text-align: center;
+	padding: 15px 12px;
+	font-size: 15px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	white-space: nowrap;
+	border-radius: 5px;
+	text-decoration: none !important;
+	transition: background .2s, border-color .2s, color .2s;
+	font-family: 'Montserrat', sans-serif;
+	box-sizing: border-box;
+}
+
+.mgc-cta-btn--primary {
+	background: var(--cl-red);
+	color: #fff !important;
+	border: 2px solid var(--cl-red);
+}
+
+.mgc-cta-btn--primary:hover {
+	background: var(--cl-red, #DD0000);
+	border-color: var(--cl-red, #DD0000);
+	color: #fff !important;
+}
+
+.mgc-cta-btn--secondary {
+	background: #111;
+	color: #fff !important;
+	border: 2px solid #111;
+}
+
+.mgc-cta-btn--secondary:hover {
+	background: #333;
+	border-color: #333;
+	color: #fff !important;
+}
+
+.mgc-cta-btn--outline {
+	background: transparent;
+	color: #111 !important;
+	border: 2px solid #d0d0d0;
+}
+
+.mgc-cta-btn--outline:hover {
+	background: #111;
+	border-color: #111;
+	color: #fff !important;
+}
+
+/* ── Phone number link (desktop) / Call Now button (mobile) ── */
+.mgc-phone-link {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	font-size: 18px;
+	font-weight: 800;
+	color: #111 !important;
+	text-decoration: none !important;
+	font-family: 'Montserrat', sans-serif;
+	letter-spacing: 0.5px;
+	padding: 6px 0;
+}
+
+.mgc-phone-link::before {
+	content: "\f095";
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	font-size: 14px;
+	color: var(--cl-red);
+}
+
+.mgc-phone-link:hover {
+	color: var(--cl-red) !important;
+}
+
+.mgc-phone-link__mobile { display: none; }
+
+@media (max-width: 767px) {
+	.mgc-phone-link__desktop { display: none; }
+	.mgc-phone-link__mobile { display: inline; }
+	.mgc-phone-link {
+		display: block;
+		width: 100%;
+		text-align: center;
+		padding: 15px 12px;
+		font-size: 15px;
+		font-weight: 800;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		border-radius: 5px;
+		background: transparent;
+		color: var(--cl-red) !important;
+		border: 2px solid var(--cl-red);
+		box-sizing: border-box;
+	}
+	.mgc-phone-link::before {
+		display: none;
+	}
+	.mgc-phone-link:hover {
+		background: var(--cl-red);
+		color: #fff !important;
+	}
+}
+
+/* ── Trust badge ────────────────────────────────────────── */
+.mgc-trust-badge {
+	margin-top: 6px;
+	padding: 14px 16px 12px;
+	background: #111;
+	border: 1px solid #111;
+	border-radius: 6px;
+	text-align: center;
+}
+
+.mgc-trust-badge__stars {
+	color: var(--cl-red);
+	font-size: 20px;
+	letter-spacing: 3px;
+	line-height: 1;
+	margin-bottom: 6px;
+}
+
+.mgc-trust-badge__text {
+	font-size: 11px;
+	font-weight: 800;
+	color: #fff;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* ── Gallery ────────────────────────────────────────────── */
+.single-listings .stm-gallery-slider {
+	border-radius: 8px;
+	overflow: hidden;
+	margin-top: 20px;
+}
+
+.single-listings [data-id="eee64c6"],
+.single-listings [data-id="56c4070"] {
+	margin-bottom: 4px !important;
+}
+
+.single-listings .motors-elementor-single-listing-gallery {
+	margin-bottom: 0 !important;
+}
+
+/* ── Second section: contact form ───────────────────────── */
+.single-listings .elementor-element-e49611c {
+	background: #ffffff !important;
+	border-top: 1px solid #eaeaea;
+}
+
+.single-listings .stm-single-car-listing-form-wrap,
+.single-listings .stm-vl-single-form-wrap {
+	background: #fff;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+/* Dealer image + info column in contact section */
+.single-listings .stm-listing-car-dealer-info-simple {
+	background: #111;
+	color: #fff;
+	padding: 32px 24px;
+	border-radius: 8px 0 0 8px;
+}
+
+.single-listings .stm-listing-car-dealer-info-simple .name a {
+	color: #fff;
+}
+
+/* Form styling */
+.single-listings .stm-dealer-contact-form input,
+.single-listings .stm-dealer-contact-form textarea {
+	border: 1.5px solid #e0e0e0 !important;
+	border-radius: 5px !important;
+	padding: 12px 14px !important;
+	font-size: 14px !important;
+	transition: border-color .2s;
+}
+
+.single-listings .stm-dealer-contact-form input:focus,
+.single-listings .stm-dealer-contact-form textarea:focus {
+	border-color: var(--cl-red) !important;
+	outline: none !important;
+}
+
+.single-listings .stm-dealer-contact-form .stm-btn,
+.single-listings .stm-dealer-contact-form [type="submit"] {
+	background: var(--cl-red) !important;
+	color: #fff !important;
+	font-weight: 700 !important;
+	text-transform: uppercase !important;
+	letter-spacing: 1px !important;
+	border: 0 !important;
+	padding: 14px 32px !important;
+	border-radius: 5px !important;
+	cursor: pointer !important;
+}
+
+/* ── Similar listings section ───────────────────────────── */
+.single-listings .stm-similar-cars h3,
+.single-listings .stm-similar-cars .section-title {
+	font-size: 14px;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 1.5px;
+	color: #111;
+	padding-left: 14px;
+	border-left: 4px solid var(--cl-red);
+}
+
+/* ── Rename "Seller's Notes" → "Description" ───────────── */
+.single-listings [data-id="f0dab77"] .elementor-heading-title {
+	font-size: 0 !important;
+	letter-spacing: 0 !important;
+}
+.single-listings [data-id="f0dab77"] .elementor-heading-title::before {
+	content: "DESCRIPTION";
+	font-size: 16px;
+	font-weight: 800;
+	letter-spacing: 1.8px;
+	color: #111;
+	padding-left: 14px;
+	border-left: 4px solid var(--cl-red);
+}
+
+/* ── Bottom section: hide dealer column, full-width form ── */
+.single-listings [data-id="4d956ab"] {
+	display: none !important;
+}
+
+.single-listings [data-id="8c18c09"] {
+	width: 100% !important;
+	max-width: 100% !important;
+	flex: 0 0 100% !important;
+}
+
+/* ── Form heading ───────────────────────────────────────── */
+.mgc-form-title {
+	font-size: 20px !important;
+	font-weight: 800 !important;
+	color: #111 !important;
+	margin-bottom: 20px !important;
+	line-height: 1.3 !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.mgc-form-title__sub {
+	display: block;
+	font-size: 15px;
+	font-weight: 500;
+	color: #555;
+	margin-top: 4px;
+}
+
+/* ── Responsive ─────────────────────────────────────────── */
+@media (max-width: 767px) {
+	.gf-single-page-fixed {
+		padding-top: 20px !important;
+		padding-bottom: 32px !important;
+	}
+
+	.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-66 > .elementor-column-wrap > .elementor-widget-wrap,
+	.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-66 > .elementor-widget-wrap,
+	.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-33 > .elementor-column-wrap > .elementor-widget-wrap,
+	.gf-single-page-fixed > .elementor-container > .elementor-row > .elementor-col-33 > .elementor-widget-wrap {
+		padding: 20px 16px !important;
+	}
+
+	.mgc-price-promo__value--highlight {
+		font-size: 26px !important;
+	}
+
+	.mgc-cta-btn {
+		padding: 14px 16px;
+	}
+}

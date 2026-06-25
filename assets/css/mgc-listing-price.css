@@ -1,0 +1,356 @@
+/**
+ * {{DEALER_NAME}} — Promo price block (Elementor Single Listing Price).
+ */
+
+/* ── Inventory listing card: hide View Details, style Get a Quote ── */
+
+/* ── Grid view button ────────────────────────────────────────────── */
+.stm-directory-grid-loop .mvl-action-buttons .mvl-action-buttons-inner .mvl-action-button,
+.stm-directory-grid-loop .mvl-action-buttons .mvl-action-buttons-inner .mvl-action-button:link,
+.stm-directory-grid-loop .mvl-action-buttons .mvl-action-buttons-inner .mvl-action-button:visited,
+.stm-directory-grid-loop .mvl-action-buttons .mvl-action-buttons-inner .mvl-action-button:hover {
+	background-color: var(--cl-red) !important;
+	color: #fff !important;
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 800 !important;
+	font-size: 14px !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.5px;
+	border-radius: 4px !important;
+	opacity: 1 !important;
+	width: 100%;
+}
+.stm-directory-grid-loop .mvl-action-buttons .mvl-action-buttons-inner .mvl-action-button:hover {
+	background-color: var(--cl-red-dark) !important;
+}
+.stm-directory-grid-loop .mvl-action-buttons .mvl-action-buttons-inner .mvl-action-button .label {
+	color: #fff !important;
+}
+
+/* Strip any rogue background off the action button container */
+.mvl-list-card-skin .mvl-action-buttons,
+.mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner {
+	background: none !important;
+	background-color: transparent !important;
+}
+
+/* Hide View Details — the one with margin-bottom inline style on its wrapper */
+.mvl-view-listing[style*="margin-bottom"],
+.mvl-actions-popup .mvl_view_listing_link,
+.mvl-action-buttons .mvl-view-listing a.mvl_view_listing_link:not(:has(.label)) {
+	display: none !important;
+}
+
+/* Style the Get a Quote Today link in grid cards */
+.mvl-view-listing a.mvl_view_listing_link {
+	display: flex !important;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	padding: 14px 20px !important;
+	background-color: var(--cl-red) !important;
+	color: #fff !important;
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 800 !important;
+	font-size: 14px !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.5px;
+	border-radius: 4px !important;
+	text-decoration: none !important;
+	transition: background 0.2s ease;
+	border: none !important;
+	margin-bottom: 0 !important;
+}
+.mvl-view-listing a.mvl_view_listing_link:hover {
+	background-color: var(--cl-red-dark) !important;
+	color: #fff !important;
+	opacity: 1 !important;
+}
+.mvl-view-listing a.mvl_view_listing_link .label {
+	color: #fff !important;
+	font-weight: 800 !important;
+}
+
+/* Get a Quote Today button on listing cards */
+.mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button,
+.mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button:link,
+.mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button:visited {
+	background-color: var(--cl-red) !important;
+	color: #fff !important;
+	border: none !important;
+	border-radius: 4px !important;
+	padding: 14px 20px !important;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	text-decoration: none !important;
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 800 !important;
+	font-size: 15px !important;
+	text-transform: uppercase !important;
+	letter-spacing: 0.5px;
+	transition: background 0.2s ease;
+	opacity: 1 !important;
+	min-width: 100% !important;
+}
+
+.mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button:hover {
+	background-color: var(--cl-red-dark) !important;
+	color: #fff !important;
+	opacity: 1 !important;
+}
+
+.mvl-list-card-skin .mvl-action-buttons .mvl-action-buttons-inner a.mvl-action-button .label {
+	color: #fff !important;
+	font-family: 'Montserrat', sans-serif !important;
+	font-weight: 800 !important;
+	font-size: 15px !important;
+	text-transform: uppercase !important;
+}
+
+/* ── Get a Quote Today modal ─────────────────────────────────────── */
+.mgc-modal-title {
+	font-size: 20px !important;
+	font-weight: 700 !important;
+}
+
+.mgc-required {
+	color: var(--cl-red);
+	font-weight: 700;
+}
+
+/* ── Single listing sidebar: hide unwanted widgets ─────────────────── */
+.elementor-widget-motors-single-listing-user-data-simple,
+.elementor-widget-motors-single-listing-dealer-phone,
+.elementor-widget-motors-single-listing-dealer-email {
+	display: none !important;
+}
+
+/* ── Mobile sticky "Get a Quote Today" bar ───────────────────────── */
+@media (max-width: 767px) {
+	.mgc-cta-sticky-wrap.mobile-fixed {
+		position: fixed;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 9999;
+		padding: 10px 12px;
+		background: #fff;
+		box-shadow: 0 -2px 12px rgba(0,0,0,0.15);
+	}
+
+	/* Add bottom padding to page so content isn't hidden behind bar */
+	body.page-id-2301 {
+		padding-bottom: 70px;
+	}
+}
+
+/* ── Sidebar CTA buttons ─────────────────────────────────────────── */
+.mgc-sidebar-cta {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	width: 100%;
+}
+
+.mgc-cta-btn {
+	display: block;
+	width: 100%;
+	padding: 14px 20px;
+	border-radius: 6px;
+	font-size: 14px;
+	font-weight: 700;
+	letter-spacing: 0.5px;
+	text-align: center;
+	text-decoration: none !important;
+	text-transform: uppercase;
+	transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+/* Red — Get a Quote Today */
+.mgc-cta-btn--primary {
+	background-color: var(--cl-red);
+	color: #fff !important;
+	border: 2px solid var(--cl-red);
+}
+.mgc-cta-btn--primary:hover {
+	background-color: var(--cl-red-dark);
+	border-color: var(--cl-red-dark);
+	color: #fff !important;
+}
+
+/* Dark — Get Financing */
+.mgc-cta-btn--secondary {
+	background-color: #121e24;
+	color: #fff !important;
+	border: 2px solid #121e24;
+}
+.mgc-cta-btn--secondary:hover {
+	background-color: #1e2f39;
+	border-color: #1e2f39;
+	color: #fff !important;
+}
+
+/* Outline — Call Now */
+.mgc-cta-btn--outline {
+	background-color: #fff;
+	color: #121e24 !important;
+	border: 2px solid #121e24;
+}
+.mgc-cta-btn--outline:hover {
+	background-color: #121e24;
+	color: #fff !important;
+}
+
+.mgc-price-promo {
+	text-align: right;
+	line-height: 1.35;
+	font-family: Montserrat, sans-serif;
+}
+
+.mgc-price-promo__line {
+	display: block;
+	margin: 0 0 4px;
+}
+
+.mgc-price-promo__label {
+	color: #7a7a7a;
+	font-size: 15px;
+	font-weight: 400;
+	margin-right: 4px;
+}
+
+.mgc-price-promo__value {
+	font-weight: 700;
+}
+
+.mgc-price-promo__value--strike {
+	color: #7a7a7a;
+	font-size: 15px;
+	font-weight: 400;
+	text-decoration: line-through;
+}
+
+.mgc-price-promo__value--highlight {
+	color: #000;
+	font-size: 28px;
+	font-weight: 700;
+	line-height: 1.2;
+}
+
+.mgc-price-promo__sale .mgc-price-promo__label {
+	color: #000;
+	font-size: 15px;
+	font-weight: 700;
+}
+
+.mgc-price-promo__savings {
+	color: #2db84c;
+	font-size: 16px;
+	font-weight: 700;
+	margin: 2px 0 8px;
+}
+
+.mgc-price-promo__financing-wrap {
+	display: flex;
+	align-items: flex-end;
+	justify-content: flex-end;
+	gap: 8px;
+	margin-top: 4px;
+}
+
+.mgc-price-promo__financing {
+	color: var(--cl-red);
+	font-size: 14px;
+	font-weight: 700;
+}
+
+.mgc-price-promo__info {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 18px;
+	height: 18px;
+	flex-shrink: 0;
+	border-radius: 50%;
+	background-color: var(--cl-red);
+	color: #fff;
+	text-decoration: none;
+	line-height: 1;
+}
+
+.mgc-price-promo__info:hover,
+.mgc-price-promo__info:focus {
+	color: #fff;
+	opacity: 0.85;
+}
+
+.mgc-price-promo__info .motors-icons {
+	font-size: 11px;
+}
+
+.mgc-price-promo__info .motors-icons::before {
+	color: #fff;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────
+ * Advertised payment promo block — single listing, grid + list inventory.
+ * Big red "$X/mo" with smaller black "Y mo · $Z down" line underneath.
+ * ───────────────────────────────────────────────────────────────────────── */
+.mgc-pay-promo {
+	margin: 12px 0 0;
+	text-align: right;
+	line-height: 1.1;
+}
+.mgc-pay-promo__amount {
+	display: block;
+	font-family: inherit;
+	font-weight: 800;
+	color: var(--cl-red);
+	font-size: 36px;
+	letter-spacing: -0.5px;
+}
+.mgc-pay-promo__per {
+	font-size: 18px;
+	font-weight: 700;
+	margin-left: 2px;
+}
+.mgc-pay-promo__sub {
+	display: block;
+	color: #222;
+	font-size: 13px;
+	font-weight: 500;
+	margin-top: 2px;
+}
+
+/* Grid + List card variants — smaller scale, left-aligned to sit with the
+   price block, no top margin so it tucks against the price. */
+.mgc-pay-promo--list,
+.mgc-pay-promo--grid {
+	margin-top: 4px;
+	text-align: left;
+}
+.mgc-pay-promo--list .mgc-pay-promo__amount,
+.mgc-pay-promo--grid .mgc-pay-promo__amount {
+	font-size: 22px;
+}
+.mgc-pay-promo--list .mgc-pay-promo__per,
+.mgc-pay-promo--grid .mgc-pay-promo__per {
+	font-size: 12px;
+}
+.mgc-pay-promo--list .mgc-pay-promo__sub,
+.mgc-pay-promo--grid .mgc-pay-promo__sub {
+	font-size: 11px;
+}
+
+@media (max-width: 600px) {
+	.mgc-pay-promo--single .mgc-pay-promo__amount {
+		font-size: 28px;
+	}
+	.mgc-pay-promo--single .mgc-pay-promo__per {
+		font-size: 16px;
+	}
+}

@@ -1,0 +1,14 @@
+#wpadminbar>#wp-toolbar>#wp-admin-bar-root-default .ab-icon img {
+	width: 40px;
+}
+
+#adminmenu img.motors-theme-icon, #adminmenu .wp-menu-image img[src*="motors-theme-icon"] {
+	content: url(../images/carf-launch.png);
+	width: 20px !important;
+	height: 20px !important;
+	object-fit: contain;
+}
+
+.mvl-pro-addons-menu.mst-skins-importer {
+	display: none;
+}

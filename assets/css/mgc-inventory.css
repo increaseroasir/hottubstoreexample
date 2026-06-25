@@ -1,0 +1,216 @@
+/**
+ * {{DEALER_NAME}} — Inventory page modern styling
+ */
+
+/* ── Page headline ──────────────────────────────────────────────── */
+.search-results-actions-heading h4,
+.search-results-actions-heading h1.search-results-actions-title {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 36px !important;
+	font-weight: 800 !important;
+	letter-spacing: -0.5px;
+	color: #111827 !important;
+	line-height: 1.15;
+	margin: 0 0 4px;
+	padding: 0;
+}
+
+.mvl-total-results,
+.mvl-total-results span {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 16px !important;
+	font-weight: 500 !important;
+	color: #6b7280 !important;
+}
+
+/* ── Breadcrumbs ────────────────────────────────────────────────── */
+.mvl-simple-breadcrumbs,
+.mvl-simple-breadcrumbs li,
+.mvl-simple-breadcrumbs a {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	color: #6b7280 !important;
+	text-decoration: none !important;
+}
+.mvl-simple-breadcrumbs .current-link a {
+	color: #111827 !important;
+}
+
+/* ── Hide cloned filter bars (caused by 2 footer elements + plugin sticky JS) */
+.stm-inventory-pro-maincol ~ .stm-inventory-pro-filter-mobile-apparent,
+#colophon + .stm-inventory-pro-filter-mobile-apparent,
+body > .stm-inventory-pro-filter-mobile-apparent {
+	display: none !important;
+}
+
+/* ── Filter button — red (only the main mobile trigger) ─────────── */
+.stm-inventory-pro-filter-mobile-apparent .filter-handle,
+.filter-handle-wrapper .filter-handle {
+	background-color: var(--cl-red) !important;
+	border-color: var(--cl-red) !important;
+	color: #fff !important;
+}
+
+/* ── Sort / filter bar ──────────────────────────────────────────── */
+.search-results-actions-triggers,
+.search-results-actions-triggers-sorting,
+.stm-view-by,
+.stm-sort-by,
+.stm-sort-by select,
+.motors-compare-button {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 13px !important;
+	font-weight: 600 !important;
+}
+
+/* ── Listing card ───────────────────────────────────────────────── */
+
+/* Card title */
+.mvl_listing_title,
+.mvl_listing_title .car-title,
+a.mvl_listing_title div {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 20px !important;
+	font-weight: 700 !important;
+	color: #111827 !important;
+	line-height: 1.3 !important;
+	letter-spacing: -0.2px;
+	text-decoration: none !important;
+}
+a.mvl_listing_title:hover .car-title,
+a.mvl_listing_title:hover div {
+	color: var(--cl-red) !important;
+}
+
+/* Price — original (strikethrough) */
+.mvl-list-card-skin.skin_1 .mvl-normal-price,
+.mvl-price-list-card .mvl-normal-price {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 14px !important;
+	font-weight: 400 !important;
+	color: #9ca3af !important;
+	text-decoration: line-through;
+}
+
+/* Price — sale / main price */
+.mvl-list-card-skin.skin_1 .mvl-sale-price,
+.mvl-price-list-card .mvl-sale-price,
+.mvl-price-list-card .mvl-normal-price:only-child {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 26px !important;
+	font-weight: 800 !important;
+	color: #111827 !important;
+	letter-spacing: -0.5px;
+}
+
+/* Meta data row (location, year, battery) */
+.mvl-card-listing-data-inner li {
+	font-family: 'Montserrat', sans-serif !important;
+	font-size: 13px !important;
+	font-weight: 500 !important;
+	color: #4e5562 !important;
+}
+.mvl-card-listing-data-inner li i {
+	font-size: 20px !important;
+	color: var(--cl-red) !important;
+	margin-bottom: 4px !important;
+}
+
+/* Card container — tighten spacing, sharpen border */
+.mvl-list-card-skin.skin_1 {
+	border: 1px solid #e5e7eb !important;
+	border-radius: 10px !important;
+	box-shadow: 0 2px 12px rgba(0,0,0,0.06) !important;
+	transition: box-shadow 0.2s ease, transform 0.2s ease;
+	overflow: hidden;
+}
+
+.mvl-list-card-skin.skin_1:hover {
+	box-shadow: 0 8px 28px rgba(0,0,0,0.12) !important;
+	transform: translateY(-2px);
+}
+
+/* Card title wrapper padding */
+.skin_1.mvl_listing_title_wrapper {
+	padding: 16px 16px 4px !important;
+}
+
+/* Price wrapper padding */
+.mvl-list-card-skin.skin_1 .mvl-price-list-card {
+	padding: 0 16px 8px !important;
+}
+
+
+/* ── Responsive — mobile card ───────────────────────────────────── */
+@media (max-width: 767px) {
+	.search-results-actions-heading h4,
+	.search-results-actions-heading h1.search-results-actions-title {
+		font-size: 26px !important;
+	}
+	.mvl_listing_title .car-title,
+	a.mvl_listing_title div {
+		font-size: 17px !important;
+	}
+	.mvl-list-card-skin.skin_1 .mvl-sale-price {
+		font-size: 22px !important;
+	}
+}
+
+/* Inventory filter "Results" button -> brand red (was Motors blue). */
+.stm-inventory-pro-filter .show-results,
+.show-results,
+.show-results.button-secondary {
+	background-color: var(--cl-red, #DD0000) !important;
+	border-color: var(--cl-red, #DD0000) !important;
+	color: #fff !important;
+}
+.show-results:hover,
+.show-results:focus {
+	background-color: var(--cl-red-dark) !important;
+	color: #fff !important;
+}
+
+/* ── Breathing room between the site header and the inventory content ── */
+.stm-pro-layout.stm-inventory-pro {
+	padding-top: 34px !important;
+}
+@media (max-width: 767px) {
+	.stm-pro-layout.stm-inventory-pro {
+		padding-top: 20px !important;
+	}
+}
+
+/* ── Filter/sort dropdown: selected-option checkmark -> brand red (was blue) ── */
+.select2-container--default .select2-results__option[aria-selected="true"]::after,
+.select2-container--default .select2-results__option--highlighted::after,
+.select2-results__option[aria-selected="true"]::after {
+	border-color: var(--cl-red, #DD0000) !important;
+}
+
+/* ── Price / Monthly-Payment range sliders -> brand red (was dark navy/blue).
+   Same sliders are used in the desktop sidebar and the mobile filter panel. ── */
+.stm-price-range.ui-slider .ui-slider-range,
+.ui-slider .ui-slider-range {
+	background-color: var(--cl-red, #DD0000) !important;
+}
+.ui-slider .ui-slider-handle,
+.ui-slider-handle.ui-state-default,
+.ui-slider-handle.ui-state-hover {
+	background-color: var(--cl-red, #DD0000) !important;
+	border-color: var(--cl-red, #DD0000) !important;
+}
+.ui-slider .ui-slider-handle::after {
+	background-color: var(--cl-red, #DD0000) !important;
+	border-color: var(--cl-red, #DD0000) !important;
+}
+
+/* ── Filter option pills (Condition: New / Refurbished, etc.) -> brand red
+   when selected, instead of Motors blue. Covers sidebar + mobile filter. ── */
+.stm-filter-pro-options-list label input[type="checkbox"]:checked + .option-badge {
+	background: var(--cl-red, #DD0000) !important;
+	color: #fff !important;
+}
+.stm-filter-pro-options-list label input[type="checkbox"]:checked + .option-badge .option-count {
+	color: #fff !important;
+}

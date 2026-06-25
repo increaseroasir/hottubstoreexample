@@ -1,0 +1,37 @@
+/**
+ * Custom Fields page only — restore original Motors plugin workspace layout.
+ * Loaded instead of cart-launch-admin.css on admin.php?page=listing_categories
+ */
+
+.stm_vehicles_listing_categories .stm_custom_fields__workspace {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	gap: 20px;
+}
+
+.stm_vehicles_listing_categories .stm_custom_fields__list,
+.stm_vehicles_listing_categories .stm_custom_fields__form--wrapper {
+	flex: 1 0 47%;
+}
+
+.stm_vehicles_listing_categories .stm_custom_fields__list {
+	padding: 0 20px 24px;
+	min-height: 640px;
+	display: flex;
+	flex-direction: column;
+	background: #fff;
+	border-radius: 12px;
+}
+
+.stm_vehicles_listing_categories .stm_custom_fields__form--wrapper {
+	position: relative;
+}
+
+.stm_vehicles_listing_categories .stm_custom_fields__workspace img {
+	content: none;
+	max-height: none;
+	width: auto;
+	height: auto;
+	object-fit: initial;
+}

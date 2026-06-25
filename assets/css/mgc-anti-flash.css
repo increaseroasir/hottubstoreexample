@@ -1,0 +1,240 @@
+/*
+ * Loaded into <head> via the plugin's mvl_listing_manager_css filter, BEFORE
+ * the page paints. Holds two kinds of rules:
+ *   1. Brand styling (sidebar bg, accent color, logo overlay) — without
+ *      these in head, the user sees the default navy plugin sidebar for a
+ *      split second before our JS injects them.
+ *   2. Field hides on the Description tab — the Title field and the
+ *      Mark Sold / Mark Featured toggles are moved to other tabs by JS, so
+ *      we need them hidden from the very first paint.
+ *
+ * Cart Launch brand palette: #0092D6 blue, #404040 gray.
+ */
+
+/* ─── Sidebar background + active state ─── */
+.mvl-listing-manager-body .mvl-listing-manager-sidebar {
+	background-color: #404040 !important;
+}
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-header {
+	background-color: #fff !important;
+	border-bottom-color: #e5e7eb !important;
+	height: 70px !important;
+	justify-content: center;
+	padding: 8px 16px !important;
+	margin-bottom: 20px !important;
+}
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-menu-item.active {
+	background-color: #2e2e2e !important;
+}
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-menu-item.active i {
+	background-color: #0092D6 !important;
+}
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-menu-item.active a:before {
+	background-color: #2e2e2e !important;
+}
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-back-link:hover {
+	background-color: #0092D6 !important;
+}
+/* Future / unvisited tab icons (the plugin marks them via .active ~ DOM
+   sibling, which works correctly now that we reorder server-side). */
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-menu-item.active ~ .mvl-listing-manager-sidebar-menu-item i {
+	background-color: #2e2e2e !important;
+}
+
+/* ─── Logo overlay: hide UNTITLED text + back arrow, drop in our SVG ─── */
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-back-link {
+	display: none !important;
+}
+.mvl-listing-manager-body .mvl-listing-manager-sidebar-title {
+	background-image: url('/wp-content/themes/motors-starter-theme-child/assets/img/mgc-logo.png') !important;
+	background-repeat: no-repeat !important;
+	background-position: center center !important;
+	background-size: contain !important;
+	height: 50px !important;
+	width: 100% !important;
+	font-size: 0 !important;
+	color: transparent !important;
+}
+
+/* ─── Header row: search field is flush against the action buttons. Add
+   a gap so "Back to Listings" doesn't touch the search bar. ─── */
+.mvl-listing-manager-body .mvl-listing-manager-content-header-inner {
+	gap: 16px !important;
+}
+
+/* ─── Right-side Publish button → brand blue ─── */
+.mvl-listing-manager-body .mvl-primary-btn,
+.mvl-listing-manager-body .mvl-listing-manager-content-header-action-btn.mvl-primary-btn {
+	background-color: #0092D6 !important;
+	border-color: #0092D6 !important;
+}
+.mvl-listing-manager-body .mvl-primary-btn:hover {
+	background-color: #007BB6 !important;
+}
+
+/* ─── Description tab: hide fields that JS later moves/repurposes ─── */
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.general
+.mvl-listing-manager-field-input-title,
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.general
+.mvl-listing-manager-field-switch-car_mark_as_sold,
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.general
+.mvl-listing-manager-field-switch-special_car {
+	display: none !important;
+}
+
+/* ─── Listing Manager preview card (right side): recolor the price
+   value from the plugin's default blue (#3783E1) to our brand
+   blue #0092D6 for consistency. ─── */
+.mvl-listing-manager-body .mvl-listing-preview-card-price-value {
+	color: #0092D6 !important;
+}
+
+/* ─── Hide the plugin's "Edit Fields" + "Add Custom Field" / "Add Features
+   List" buttons on every tab header. Dealers don't need taxonomy-level
+   editing from inside the listing manager — that's an admin concern.
+   We swap in an inline "+ Add Feature" button via JS on the Features
+   tab specifically. ─── */
+.mvl-listing-manager-body .mvl-lm-edit-options-btn,
+.mvl-listing-manager-body .mvl-lm-add-options-btn,
+.mvl-listing-manager-body .mvl-lm-edit-features-btn,
+.mvl-listing-manager-body .mvl-lm-add-feature-btn {
+	display: none !important;
+}
+
+/* ─── Hide the "Preview" tooltip-image button that the plugin shows in
+   the top-left of every Listing Manager tab header. It's only useful for
+   stock theme docs; dealers don't need it. ─── */
+.mvl-listing-manager-body .mvl-listing-manager-content-body-page-preview-wrapper {
+	display: none !important;
+}
+
+/* ─── Inline "Add new" link + form under Make/Model dropdowns ───
+   Wired up via JS (addInlineAddNewTerm). Visually a small ghost link
+   that opens into an input + Save button when clicked. ─── */
+.mgc-add-new-trigger {
+	display: inline-block;
+	margin-top: 4px;
+	font-size: 12px;
+	font-weight: 600;
+	color: #0092D6;
+	background: none;
+	border: 0;
+	padding: 2px 0;
+	cursor: pointer;
+	text-decoration: none;
+}
+.mgc-add-new-trigger:hover { text-decoration: underline; }
+.mgc-add-new-form {
+	display: none;
+	margin-top: 6px;
+	gap: 6px;
+	align-items: stretch;
+}
+.mgc-add-new-form.open { display: flex; }
+.mgc-add-new-form input[type="text"] {
+	flex: 1 1 auto;
+	min-width: 0;
+	height: 36px;
+	padding: 0 10px;
+	font-size: 13px;
+	border: 1px solid #d1d5db;
+	border-radius: 4px;
+}
+.mgc-add-new-form .mgc-add-new-save,
+.mgc-add-new-form .mgc-add-new-cancel {
+	flex: 0 0 auto;
+	height: 36px;
+	padding: 0 12px;
+	font-size: 12px;
+	font-weight: 700;
+	border: 0;
+	border-radius: 4px;
+	cursor: pointer;
+}
+.mgc-add-new-form .mgc-add-new-save {
+	background: #0092D6;
+	color: #fff;
+}
+.mgc-add-new-form .mgc-add-new-save:hover { background: #007BB6; }
+.mgc-add-new-form .mgc-add-new-cancel {
+	background: #f3f4f6;
+	color: #374151;
+}
+.mgc-add-new-form .mgc-add-new-cancel:hover { background: #e5e7eb; }
+.mgc-add-new-error {
+	display: block;
+	margin-top: 4px;
+	font-size: 11px;
+	color: #dc2626;
+}
+
+/* ─── Details + Price tabs: gentle vertical tightening ───
+   Plugin default puts 10px top/bottom on every field row + 10px on the
+   wrapper itself. Trim to 6px so rows fit more compactly without
+   feeling squeezed (~32px saved vertical per tab). ─── */
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.option
+.mvl-listing-manager-field,
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.price
+.mvl-listing-manager-field {
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
+}
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.option
+.mvl-listing-manager-content-body-page-option-wrapper,
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.price
+.mvl-listing-manager-content-body-page-text {
+	padding-top: 6px !important;
+	padding-bottom: 6px !important;
+}
+
+/* ─── Price tab: kill the inner-panel scroll ───
+   The plugin's body-inner uses overflow:auto, so when a user clicks
+   into an input near the bottom (Down Payment, Mark Sold), the browser
+   auto-scrolls the panel. User wants this fixed — kill the scroll on
+   the Price tab specifically, and tighten the moved Mark Sold/Featured
+   container so everything fits inside the viewport without overflow. ─── */
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body:has(.mvl-listing-manager-content-body-page.price.active) {
+	overflow-y: visible !important;
+}
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-inner:has(.mvl-listing-manager-content-body-page.price.active) {
+	overflow-y: visible !important;
+}
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.price
+.mgc-lm-price-flags {
+	margin-top: 8px !important;
+	padding: 10px 30px 8px !important;
+}
+
+/* ─── Details (option) tab: let Select2 dropdowns escape the form area ───
+   The inner option-wrapper had overflow:auto, which clipped Select2 popup
+   panels (rendered inline) for fields in the lower rows — so Year, Model,
+   and Location dropdowns appeared truncated or invisible when clicked.
+   The outer .mvl-listing-manager-content-body-inner already handles
+   long-form scroll (overflow:auto), so we can safely make the inner
+   wrapper overflow:visible without losing the scroll behavior. ─── */
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.option
+.mvl-listing-manager-content-body-page-option-wrapper {
+	overflow: visible !important;
+}
+
+/* ─── Year field: hide the native <input type="number"> on first paint ───
+   JS swaps it for a Select2-wrapped <select> on init. Without this rule
+   the bare number input is briefly visible (~200ms), which looks like the
+   field is a type-in. Once JS replaces the element with a <select>, this
+   selector no longer matches, so the dropdown shows normally. */
+.mvl-listing-manager-body
+.mvl-listing-manager-content-body-page.option
+input[name="option[numeric][ca-year]"] {
+	visibility: hidden !important;
+}

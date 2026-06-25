@@ -1,0 +1,257 @@
+/* Product listing page — Hot Tub Store brand palette (colors only) */
+
+body.single-listings .ps-listing-title {
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+	font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif !important;
+	font-size: clamp(22px, 2.6vw, 34px) !important;
+	font-weight: 700 !important;
+	line-height: 1.2 !important;
+	letter-spacing: -0.02em;
+	margin: 0 0 4px !important;
+	text-align: left !important;
+	color: var(--ps-brand-navy);
+}
+
+body.single-listings .ps-listing-title__line {
+	font-weight: 700;
+	color: var(--ps-brand-navy);
+}
+
+body.single-listings .ps-listing-title__model {
+	font-weight: 700;
+	font-size: 1em;
+	letter-spacing: -0.02em;
+	color: var(--ps-brand-navy);
+}
+
+body.single-listings .ps-listing-tagline {
+	margin: 10px 0 0;
+	font-family: 'Montserrat', system-ui, sans-serif;
+	font-size: 12px;
+	font-weight: 500;
+	font-style: normal;
+	letter-spacing: 0.16em;
+	text-transform: uppercase;
+	color: var(--ps-brand-accent);
+	opacity: 1;
+	line-height: 1.4;
+}
+
+@media (max-width: 767px) {
+	body.single-listings .ps-listing-title {
+		display: flex !important;
+		flex-direction: column !important;
+		align-items: flex-start !important;
+		font-size: clamp(22px, 6.2vw, 30px) !important;
+		max-width: 100%;
+		width: 100%;
+		min-width: 0;
+		white-space: normal !important;
+		overflow: visible !important;
+		text-overflow: unset !important;
+	}
+
+	body.single-listings .ps-listing-title__line,
+	body.single-listings .ps-listing-title__model {
+		display: block !important;
+		width: 100%;
+		max-width: 100%;
+		overflow-wrap: anywhere;
+		word-break: normal;
+		white-space: normal !important;
+	}
+}
+
+body.single-listings .mvl-listing-description p {
+	margin: 0 0 14px;
+	font-size: 15px;
+	line-height: 1.65;
+	color: #243C54;
+}
+
+body.single-listings .mvl-listing-description p:last-child {
+	margin-bottom: 0;
+}
+
+body.single-listings {
+	--ps-brand-accent: #04a3fb;
+	--ps-brand-navy: #243C54;
+	--ps-brand-cta: #CE3F2D;
+	--ps-brand-cta-hover: #B53525;
+	--cl-red: #CE3F2D;
+	background: #f0f0f0;
+	color: var(--ps-brand-navy);
+}
+
+/* ── Header CTA (logo image untouched) ─────────────────── */
+body.single-listings .ps-funnel-header__call {
+	background: var(--ps-brand-cta) !important;
+	color: #FFFFFF !important;
+}
+
+body.single-listings .ps-funnel-header__call:hover {
+	background: var(--ps-brand-cta-hover) !important;
+	color: #FFFFFF !important;
+}
+
+body.single-listings .ps-menu-toggle {
+	color: var(--ps-brand-navy);
+}
+
+/* ── Headings, labels, sale price ──────────────────────── */
+body.single-listings .elementor-widget-motors-single-listing-classified-title h1.title,
+body.single-listings .elementor-widget-motors-single-listing-classified-title h1.ps-listing-title,
+body.single-listings .mgc-price-promo__value--highlight,
+body.single-listings .mgc-price-promo__sale .mgc-price-promo__label,
+body.single-listings .mgc-price-promo__original .mgc-price-promo__label,
+body.single-listings .stm-single-car-listing-data .heading-font,
+body.single-listings .elementor-widget-heading .elementor-heading-title,
+body.single-listings .mgc-sidebar-cta-heading,
+body.single-listings .mgc-form-title,
+body.single-listings [data-id="f0dab77"] .elementor-heading-title::before,
+body.single-listings .stm-similar-cars h3,
+body.single-listings .stm-similar-cars .section-title {
+	color: var(--ps-brand-navy) !important;
+}
+
+/* ── Accent — monthly payment ────────────────────────────── */
+body.single-listings .mgc-pay-promo__amount,
+body.single-listings .mgc-pay-promo__per {
+	color: var(--ps-brand-accent) !important;
+}
+
+/* ── Accent — divider under price row ───────────────────── */
+body.single-listings [data-id="eee64c6"] {
+	border-top-color: var(--ps-brand-accent) !important;
+}
+
+/* ── You Save pill — accent highlight, not primary CTA ─── */
+body.single-listings .mgc-price-promo__savings {
+	background: var(--ps-brand-accent) !important;
+	color: #FFFFFF !important;
+}
+
+/* ── Accent — spec / feature icons ─────────────────────── */
+body.single-listings .stm-single-car-listing-data .item-label i,
+body.single-listings .stm-single-listing-car-features .lists-horizontal ul li i,
+body.single-listings .mgc-phone-link::before,
+body.single-listings .mgc-trust-badge__stars {
+	color: var(--ps-brand-accent) !important;
+}
+
+/* ── Accent — section heading bars ──────────────────────── */
+body.single-listings .elementor-widget-heading .elementor-heading-title,
+body.single-listings [data-id="f0dab77"] .elementor-heading-title::before,
+body.single-listings .stm-similar-cars h3,
+body.single-listings .stm-similar-cars .section-title {
+	border-left-color: var(--ps-brand-accent) !important;
+}
+
+/* ── Primary CTAs ───────────────────────────────────────── */
+body.single-listings .mgc-cta-btn--primary,
+body.single-listings .mgc-cta-sticky-wrap .mgc-cta-btn--primary,
+body.single-listings .stm-dealer-contact-form .stm-btn,
+body.single-listings .stm-dealer-contact-form [type="submit"],
+body.single-listings .mgc-quote-link,
+body.single-listings .mvl-action-button.mgc-quote-link,
+body.single-listings #trade-offer .wpcf7-form input.wpcf7-submit,
+body.single-listings #trade-offer .wpcf7-form button[type="submit"] {
+	background: var(--ps-brand-cta) !important;
+	background-color: var(--ps-brand-cta) !important;
+	border-color: var(--ps-brand-cta) !important;
+	color: #FFFFFF !important;
+}
+
+body.single-listings .mgc-cta-btn--primary:hover,
+body.single-listings .mgc-cta-sticky-wrap .mgc-cta-btn--primary:hover,
+body.single-listings .stm-dealer-contact-form .stm-btn:hover,
+body.single-listings .stm-dealer-contact-form [type="submit"]:hover,
+body.single-listings .mgc-quote-link:hover,
+body.single-listings .mvl-action-button.mgc-quote-link:hover,
+body.single-listings #trade-offer .wpcf7-form input.wpcf7-submit:hover,
+body.single-listings #trade-offer .wpcf7-form button[type="submit"]:hover {
+	background: var(--ps-brand-cta-hover) !important;
+	background-color: var(--ps-brand-cta-hover) !important;
+	border-color: var(--ps-brand-cta-hover) !important;
+	color: #FFFFFF !important;
+}
+
+/* Mobile Call Now outline → CTA on hover */
+@media (max-width: 767px) {
+	body.single-listings .mgc-phone-link {
+		color: var(--ps-brand-cta) !important;
+		border-color: var(--ps-brand-cta) !important;
+	}
+
+	body.single-listings .mgc-phone-link:hover {
+		background: var(--ps-brand-cta) !important;
+		color: #FFFFFF !important;
+	}
+}
+
+/* ── Form focus + required asterisk ─────────────────────── */
+body.single-listings .stm-dealer-contact-form input:focus,
+body.single-listings .stm-dealer-contact-form textarea:focus,
+body.single-listings #trade-offer .wpcf7-form input:focus,
+body.single-listings #trade-offer .wpcf7-form textarea:focus {
+	border-color: var(--ps-brand-accent) !important;
+}
+
+body.single-listings .wpcf7-form .required::after {
+	color: var(--ps-brand-accent) !important;
+}
+
+/* ── Gallery condition / spec badge ─────────────────────── */
+body.single-listings .special-label,
+body.single-listings .stm-special-car-top,
+body.single-listings .stm-badge-directory,
+body.single-listings .label-wrap .label,
+body.single-listings .motors-elementor-single-listing-gallery .special-label {
+	background-color: var(--ps-brand-accent) !important;
+	border-color: var(--ps-brand-accent) !important;
+}
+
+/* ── Override shared brand file gold on this page only ──── */
+body.single-listings .mgc-savings-line__amount,
+body.single-listings .sale-price,
+body.single-listings .mvl-sale-price {
+	color: var(--ps-brand-navy) !important;
+}
+
+body.single-listings .mgc-pay-promo__info:hover,
+body.single-listings .mgc-pay-promo__info:focus-visible {
+	background: var(--ps-brand-accent) !important;
+	border-color: var(--ps-brand-accent) !important;
+	color: #FFFFFF !important;
+}
+
+/* ── Sidebar product video ──────────────────────────────── */
+body.single-listings .ps-listing-video {
+	margin-bottom: 20px;
+}
+
+body.single-listings .ps-listing-video__wrap {
+	position: relative;
+	width: 100%;
+	padding-bottom: 56.25%;
+	height: 0;
+	overflow: hidden;
+	border-radius: 8px;
+	background: #000;
+	box-shadow: 0 4px 16px rgba(36, 60, 84, 0.12);
+}
+
+body.single-listings .ps-listing-video__wrap iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 0;
+}
+
+body.single-listings [data-id="ad45d7b"] .elementor-widget-wrap {
+	min-height: auto;
+}

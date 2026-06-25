@@ -1,0 +1,264 @@
+/**
+ * Cart Launch — Interior Page Styles
+ * Shared styles for financing, service, and other interior pages.
+ * Builds on mgc-homepage.css — must be loaded after it.
+ */
+
+/* ─── Interior hero ──────────────────────────────────────────────── */
+.mgc-hp-hero--interior {
+	min-height: 80vh;
+}
+
+.mgc-hp-hero--interior .mgc-hp-hero__title-sm {
+	font-weight: 700;
+}
+
+.mgc-hp-hero--interior .mgc-hp-hero__sub {
+	font-weight: 500;
+	color: rgba(255,255,255,0.88);
+}
+
+/* ─── Section titles on dark bg ─────────────────────────────────── */
+.mgc-ip-section--dark .mgc-hp-section__title,
+.mgc-ip-section--dark .mgc-hp-section__sub {
+	color: #ffffff;
+}
+.mgc-ip-section--dark .mgc-hp-section__sub {
+	color: rgba(255,255,255,0.55);
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   HOW IT WORKS — 3-step strip
+   ═══════════════════════════════════════════════════════════════════ */
+.mgc-ip-steps {
+	background: #ffffff;
+	padding: 88px 24px;
+}
+
+.mgc-ip-steps__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 0;
+	max-width: 860px;
+	margin: 0 auto;
+	position: relative;
+}
+
+/* Connecting line between step circles */
+.mgc-ip-steps__grid::before {
+	content: '';
+	position: absolute;
+	top: 35px;
+	left: calc(50% / 3 + 36px);
+	right: calc(50% / 3 + 36px);
+	height: 2px;
+	background: #e5e7eb;
+	z-index: 0;
+}
+
+.mgc-ip-step {
+	text-align: center;
+	padding: 0 28px;
+	position: relative;
+	z-index: 1;
+}
+
+.mgc-ip-step__num {
+	width: 72px;
+	height: 72px;
+	background: var(--hp-red);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 24px;
+	font-family: var(--hp-font);
+	font-size: 26px;
+	font-weight: 900;
+	color: #ffffff;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0 4px 20px color-mix(in srgb, var(--cl-red) 35%, transparent);
+}
+
+.mgc-ip-step h4 {
+	font-family: var(--hp-font);
+	font-size: 18px;
+	font-weight: 700;
+	color: #0d0d0d;
+	margin: 0 0 10px;
+	letter-spacing: -0.3px;
+}
+
+.mgc-ip-step p {
+	font-family: var(--hp-font);
+	font-size: 14px;
+	color: #6b7280;
+	line-height: 1.7;
+	margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   SERVICES GRID
+   ═══════════════════════════════════════════════════════════════════ */
+.mgc-ip-services {
+	background: #f9fafb;
+	padding: 88px 24px;
+}
+
+.mgc-ip-services__grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 24px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.mgc-ip-service-card {
+	background: #ffffff;
+	border: 1px solid #e5e7eb;
+	border-top: 3px solid var(--hp-red);
+	border-radius: 8px;
+	padding: 36px 28px;
+	transition: box-shadow 0.25s ease, transform 0.25s ease;
+}
+
+.mgc-ip-service-card:hover {
+	box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+	transform: translateY(-4px);
+}
+
+.mgc-ip-service-card__icon {
+	width: 52px;
+	height: 52px;
+	background: var(--hp-red);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 20px;
+}
+
+.mgc-ip-service-card__icon i {
+	color: #ffffff;
+	font-size: 19px;
+}
+
+.mgc-ip-service-card h4 {
+	font-family: var(--hp-font);
+	font-size: 17px;
+	font-weight: 700;
+	color: #0d0d0d;
+	margin: 0 0 10px;
+	letter-spacing: -0.2px;
+}
+
+.mgc-ip-service-card p {
+	font-family: var(--hp-font);
+	font-size: 14px;
+	color: #6b7280;
+	line-height: 1.65;
+	margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   BENEFITS STRIP (financing page)
+   ═══════════════════════════════════════════════════════════════════ */
+.mgc-ip-benefits {
+	background: #111111;
+	padding: 56px 24px;
+}
+
+.mgc-ip-benefits__grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 2px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.mgc-ip-benefit {
+	text-align: center;
+	padding: 36px 24px;
+	background: #1a1a1a;
+	border-radius: 6px;
+}
+
+.mgc-ip-benefit__icon {
+	width: 52px;
+	height: 52px;
+	background: var(--hp-red);
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto 16px;
+}
+
+.mgc-ip-benefit__icon i {
+	color: #ffffff;
+	font-size: 18px;
+}
+
+.mgc-ip-benefit strong {
+	display: block;
+	font-family: var(--hp-font);
+	font-size: 15px;
+	font-weight: 700;
+	color: #ffffff;
+	margin-bottom: 6px;
+}
+
+.mgc-ip-benefit span {
+	font-family: var(--hp-font);
+	font-size: 13px;
+	color: rgba(255,255,255,0.45);
+	line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+	.mgc-ip-services__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.mgc-ip-benefits__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.mgc-ip-steps__grid::before {
+		display: none;
+	}
+}
+
+@media (max-width: 600px) {
+	.mgc-ip-steps__grid {
+		grid-template-columns: 1fr;
+		gap: 40px;
+	}
+
+	.mgc-ip-services__grid {
+		grid-template-columns: 1fr;
+	}
+
+	.mgc-ip-benefits__grid {
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.mgc-hp-hero--interior {
+		min-height: 75vh;
+	}
+}
+
+/* ---- Mobile paragraph legibility ----
+   These interior-page paragraph styles set explicit small sizes, so the
+   generic mobile "+2px" paragraph rule in style.css can't reach them.
+   Bump them for phones. */
+@media (max-width: 767px) {
+	.mgc-ip-step p,
+	.mgc-ip-service-card p {
+		font-size: 16px;
+	}
+}

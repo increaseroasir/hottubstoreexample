@@ -1,0 +1,814 @@
+/* The Hot Tub Store — Hansons-style header + split hero (top of page only) */
+
+body.ps-hottubstore-home {
+	display: contents;
+}
+
+body.ps-hottubstore-home .ps-site-header--hansons {
+	display: contents;
+}
+
+/* ── Top utility bar ── */
+body.ps-hottubstore-home .ps-h-utility,
+body.ps-hottubstore-inventory .ps-h-utility,
+body.ps-hottubstore-listing .ps-h-utility {
+	display: none;
+	background: #F4F7F9;
+	border-bottom: 1px solid rgba(0, 174, 239, 0.18);
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	line-height: 1;
+	min-height: 36px;
+}
+
+body.ps-hottubstore-home .ps-h-utility__inner,
+body.ps-hottubstore-inventory .ps-h-utility__inner,
+body.ps-hottubstore-listing .ps-h-utility__inner {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 0 20px;
+	min-height: 36px;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+
+body.ps-hottubstore-home .ps-h-utility__links,
+body.ps-hottubstore-inventory .ps-h-utility__links,
+body.ps-hottubstore-listing .ps-h-utility__links {
+	display: flex;
+	align-items: center;
+	flex-wrap: nowrap;
+	gap: 0 24px;
+}
+
+body.ps-hottubstore-home .ps-h-utility__links a,
+body.ps-hottubstore-inventory .ps-h-utility__links a,
+body.ps-hottubstore-listing .ps-h-utility__links a {
+	color: #444444;
+	text-decoration: none;
+	white-space: nowrap;
+	font-size: 13px;
+	transition: color 0.15s ease;
+}
+
+body.ps-hottubstore-home .ps-h-utility__links a:hover,
+body.ps-hottubstore-inventory .ps-h-utility__links a:hover,
+body.ps-hottubstore-listing .ps-h-utility__links a:hover {
+	color: #00AEEF;
+}
+
+/* ── Main header ── */
+body.ps-hottubstore-home .ps-h-main,
+body.ps-hottubstore-inventory .ps-h-main {
+	position: sticky;
+	top: 0;
+	z-index: 1000;
+	background: #FFFFFF;
+	border-bottom: 1px solid rgba(5, 5, 5, 0.08);
+	box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
+	overflow: visible;
+}
+
+body.ps-hottubstore-listing .ps-h-main {
+	position: relative;
+	top: auto;
+	background: #FFFFFF;
+	border-bottom: 1px solid rgba(5, 5, 5, 0.08);
+	box-shadow: none;
+}
+
+body.ps-hottubstore-home.ps-header-scrolled,
+body.ps-hottubstore-inventory.ps-header-scrolled,
+body.ps-hottubstore-listing.ps-header-scrolled body.ps-hottubstore-home .ps-h-main,
+body.ps-hottubstore-inventory .ps-h-main,
+body.ps-hottubstore-listing .ps-h-main {
+	box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+}
+
+body.ps-hottubstore-home .ps-h-main__inner,
+body.ps-hottubstore-inventory .ps-h-main__inner,
+body.ps-hottubstore-listing .ps-h-main__inner {
+	max-width: 1500px;
+	margin: 0 auto;
+	padding: 14px 16px;
+	min-height: 76px;
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-items: center;
+	gap: 12px 16px;
+	box-sizing: border-box;
+	overflow: visible;
+}
+
+body.ps-hottubstore-home .ps-h-main__logo,
+body.ps-hottubstore-inventory .ps-h-main__logo,
+body.ps-hottubstore-listing .ps-h-main__logo {
+	flex-shrink: 0;
+	justify-self: start;
+	padding-right: 8px;
+}
+
+body.ps-hottubstore-home .ps-h-main__logo .ps-logo__img,
+body.ps-hottubstore-inventory .ps-h-main__logo .ps-logo__img,
+body.ps-hottubstore-listing .ps-h-main__logo .ps-logo__img {
+	height: 48px;
+	width: auto;
+	max-width: min(220px, 44vw);
+}
+
+body.ps-hottubstore-home .ps-h-main__nav,
+body.ps-hottubstore-inventory .ps-h-main__nav,
+body.ps-hottubstore-listing .ps-h-main__nav {
+	display: none;
+	min-width: 0;
+	grid-column: 1 / -1;
+	border-top: 1px solid rgba(5, 5, 5, 0.08);
+	padding-top: 10px;
+	overflow: visible;
+}
+
+body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__inner,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__inner,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__inner {
+	max-width: none;
+	padding: 0;
+	overflow: visible;
+}
+
+body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__list,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__list,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__list {
+	justify-content: safe center;
+	padding: 0;
+	gap: 0 clamp(16px, 1.4vw, 24px);
+	flex-wrap: nowrap;
+	overflow: visible;
+}
+
+body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__link,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__link {
+	font-size: 14px;
+	font-weight: 800;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	color: #111827;
+	white-space: nowrap;
+	text-decoration: none;
+	line-height: 1.25;
+	padding: 2px 0 5px;
+	border-bottom: 3px solid transparent;
+	box-shadow: none;
+}
+
+body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__link:hover,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link:hover,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__link:hover,
+body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__link:focus-visible,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link:focus-visible,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__link:focus-visible {
+	color: #00AEEF;
+}
+
+body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__link.is-active,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link.is-active,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__link.is-active,
+body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__link[aria-current="page"],
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link[aria-current="page"],
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__link[aria-current="page"] {
+	color: #00AEEF;
+	border-bottom-color: #00AEEF;
+	text-decoration: none;
+	box-shadow: none;
+}
+
+body.ps-hottubstore-home .ps-h-main__actions,
+body.ps-hottubstore-inventory .ps-h-main__actions,
+body.ps-hottubstore-listing .ps-h-main__actions {
+	display: none;
+	align-items: center;
+	justify-content: flex-end;
+	gap: 18px;
+	flex-shrink: 0;
+	grid-column: 2;
+	grid-row: 1;
+}
+
+body.ps-hottubstore-home .ps-h-phone,
+body.ps-hottubstore-inventory .ps-h-phone,
+body.ps-hottubstore-listing .ps-h-phone {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	gap: 2px;
+}
+
+body.ps-hottubstore-home .ps-h-phone__badge,
+body.ps-hottubstore-inventory .ps-h-phone__badge,
+body.ps-hottubstore-listing .ps-h-phone__badge {
+	display: none;
+}
+
+body.ps-hottubstore-home .ps-h-phone__number,
+body.ps-hottubstore-inventory .ps-h-phone__number,
+body.ps-hottubstore-listing .ps-h-phone__number {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4em;
+	font-size: 18px;
+	font-weight: 900;
+	color: #111827;
+	text-decoration: none;
+	white-space: nowrap;
+	letter-spacing: 0.01em;
+}
+
+body.ps-hottubstore-home .ps-h-phone__number::before,
+body.ps-hottubstore-inventory .ps-h-phone__number::before,
+body.ps-hottubstore-listing .ps-h-phone__number::before {
+	font-family: "Font Awesome 6 Free";
+	font-weight: 900;
+	content: "\f095";
+	font-size: 0.72em;
+	color: #00AEEF;
+	flex-shrink: 0;
+}
+
+body.ps-hottubstore-home .ps-h-phone__number:hover,
+body.ps-hottubstore-inventory .ps-h-phone__number:hover,
+body.ps-hottubstore-listing .ps-h-phone__number:hover {
+	color: #00AEEF;
+}
+
+body.ps-hottubstore-home .ps-h-estimate,
+body.ps-hottubstore-inventory .ps-h-estimate,
+body.ps-hottubstore-listing .ps-h-estimate {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 48px;
+	padding: 0 24px;
+	border-radius: 9px;
+	background: #00AEEF;
+	color: #FFFFFF;
+	font-size: 14px;
+	font-weight: 900;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	text-decoration: none;
+	white-space: nowrap;
+	line-height: 1.1;
+	transition: background 0.15s ease;
+	flex-shrink: 0;
+}
+
+body.ps-hottubstore-home .ps-h-estimate:hover,
+body.ps-hottubstore-inventory .ps-h-estimate:hover,
+body.ps-hottubstore-listing .ps-h-estimate:hover {
+	background: #008FC7;
+	color: #FFFFFF;
+}
+
+body.ps-hottubstore-home .ps-h-main__mobile,
+body.ps-hottubstore-inventory .ps-h-main__mobile,
+body.ps-hottubstore-listing .ps-h-main__mobile {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	justify-self: end;
+	grid-column: 2;
+	grid-row: 1;
+}
+
+body.ps-hottubstore-home .ps-h-main__mobile .ps-funnel-header__call,
+body.ps-hottubstore-inventory .ps-h-main__mobile .ps-funnel-header__call,
+body.ps-hottubstore-listing .ps-h-main__mobile .ps-funnel-header__call {
+	padding: 8px 12px;
+	font-size: 10px;
+	font-weight: 800;
+	text-transform: uppercase;
+	background: #00AEEF;
+	color: #FFFFFF;
+	border-radius: 4px;
+	text-decoration: none;
+}
+
+body.ps-hottubstore-home .ps-h-main__mobile .ps-funnel-header__call:hover,
+body.ps-hottubstore-inventory .ps-h-main__mobile .ps-funnel-header__call:hover,
+body.ps-hottubstore-listing .ps-h-main__mobile .ps-funnel-header__call:hover {
+	background: #008FC7;
+	color: #FFFFFF;
+}
+
+body.ps-hottubstore-home .ps-h-main__mobile .ps-menu-toggle,
+body.ps-hottubstore-inventory .ps-h-main__mobile .ps-menu-toggle {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 40px;
+	height: 40px;
+	border: 0;
+	border-radius: 4px;
+	background: #050505;
+	color: #FFFFFF;
+	cursor: pointer;
+}
+
+body.ps-hottubstore-home .ps-site-header--hansons .ps-desktop-nav,
+body.ps-hottubstore-inventory .ps-site-header--hansons .ps-desktop-nav,
+body.ps-hottubstore-listing .ps-site-header--hansons .ps-desktop-nav {
+	display: none;
+	border-top: 0;
+	background: transparent;
+}
+
+@media (min-width: 768px) {
+	body.ps-hottubstore-home .ps-h-utility,
+body.ps-hottubstore-inventory .ps-h-utility,
+body.ps-hottubstore-listing .ps-h-utility {
+		display: block;
+		min-height: 38px;
+	}
+
+	body.ps-hottubstore-home .ps-h-utility__inner,
+	body.ps-hottubstore-inventory .ps-h-utility__inner,
+	body.ps-hottubstore-listing .ps-h-utility__inner {
+		min-height: 38px;
+	}
+
+	body.ps-hottubstore-home .ps-h-utility__links a,
+	body.ps-hottubstore-inventory .ps-h-utility__links a,
+	body.ps-hottubstore-listing .ps-h-utility__links a {
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 1024px) {
+	body.ps-hottubstore-home .ps-h-main__inner,
+body.ps-hottubstore-inventory .ps-h-main__inner,
+body.ps-hottubstore-listing .ps-h-main__inner {
+		padding: 14px clamp(24px, 2.5vw, 40px);
+		min-height: 84px;
+	}
+
+	body.ps-hottubstore-home .ps-site-header--hansons .ps-h-main__nav.ps-desktop-nav,
+body.ps-hottubstore-inventory .ps-site-header--hansons .ps-h-main__nav.ps-desktop-nav,
+body.ps-hottubstore-listing .ps-site-header--hansons .ps-h-main__nav.ps-desktop-nav {
+		display: block;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__actions,
+body.ps-hottubstore-inventory .ps-h-main__actions,
+body.ps-hottubstore-listing .ps-h-main__actions {
+		display: flex;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__mobile,
+body.ps-hottubstore-inventory .ps-h-main__mobile,
+body.ps-hottubstore-listing .ps-h-main__mobile {
+		display: none;
+	}
+}
+
+@media (min-width: 1280px) {
+	body.ps-hottubstore-home .ps-h-main__inner,
+body.ps-hottubstore-inventory .ps-h-main__inner,
+body.ps-hottubstore-listing .ps-h-main__inner {
+		grid-template-columns: minmax(170px, 210px) minmax(0, 1fr) auto;
+		grid-template-rows: auto;
+		gap: 12px clamp(14px, 1.6vw, 24px);
+		padding: 14px clamp(32px, 3vw, 48px);
+		min-height: 88px;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__logo,
+body.ps-hottubstore-inventory .ps-h-main__logo,
+body.ps-hottubstore-listing .ps-h-main__logo {
+		grid-column: 1;
+		grid-row: 1;
+		padding-right: 0;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__logo .ps-logo__img,
+body.ps-hottubstore-inventory .ps-h-main__logo .ps-logo__img,
+body.ps-hottubstore-listing .ps-h-main__logo .ps-logo__img {
+		height: 48px;
+		max-width: 210px;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__nav,
+body.ps-hottubstore-inventory .ps-h-main__nav,
+body.ps-hottubstore-listing .ps-h-main__nav {
+		grid-column: 2;
+		grid-row: 1;
+		border-top: 0;
+		padding-top: 0;
+		align-self: center;
+		justify-self: stretch;
+		overflow: visible;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__actions,
+body.ps-hottubstore-inventory .ps-h-main__actions,
+body.ps-hottubstore-listing .ps-h-main__actions {
+		grid-column: 3;
+		grid-row: 1;
+		gap: 14px;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__list,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__list,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__list {
+		justify-content: safe center;
+		gap: 22px;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__link,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__link {
+		font-size: 14px;
+	}
+
+	body.ps-hottubstore-home .ps-h-phone__number,
+body.ps-hottubstore-inventory .ps-h-phone__number,
+body.ps-hottubstore-listing .ps-h-phone__number {
+		font-size: 18px;
+	}
+
+	body.ps-hottubstore-home .ps-h-estimate,
+	body.ps-hottubstore-inventory .ps-h-estimate,
+	body.ps-hottubstore-listing .ps-h-estimate {
+		min-height: 48px;
+		padding: 0 22px;
+		font-size: 14px;
+	}
+}
+
+@media (min-width: 1440px) {
+	body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__list,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__list,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__list {
+		gap: 26px;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__nav .ps-desktop-nav__link,
+body.ps-hottubstore-inventory .ps-h-main__nav .ps-desktop-nav__link,
+body.ps-hottubstore-listing .ps-h-main__nav .ps-desktop-nav__link {
+		font-size: 15px;
+	}
+
+	body.ps-hottubstore-home .ps-h-phone__number,
+body.ps-hottubstore-inventory .ps-h-phone__number,
+body.ps-hottubstore-listing .ps-h-phone__number {
+		font-size: 20px;
+	}
+
+	body.ps-hottubstore-home .ps-h-estimate,
+	body.ps-hottubstore-inventory .ps-h-estimate,
+	body.ps-hottubstore-listing .ps-h-estimate {
+		min-height: 50px;
+		padding: 0 26px;
+	}
+}
+
+@media (max-width: 1023px) {
+	body.ps-hottubstore-home .ps-h-main__actions,
+body.ps-hottubstore-inventory .ps-h-main__actions,
+body.ps-hottubstore-listing .ps-h-main__actions,
+	body.ps-hottubstore-home .ps-h-main__nav,
+body.ps-hottubstore-inventory .ps-h-main__nav,
+body.ps-hottubstore-listing .ps-h-main__nav {
+		display: none !important;
+	}
+}
+
+@media (max-width: 767px) {
+	body.ps-hottubstore-home .ps-h-utility,
+body.ps-hottubstore-inventory .ps-h-utility,
+body.ps-hottubstore-listing .ps-h-utility {
+		display: none !important;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__inner,
+body.ps-hottubstore-inventory .ps-h-main__inner,
+body.ps-hottubstore-listing .ps-h-main__inner {
+		min-height: 66px;
+		padding: 10px 16px;
+	}
+
+	body.ps-hottubstore-home .ps-h-main__logo .ps-logo__img,
+	body.ps-hottubstore-inventory .ps-h-main__logo .ps-logo__img,
+	body.ps-hottubstore-listing .ps-h-main__logo .ps-logo__img {
+		height: 42px;
+		max-width: min(210px, 52vw);
+	}
+}
+
+/* ── Split hero ── */
+body.ps-hottubstore-home .ps-hero.ps-hero--split {
+	display: block;
+	margin: 0;
+	padding: 0;
+	background: #050505;
+	overflow: visible;
+	min-height: 0 !important;
+	height: auto;
+}
+
+body.ps-hottubstore-home .ps-hero--split .ps-hero__bg,
+body.ps-hottubstore-home .ps-hero--split .ps-hero__inner,
+body.ps-hottubstore-home .ps-hero--split .ps-lead,
+body.ps-hottubstore-home .ps-hero--split .ps-hero__copy {
+	display: none !important;
+}
+
+body.ps-hottubstore-home .ps-hero__split {
+	display: grid;
+	grid-template-columns: 1fr;
+	min-height: 0;
+}
+
+body.ps-hottubstore-home .ps-hero__media {
+	position: relative;
+	overflow: hidden;
+	background: #050505;
+	min-height: 240px;
+}
+
+body.ps-hottubstore-home .ps-hero__media::after {
+	display: none;
+}
+
+body.ps-hottubstore-home .ps-hero__media img {
+	width: 100%;
+	height: 100%;
+	min-height: 240px;
+	object-fit: cover;
+	object-position: 38% 55%;
+	display: block;
+}
+
+body.ps-hottubstore-home .ps-hero__promo {
+	display: grid;
+	place-items: center;
+	align-content: center;
+	padding: 28px 24px;
+	background: linear-gradient(135deg, #006B8F 0%, #003A52 52%, #001E2E 100%);
+	color: #FFFFFF;
+	box-sizing: border-box;
+	overflow: visible;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-inner {
+	width: 100%;
+	max-width: 680px;
+	margin: 0;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-title {
+	margin: 0 0 8px;
+	font-size: clamp(2rem, 4.2vw, 4.25rem);
+	font-weight: 900;
+	line-height: 1.02;
+	letter-spacing: 0.01em;
+	color: #FFFFFF;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-services {
+	margin: 0 0 12px;
+	font-size: clamp(1.125rem, 1.8vw, 1.625rem);
+	font-weight: 500;
+	line-height: 1.3;
+	max-width: 600px;
+	color: rgba(238, 244, 255, 0.96);
+}
+
+body.ps-hottubstore-home .ps-hero__promo-divider {
+	width: 72px;
+	height: 3px;
+	margin: 0 0 12px;
+	border: 0;
+	background: #F5A400;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-offer {
+	margin: 0 0 8px;
+	font-size: clamp(1.75rem, 2.8vw, 2.375rem);
+	font-weight: 900;
+	line-height: 1.1;
+	color: #FFFFFF;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-support {
+	margin: 0 0 16px;
+	font-size: clamp(14px, 1.1vw, 16px);
+	font-weight: 400;
+	line-height: 1.45;
+	max-width: 560px;
+	color: rgba(255, 255, 255, 0.82);
+}
+
+body.ps-hottubstore-home .ps-hero__promo-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin-bottom: 14px;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-cta {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+	min-height: 58px;
+	padding: 0 34px;
+	background: #F5A400 !important;
+	color: #111B5F !important;
+	font-size: 16px;
+	font-weight: 900;
+	letter-spacing: 0.06em;
+	text-transform: uppercase;
+	text-decoration: none;
+	border-radius: 8px;
+	border: none;
+	box-shadow: 0 4px 14px rgba(245, 164, 0, 0.35);
+	transition: background 0.15s ease, color 0.15s ease;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-cta:hover {
+	background: #FFB326 !important;
+	color: #07153E !important;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-cta--secondary {
+	background: transparent !important;
+	color: #FFFFFF !important;
+	border: 2px solid rgba(255, 255, 255, 0.9) !important;
+	box-shadow: none;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-cta--secondary:hover {
+	background: #FFFFFF !important;
+	color: #111B5F !important;
+	border-color: #FFFFFF !important;
+}
+
+body.ps-hottubstore-home .ps-hero__promo-trust {
+	margin: 0;
+	font-size: 13px;
+	font-weight: 700;
+	line-height: 1.4;
+	color: rgba(255, 255, 255, 0.78);
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+
+@media (min-width: 768px) {
+	body.ps-hottubstore-home .ps-hero.ps-hero--split {
+		height: auto;
+		min-height: 580px !important;
+		max-height: none;
+		margin-top: 0 !important;
+		overflow: visible;
+	}
+
+	body.ps-hottubstore-home .ps-hero__split {
+		grid-template-columns: 1fr 1fr;
+		height: 580px;
+		min-height: 580px;
+		max-height: 580px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__media,
+	body.ps-hottubstore-home .ps-hero__promo {
+		height: 580px;
+		min-height: 580px;
+		max-height: 580px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__media img {
+		min-height: 580px;
+		height: 580px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo {
+		padding: clamp(32px, 3.5vh, 44px) clamp(56px, 6vw, 88px);
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-inner {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		height: auto;
+		max-height: 100%;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-title {
+		font-size: clamp(44px, 3.4vw, 64px);
+		line-height: 1.02;
+		margin-bottom: 14px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-services {
+		font-size: clamp(1.2rem, 1.35vw, 1.5rem);
+		line-height: 1.3;
+		max-width: 560px;
+		margin-bottom: 0;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-divider {
+		margin-top: 20px;
+		margin-bottom: 20px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-offer {
+		font-size: clamp(2rem, 2.2vw, 2.625rem);
+		line-height: 1.1;
+		margin-top: 0;
+		margin-bottom: 12px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-support {
+		margin-bottom: 0;
+		font-size: clamp(14px, 1vw, 16px);
+		max-width: 520px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-actions {
+		margin-top: 20px;
+		margin-bottom: 12px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-cta,
+	body.ps-hottubstore-home .ps-hero__promo-cta--secondary {
+		min-height: 52px;
+	}
+}
+
+@media (min-width: 1024px) {
+	body.ps-hottubstore-home .ps-hero.ps-hero--split,
+	body.ps-hottubstore-home .ps-hero__split,
+	body.ps-hottubstore-home .ps-hero__media,
+	body.ps-hottubstore-home .ps-hero__promo,
+	body.ps-hottubstore-home .ps-hero__media img {
+		height: 580px;
+		min-height: 580px;
+		max-height: 580px;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo {
+		padding: clamp(36px, 4vh, 48px) clamp(64px, 6.5vw, 96px);
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-title {
+		font-size: clamp(48px, 3.6vw, 68px);
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-services {
+		font-size: clamp(1.25rem, 1.4vw, 1.5625rem);
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-offer {
+		font-size: clamp(2.125rem, 2.4vw, 2.75rem);
+	}
+}
+
+@media (max-width: 767px) {
+	body.ps-hottubstore-home .ps-hero__promo-title {
+		font-size: clamp(1.75rem, 8.5vw, 2.35rem);
+		line-height: 1.05;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-services {
+		font-size: clamp(1.05rem, 4.5vw, 1.25rem);
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-offer {
+		font-size: clamp(1.35rem, 5.5vw, 1.75rem);
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-cta,
+	body.ps-hottubstore-home .ps-hero__promo-cta--secondary {
+		flex: 1 1 calc(50% - 0.4rem);
+		min-width: 0;
+		min-height: 52px;
+		padding: 0 16px;
+		font-size: 13px;
+		justify-content: center;
+	}
+}
+
+@media (max-width: 479px) {
+	body.ps-hottubstore-home .ps-hero__promo-actions {
+		flex-direction: column;
+	}
+
+	body.ps-hottubstore-home .ps-hero__promo-cta,
+	body.ps-hottubstore-home .ps-hero__promo-cta--secondary {
+		flex: 1 1 100%;
+		width: 100%;
+	}
+}
