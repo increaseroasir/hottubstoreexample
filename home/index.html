@@ -182,6 +182,45 @@
 			color: var(--ps-headline-blue);
 			font-weight: 800;
 		}
+		/* ── Review cards: white background, small Google icon ── */
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__card {
+			background: #ffffff !important;
+			border: 1px solid #e5e7eb !important;
+			border-top: 3px solid #4285F4 !important;
+			box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+		}
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__card:hover {
+			box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+		}
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__quote {
+			color: #374151 !important;
+		}
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__author-info strong {
+			color: #111827 !important;
+		}
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__author-info span {
+			color: #6b7280 !important;
+		}
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__author {
+			border-top: 1px solid #f3f4f6 !important;
+		}
+		/* Google G icon — constrain to small badge size */
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__google-mark {
+			display: flex;
+			align-items: center;
+			justify-content: flex-end;
+		}
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__google-icon {
+			width: 20px !important;
+			height: 20px !important;
+			max-width: 20px !important;
+			max-height: 20px !important;
+			flex-shrink: 0;
+		}
+		body.ps-dealer-home #social-proof .mgc-hp-reviews__google-mark svg {
+			width: 20px !important;
+			height: 20px !important;
+		}
 		body.ps-dealer-home .ps-hansons-buying-wrap {
 			background: #FFFFFF;
 			position: relative;
