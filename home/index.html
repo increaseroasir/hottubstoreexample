@@ -18,6 +18,10 @@
 	<link rel="stylesheet" href="../assets/css/dealer-theme.css">
 	<link rel="stylesheet" href="../assets/css/ps-hottubstore-header.css?v=1">
 	<link rel="stylesheet" href="../assets/css/ps-hottubstore-home.css?v=1">
+	<link rel="stylesheet" href="../assets/css/mgc-listing-price.css">
+	<link rel="stylesheet" href="../assets/css/mgc-pay-promo.css">
+	<link rel="stylesheet" href="../assets/css/ps-mgc-brand.css">
+	<link rel="stylesheet" href="../assets/css/ps-listing-brand.css">
 	<style>
 		body.ps-dealer-home {
 			--brand-primary: #1B3A6B;
@@ -229,6 +233,11 @@
 		body.ps-dealer-home #social-proof .mgc-hp-reviews__header-stars {
 			display: none;
 		}
+		body.ps-dealer-home #social-proof .mgc-hp-section__sub {
+			color: #6b7280 !important;
+			font-size: 16px !important;
+			margin: 4px 0 0 !important;
+		}
 		body.ps-dealer-home #social-proof .mgc-hp-section__title {
 			color: var(--ps-headline-blue);
 			font-weight: 800;
@@ -321,8 +330,75 @@
 			box-sizing: border-box;
 		}
 		body.ps-dealer-home .ps-coupon-band--split {
-			background: var(--ps-navy);
-			padding: clamp(2.5rem, 4vw, 3.5rem) 0 !important;
+			background: linear-gradient(115deg, #F5A623 0%, #FFD54F 40%, #F5A623 100%);
+			padding: 0 !important;
+			margin: 0;
+			overflow: hidden;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__grid {
+			display: flex;
+			align-items: stretch;
+			min-height: 220px;
+			max-width: 1400px;
+			margin: 0 auto;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__media {
+			flex: 0 0 42%;
+			max-width: 42%;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 24px 32px 24px 48px;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__media-frame {
+			width: 100%;
+			max-width: 480px;
+			border-radius: 8px;
+			overflow: hidden;
+			box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__media-frame img {
+			display: block;
+			width: 100%;
+			height: auto;
+			object-fit: cover;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__content {
+			flex: 1 1 auto;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 40px 48px 40px 32px;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__title {
+			font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+			font-weight: 900;
+			color: #1a2e4a;
+			line-height: 1.15;
+			margin: 0 0 12px;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__sub {
+			font-size: clamp(14px, 1.1vw, 16px);
+			color: rgba(26,46,74,0.75);
+			margin: 0 0 20px;
+			line-height: 1.5;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__cta {
+			display: inline-block;
+			padding: 13px 28px;
+			background: #1a2e4a;
+			color: #fff;
+			font-family: 'Montserrat', sans-serif;
+			font-weight: 800;
+			font-size: 14px;
+			text-transform: uppercase;
+			letter-spacing: 0.5px;
+			border-radius: 4px;
+			text-decoration: none;
+			align-self: flex-start;
+		}
+		body.ps-dealer-home .ps-coupon-band--split .ps-coupon-band__cta:hover {
+			background: #0f1e33;
 		}
 		/* ── Promise Band ── */
 		body.ps-dealer-home .ps-promise-band {
@@ -392,27 +468,11 @@
 			}
 			body.ps-dealer-home .ps-promise-band__seal { width: 120px; }
 		}
-		/* ── Product carousel card image fix ── */
-		body.ps-dealer-home .listing-list-loop .image-inner,
-		body.ps-dealer-home .listing-list-loop .interactive-hoverable,
-		body.ps-dealer-home .listing-list-loop .hoverable-wrap,
-		body.ps-dealer-home .listing-list-loop .hoverable-unit,
-		body.ps-dealer-home .listing-list-loop .thumb {
-			display: block;
-			width: 100%;
-			height: 200px;
-			overflow: hidden;
-		}
-		body.ps-dealer-home .listing-list-loop .thumb img {
-			width: 100%;
-			height: 100%;
-			object-fit: cover;
-			display: block;
-		}
+		/* ── Product carousel cards ── */
 		body.ps-dealer-home .listing-list-loop {
 			background: #fff;
 			border: 1px solid #e5e7eb;
-			border-radius: 8px;
+			border-radius: 4px;
 			overflow: hidden;
 			flex: 0 0 calc(33.333% - 11px);
 			min-width: 0;
@@ -422,36 +482,161 @@
 			display: block;
 			text-decoration: none;
 		}
-		body.ps-dealer-home .listing-list-loop .mvl-list-content {
-			padding: 12px 14px 14px;
+		/* Card image */
+		body.ps-dealer-home .listing-list-loop .image-inner,
+		body.ps-dealer-home .listing-list-loop .interactive-hoverable,
+		body.ps-dealer-home .listing-list-loop .hoverable-wrap,
+		body.ps-dealer-home .listing-list-loop .hoverable-unit,
+		body.ps-dealer-home .listing-list-loop .thumb {
+			display: block;
+			width: 100%;
+			height: 240px;
+			overflow: hidden;
 		}
-		/* ── Coupon promo strip (above carousel) ── */
+		body.ps-dealer-home .listing-list-loop .thumb img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			display: block;
+		}
+		/* Card content area */
+		body.ps-dealer-home .listing-list-loop .mvl-list-content {
+			padding: 14px 16px 16px;
+		}
+		/* Card title */
+		body.ps-dealer-home .listing-list-loop .car-title {
+			font-size: 15px !important;
+			font-weight: 700 !important;
+			color: #1a1a1a !important;
+			line-height: 1.3;
+			margin: 0 0 8px;
+		}
+		body.ps-dealer-home .listing-list-loop .mvl_listing_title {
+			text-decoration: none;
+			color: inherit;
+		}
+		/* Pricing: strikethrough + sale price */
+		body.ps-dealer-home .listing-list-loop .normal-price,
+		body.ps-dealer-home .listing-list-loop .mvl-normal-price {
+			font-size: 13px !important;
+			color: #9ca3af !important;
+			text-decoration: line-through !important;
+			display: inline !important;
+			margin-right: 6px;
+		}
+		body.ps-dealer-home .listing-list-loop .sale-price,
+		body.ps-dealer-home .listing-list-loop .mvl-sale-price {
+			font-size: 22px !important;
+			font-weight: 800 !important;
+			color: #1E3A52 !important;
+			display: inline !important;
+		}
+		body.ps-dealer-home .listing-list-loop .mvl-price {
+			display: flex;
+			align-items: baseline;
+			gap: 4px;
+			margin-bottom: 4px;
+		}
+		body.ps-dealer-home .listing-list-loop .mgc-price-card {
+			display: block;
+			margin-bottom: 8px;
+		}
+		body.ps-dealer-home .listing-list-loop .mgc-price-card__main {
+			display: block;
+		}
+		body.ps-dealer-home .listing-list-loop .mgc-price-card__side {
+			display: none !important;
+		}
+		body.ps-dealer-home .listing-list-loop .mgc-savings-line {
+			display: none !important;
+		}
+		/* Specs row: inline icons */
+		body.ps-dealer-home .listing-list-loop .mvl-card-listing-data-inner {
+			display: flex !important;
+			flex-direction: row !important;
+			gap: 12px;
+			list-style: none !important;
+			padding: 0 !important;
+			margin: 6px 0 0 !important;
+			flex-wrap: wrap;
+		}
+		body.ps-dealer-home .listing-list-loop .mvl-card-listing-data-inner li {
+			display: flex !important;
+			align-items: center;
+			gap: 4px;
+			font-size: 12px;
+			color: #374151;
+			list-style: none !important;
+		}
+		body.ps-dealer-home .listing-list-loop .mvl-card-listing-data-inner li::before {
+			content: none !important;
+		}
+		/* Hide the GET CUSTOM PRICING button on homepage cards */
+		body.ps-dealer-home .listing-list-loop .mvl-action-buttons {
+			display: none !important;
+		}
+		/* ── Coupon promo strip (above carousel) — gold split band ── */
 		body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip {
-			background: var(--ps-navy, #1a2e4a) !important;
-			padding: 28px 40px !important;
-			text-align: center;
+			background: linear-gradient(135deg, #f5a623 0%, #e8941a 100%) !important;
+			padding: 0 !important;
+			min-height: 260px;
+			display: flex !important;
+			align-items: stretch;
+		}
+		body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__inner {
+			width: 100%;
+			max-width: 1200px;
+			margin: 0 auto;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			align-items: center;
+			padding: 40px;
+			gap: 40px;
+		}
+		body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__inner::before {
+			content: '';
+			display: block;
+			background: url('/assets/images/coupon-graphic.png') center/contain no-repeat;
+			min-height: 180px;
+			border-radius: 8px;
+		}
+		body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__content {
+			text-align: left;
 		}
 		body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__title {
 			color: #fff;
-			font-size: clamp(1.3rem, 2vw, 1.8rem);
+			font-size: clamp(1.6rem, 2.5vw, 2.4rem);
 			font-weight: 900;
-			margin: 0 0 6px;
+			margin: 0 0 10px;
+			line-height: 1.2;
 		}
 		body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__sub {
-			color: rgba(255,255,255,0.8);
+			color: rgba(255,255,255,0.9);
 			font-size: 1rem;
-			margin: 0 0 14px;
+			margin: 0 0 20px;
 		}
 		body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__cta {
-			background: var(--ps-hansons-gold, #c9a84c);
-			color: #1a2e4a;
+			background: var(--ps-navy, #1a2e4a);
+			color: #fff;
 			font-weight: 800;
 			border: none;
-			padding: 12px 28px;
+			padding: 14px 32px;
 			border-radius: 4px;
 			text-decoration: none;
 			display: inline-block;
 			font-size: 1rem;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+		}
+		@media (max-width: 768px) {
+			body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__inner {
+				grid-template-columns: 1fr;
+				padding: 32px 24px;
+			}
+			body.ps-dealer-home .ps-design-studio-banner.ps-coupon-promo-strip .ps-design-studio-banner__inner::before {
+				display: none;
+			}
 		}
 		/* ── Steps section (Buying your hot tub is easy) ── */
 		body.ps-dealer-home #showroom .mgc-hp-how__steps {
@@ -483,17 +668,17 @@
 			border-radius: 0;
 			min-height: 320px;
 		}
-		body.ps-dealer-home #showroom .mgc-hp-how__step-num {
-			margin: 20px 0 0;
-			padding: 0 20px;
-			font-family: var(--hp-font, 'Montserrat', sans-serif);
-			font-size: 18px;
-			font-weight: 400;
-			text-transform: none;
-			letter-spacing: 0;
-			color: #1E3A52;
-			text-align: center;
-		}
+			body.ps-dealer-home #showroom .mgc-hp-how__step-num {
+				margin: 20px 0 0;
+				padding: 0 20px;
+				font-family: var(--hp-font, 'Montserrat', sans-serif);
+				font-size: 18px;
+				font-weight: 700;
+				text-transform: none;
+				letter-spacing: 0;
+				color: #1E3A52;
+				text-align: center;
+			}
 		body.ps-dealer-home #showroom .mgc-hp-how__step-divider {
 			margin: 12px 20px;
 			border: 0;
@@ -612,40 +797,42 @@
 			align-self: flex-start;
 			margin-top: 8px;
 		}
-		/* ── Why Choose box ── */
-		body.ps-dealer-home .ps-why-box {
-			border: 2px solid #D1D5DB !important;
-			border-radius: 8px !important;
-			padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem) !important;
-			margin: 0 clamp(1rem, 3vw, 3rem) !important;
-			background: #fff !important;
-		}
-		body.ps-dealer-home .ps-why-box__panel {
-			max-width: 860px;
-			margin: 0 auto;
-		}
+			/* ── Why Choose box ── */
+			body.ps-dealer-home .ps-why-box {
+				border: 2px solid #C9A84C !important;
+				border-radius: 8px !important;
+				padding: clamp(2rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem) !important;
+				margin: 0 clamp(1rem, 3vw, 3rem) !important;
+				background: #fff !important;
+			}
+			body.ps-dealer-home .ps-why-box__panel {
+				max-width: 860px;
+				margin: 0 auto;
+				text-align: center;
+			}
 		body.ps-dealer-home .ps-why-box__title {
 			font-family: var(--hp-font, 'Montserrat', sans-serif);
-			font-size: clamp(1.4rem, 2.5vw, 1.9rem);
+			font-size: clamp(1.6rem, 2.5vw, 2.2rem);
 			font-weight: 800;
 			color: var(--ps-headline-blue, #1E3A52);
-			margin: 0 0 12px;
+			margin: 0 0 16px;
 		}
 		body.ps-dealer-home .ps-why-box__prose {
-			font-size: 15px;
-			line-height: 1.65;
+			font-size: 16px;
+			line-height: 1.7;
 			color: #374151;
-			margin-bottom: 24px;
+			margin-bottom: 28px;
 		}
-		body.ps-dealer-home .ps-why-box__badges {
-			display: flex !important;
-			flex-wrap: wrap;
-			gap: 0;
-			align-items: center;
-			border-top: 1px solid #E5E7EB;
-			padding-top: 20px;
-			margin-top: 8px;
-		}
+			body.ps-dealer-home .ps-why-box__badges {
+				display: flex !important;
+				flex-wrap: wrap;
+				gap: 0;
+				align-items: center;
+				justify-content: center;
+				border-top: 1px solid #E5E7EB;
+				padding-top: 20px;
+				margin-top: 8px;
+			}
 		body.ps-dealer-home .ps-why-box__badge {
 			display: flex !important;
 			align-items: center;
@@ -1325,12 +1512,7 @@
 							<span class="ps-why-box__badge-years-sub">OF EXPERIENCE</span>
 						</div>
 					</div>
-					<div class="ps-why-box__badge">
-						<div class="ps-why-box__badge-years">
-							<span class="ps-why-box__badge-years-top">LOCAL</span>
-							<span class="ps-why-box__badge-years-sub">INSTALLATION SUPPORT</span>
-						</div>
-					</div>
+
 				</div>
 			</div>
 		</div>
@@ -1341,7 +1523,7 @@
 	<!-- How It Works -->
 	<section class="mgc-hp-section mgc-hp-how ps-hansons-buying" id="showroom">
 			<div class="mgc-hp-section__header">
-				<h2 class="mgc-hp-section__title">Buying your hot tub is easy.</h2>
+				<h2 class="mgc-hp-section__title" style="color:#1E3A52;font-weight:800;">Buying your hot tub is easy.</h2>
 			</div>
 			<div class="mgc-hp-how__steps">
 				<article class="mgc-hp-how__step">
