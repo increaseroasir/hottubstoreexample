@@ -712,35 +712,36 @@
 				color: #374151;
 				text-align: center;
 			}
-		/* ── CTA split section (Ready to get started) ── */
-			body.ps-dealer-home #get-started.mgc-hp-split {
-				display: grid;
-				grid-template-columns: 55% 45%;
-				min-height: 480px;
-				background: #fff;
-				padding: 0 !important;
-				gap: 0;
-				max-width: 100%;
-				width: 100%;
-				align-items: stretch;
-				overflow: hidden;
-				box-sizing: border-box;
-			}
+			/* ── CTA split section (Ready to get started) ── */
+				body.ps-dealer-home #get-started.mgc-hp-split {
+					display: grid;
+					grid-template-columns: 55% 45%;
+					min-height: clamp(480px, 55vw, 700px);
+					background: #fff;
+					padding: 0 !important;
+					gap: 0;
+					max-width: 100%;
+					width: 100%;
+					align-items: stretch;
+					overflow: hidden;
+					box-sizing: border-box;
+				}
 		@media (max-width: 768px) {
 			body.ps-dealer-home #get-started.mgc-hp-split {
 				grid-template-columns: 1fr;
 			}
 		}
-			body.ps-dealer-home #get-started .mgc-hp-split__image {
-				background-size: cover;
-				background-position: center;
-				min-height: 480px;
-				display: block;
-				width: 100%;
-				max-width: 100%;
-				align-self: stretch;
-				overflow: hidden;
-			}
+				body.ps-dealer-home #get-started .mgc-hp-split__image {
+					background-size: cover;
+					background-position: center;
+					min-height: clamp(480px, 55vw, 700px);
+					display: block;
+					width: 100%;
+					max-width: 100%;
+					align-self: stretch;
+					height: 100%;
+					overflow: hidden;
+				}
 		body.ps-dealer-home #get-started .mgc-hp-split__content {
 			padding: clamp(2rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 3rem);
 			display: flex;
